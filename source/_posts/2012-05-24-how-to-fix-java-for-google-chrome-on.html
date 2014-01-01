@@ -1,0 +1,13 @@
+---
+layout: post
+title: "How to fix Java for Google Chrome on Fedora"
+date: 2012-05-24
+comments: false
+categories:
+ - fedora
+ - chrome
+ - fix
+---
+
+<div class='post'>
+First, you need to install latest version of Java. You can download it from <a href="http://java.com/en/download/manual.jsp?locale=en">here</a>.<br /><br />Next, restart Google Chrome browser. If the problem is not solved, execute these commands as root:<br /><br /><blockquote class="tr_bq"><pre># mkdir /opt/google/chrome/plugins </pre></blockquote><blockquote class="tr_bq"><pre># ln -s ln -s /usr/java/jre1.7.0_04/lib/i386/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so </pre></blockquote>That's all.</div>
