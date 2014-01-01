@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: chrome | just a lazy admin]]></title>
+  <link href="http://thangola.github.io/blog/categories/chrome/atom.xml" rel="self"/>
+  <link href="http://thangola.github.io/"/>
+  <updated>2014-01-02T02:48:41+07:00</updated>
+  <id>http://thangola.github.io/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ngăn ngừa quit nhầm Chrome trên Mac]]></title>
+    <link href="http://thangola.github.io/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac/"/>
+    <updated>2012-10-17T00:00:00+07:00</updated>
+    <id>http://thangola.github.io/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac</id>
+    <content type="html"><![CDATA[<div class='post'>
+Từ lúc mình dùng Mac đến giờ, nhầm lẫn giữa <b>⌘Q</b> và <b>⌘W</b> là một trong những điều gây bực mình nhất: Thi thoảng muốn đóng một tab bằng tổ hợp <b>⌘W</b>, nhưng lại bấm nhầm&nbsp;<b>⌘Q</b>, và a lê hấp, cả trình duyệt biến mất.<br /><br />Ấm ức bấy lâu, tình cờ hôm nay phát hiện ra giải pháp vô cùng đơn giản mà bạn Chrome làm hộ mình: Click vào menu Chrome ở thanh menu, chọn <b>"Warn before quitting"</b>, dzầy là xong, haha.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-gy1afi49bmM/TfaWLwIDZlI/AAAAAAAAAmk/6po2urmuFjE/s1600/confirmquit.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="289" src="http://3.bp.blogspot.com/-gy1afi49bmM/TfaWLwIDZlI/AAAAAAAAAmk/6po2urmuFjE/s640/confirmquit.png" width="640" /></a></div><br /></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to fix Java for Google Chrome on Fedora]]></title>
+    <link href="http://thangola.github.io/blog/2012/05/24/how-to-fix-java-for-google-chrome-on/"/>
+    <updated>2012-05-24T00:00:00+07:00</updated>
+    <id>http://thangola.github.io/blog/2012/05/24/how-to-fix-java-for-google-chrome-on</id>
+    <content type="html"><![CDATA[<div class='post'>
+First, you need to install latest version of Java. You can download it from <a href="http://java.com/en/download/manual.jsp?locale=en">here</a>.<br /><br />Next, restart Google Chrome browser. If the problem is not solved, execute these commands as root:<br /><br /><blockquote class="tr_bq"><pre># mkdir /opt/google/chrome/plugins </pre></blockquote><blockquote class="tr_bq"><pre># ln -s ln -s /usr/java/jre1.7.0_04/lib/i386/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so </pre></blockquote>That's all.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

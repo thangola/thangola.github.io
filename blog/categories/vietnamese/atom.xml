@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vietnamese | just a lazy admin]]></title>
+  <link href="http://thangola.github.io/blog/categories/vietnamese/atom.xml" rel="self"/>
+  <link href="http://thangola.github.io/"/>
+  <updated>2014-01-02T02:48:41+07:00</updated>
+  <id>http://thangola.github.io/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bài viết đầu tiên với Octopress Blog]]></title>
+    <link href="http://thangola.github.io/blog/2014/01/02/bai-viet-dau-tien-voi-octopress/"/>
+    <updated>2014-01-02T00:30:08+07:00</updated>
+    <id>http://thangola.github.io/blog/2014/01/02/bai-viet-dau-tien-voi-octopress</id>
+    <content type="html"><![CDATA[<p><strong>In đậm</strong></p>
+
+<p><em>In nghiêng</em></p>
+
+<p>``` bash Thử một block Bash shell <a href="http://localhost:4000/">http://localhost:4000/</a> src start:2 mark:3</p>
+
+<h2>!/bin/bash</h2>
+
+<p>if [ -d /etc ]; then</p>
+
+<pre><code>ls /etc | head
+</code></pre>
+
+<p>fi
+```</p>
+
+<p>Đây là đường dẫn file: <code>/etc/my.cnf</code></p>
+
+<!--more-->
+
+
+<p>Blogging sẽ vui hơn chăng?</p>
+]]></content>
+  </entry>
+  
+</feed>

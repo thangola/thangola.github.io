@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: repoquery | just a lazy admin]]></title>
+  <link href="http://thangola.github.io/blog/categories/repoquery/atom.xml" rel="self"/>
+  <link href="http://thangola.github.io/"/>
+  <updated>2014-01-02T02:48:41+07:00</updated>
+  <id>http://thangola.github.io/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Yum - Liệt kê danh sách file trong một gói]]></title>
+    <link href="http://thangola.github.io/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/"/>
+    <updated>2012-08-07T00:00:00+07:00</updated>
+    <id>http://thangola.github.io/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi</id>
+    <content type="html"><![CDATA[<div class='post'>
+Để liệt kê nội dung một gói, có thể đã cài hoặc chưa cài, chúng ta sử dụng công cụ <span style="font-family: Courier New, Courier, monospace;">repoquery</span> trong gói <span style="font-family: Courier New, Courier, monospace;">yum-utils</span>. Nếu chưa cài gói này, chạy lệnh sau để cài đặt:&nbsp;<div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><span style="font-size: small; line-height: normal; white-space: normal;"><span style="font-family: Courier New, Courier, monospace;"># yum install yum-utils -y</span></span></pre></div><div><br /></div><div>Lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> có 2 option hữu ích:</div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">  -l, --list            list files in this package/group<br />  -q, --query           no-op for rpmquery compatibility</span></code></pre></div><div><br /></div><div>Chạy lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> với 2 option trên cùng với tên gói để liệt kê danh sách các file có trong gói:</div><div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;">$ repoquery -ql mlocate<br />/etc/cron.daily/mlocate.cron<br />/etc/updatedb.conf<br />/usr/bin/locate<br />/usr/bin/updatedb<br />/usr/share/doc/mlocate-0.22.2<br />/usr/share/doc/mlocate-0.22.2/AUTHORS<br />/usr/share/doc/mlocate-0.22.2/COPYING<br />...</pre></div><div><br /></div></div></div>
+
+]]></content>
+  </entry>
+  
+</feed>

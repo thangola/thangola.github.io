@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: softwares | just a lazy admin]]></title>
+  <link href="http://thangola.github.io/blog/categories/softwares/atom.xml" rel="self"/>
+  <link href="http://thangola.github.io/"/>
+  <updated>2014-01-02T02:48:41+07:00</updated>
+  <id>http://thangola.github.io/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Những phần mềm nào sẽ được cài mặc định cho Ubuntu Netbook Edition 10.10?]]></title>
+    <link href="http://thangola.github.io/blog/2010/05/14/nhung-phan-mem-nao-se-uoc-cai-mac-inh/"/>
+    <updated>2010-05-14T00:00:00+07:00</updated>
+    <id>http://thangola.github.io/blog/2010/05/14/nhung-phan-mem-nao-se-uoc-cai-mac-inh</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div style="text-align: center;"><br /></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/unity-2.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 640px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/unity-2.png" border="0" alt="" /></a><br /><a href="https://blueprints.edge.launchpad.net/ubuntu/+spec/desktop-maverick-une-app-selection">Bản kế hoạch các phần mềm mặc định</a> cho Ubuntu Netbook Edition 10.10 (UNE 10.10) vừa được đưa lên Launchpad ngày hôm nay. Tất nhiên danh sách này vẫn đang trong quá trình thảo luận, và có thể có những thay đổi nếu cần ^^.<div><br /></div><div>Đầu tiên là<b> trình duyệt web</b>. Trình duyệt mặc định cho UNE 10.10 sẽ là <a href="http://code.google.com/chromium/">Chromium</a>, phần mềm nguồn mở do Google hậu thuẫn. Bản kế hoạch viết rằng Chromium sẽ là trình duyệt mặc định cho đến bản Alpha3, nếu như nó phù hợp với kích thước của đĩa LiveCD. Chromium cũng còn một số vấn đề khác cần xem xét. Các vấn đề này chủ yếu liên quan đến sự tương thích về phần mềm (in ấn, <span class="Apple-style-span"   style="  line-height: 17px; font-family:'dejavu sans', 'bitstream vera sans', verdana, sans-serif;font-size:14px;">ffmepg, openjdk,...</span>) cũng như giao diện (menu, buttons). Nếu Chromium không được chọn, trình duyệt mặc định sẽ là Midori.</div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /><img src="http://yorba.org/static/images/shotwell/shotwell1.jpg" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 640px; " /></span></div><div><br /></div><div><a href="http://yorba.org/shotwell/">Shotwell</a> nhiều khả năng sẽ được chọn làm trình <b>quản lý ảnh</b>. Shotwell tương đối nhẹ, và tương thích khá tốt với các dịch vụ. Đây là trình quản lý ảnh duy nhất trên Gnome hiện có thể tương tác với cả Picasa, Flick và Facebook.</div><div><br /></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><img src="http://projects.gnome.org/gnumeric/images/gnumeric-sample.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 640px; " /></span></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /></span></div><div><b>Bộ công cụ văn phòng</b> OpenOffice sẽ được thay thế bởi ba phần mềm tương ứng là Abiword, <a href="http://projects.gnome.org/gnumeric/">Gnumeric</a> và <a href="http://blogs.gnome.org/racarr/2010/04/20/introducing-glide-presentations-for-gnome/">Glide</a>. Cũng như Ubuntu 10.04, Zoho sẽ vẫn được cung cấp kèm theo, tuy nhiên nhược điểm của dịch vụ này là không phục vụ chỉnh sửa ngoại tuyến! </div><div><br /></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /><img src="http://download.banshee-project.org/shots/1.5.1/banshee-autodj.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 600px; height: 369px; " /></span></div><div><br /></div><div>Về <b>chương trình multimedia</b>, khả năng Banshee được chọn vẫn cao nhất. Trình chơi nhạc của Moblin (<span class="Apple-style-span"   style="  line-height: 17px; font-family:'dejavu sans', 'bitstream vera sans', verdana, sans-serif;font-size:14px;">hornsey</span>) đã bị bỏ rơi. XBMC tuy tốt nhưng lại không sử dung gstreamer. Vấn đề của Banshee chỉ là liệu nó có phù hợp với đĩa LiveCD (lại vấn đề dung lượng ^.-). </div><div><br /></div><div>Cuối cùng, nhóm phát triển vẫn đang thảo luận về việc trình khách email nào sẽ được cài mặc định. Có vẻ như họ sẽ tuỳ biến lại Evolution cho phù hợp với netbook. Đã có một bản tuỳ biến của Evolution là <span class="Apple-style-span"   style="  ;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;"><a href="http://live.gnome.org/Evolution/Art" style="color: rgb(23, 57, 75); text-decoration: underline; font-weight: bold; ">Evolution Express</a></span>, nhưng hình như có nhiều người không thích nó.</div><div><br /></div><div>Về phần mình, mình vẫn khoái nghe nhạc bằng Rthymbox, Symphony cho tác vụ văn phòng và webmail + 1 tool notify cho thư điện tử :">.</div></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+Nhìn trông giống bản dành cho smart phone quá :)). k0 giống ubuntu thường nữa. Đâm hơi chán</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Giải pháp hoàn chỉnh cho việc convert file PDF thành file DOC]]></title>
+    <link href="http://thangola.github.io/blog/2009/03/16/giai-phap-hoan-chinh-cho-viec-convert/"/>
+    <updated>2009-03-16T00:00:00+07:00</updated>
+    <id>http://thangola.github.io/blog/2009/03/16/giai-phap-hoan-chinh-cho-viec-convert</id>
+    <content type="html"><![CDATA[<div class='post'>
+PDF và DOC, hai loại file văn bản phổ biến nhất hiện nay. Khi chúng ta soạn thảo, chúng ta tạo một file doc và sử dụng MS Word, OpenOffice Write hoặc một chương trình soạn thảo văn bản khác để chỉnh sửa file doc đó. File doc quả thật rất tiện dụng trong trường hợp này.<br /><br />Tuy vậy, để "mang vác" file văn bản từ nơi này sang nơi khác mà vẫn giữ nguyên định dạng, đọc file văn bản tiện lợi, tốn ít tài nguyên hệ thống thì file doc không còn là một lựa chọn hợp lý. Nào, đoán xem... Okay, bạn đã đoán đúng: chúng ta nên sử dụng định dạng pdf. Hầu hết các tài liệu dạng read-only (ebook, scanned book,...) đều được xuất bản dưới định dạng pdf.<br /><br />Và một quá trình rất hợp lý bắt đầu từ người viết đến người đọc diễn ra:<br /><blockquote>Soạn thảo file doc -> convert DOC to PDF -> đọc file pdf</blockquote>Tuy nhiên đôi khi quá trình này không nên kết thúc ở đây: người đọc cũng muốn chỉnh sửa file pdf đã xuất bản. Có hai lựa chọn: sử dụng một chương trình chỉnh sửa file pdf, hoặc convert ngược từ pdf về doc. Thường thì chương trình chỉnh sửa file pdf sẽ không có đầy đủ tính năng như một chương trình soạn thảo văn bản chuyên dụng. Do đó chúng ta thường chọn cách thứ hai.<br /><br />Tuy nhiên việc chuyển một file pdf về file doc một cách hoàn chỉnh cũng là một vấn đề nan giải. Đã một thời gian dài, chúng ta luôn cố tìm một ứng dụng convert như thế: Convert giữ nguyên font chữ, bullet, căn lề, bảng,... và... tiếng Việt.<br /><br />Trong bài viết này tôi xin giới thiệu một công cụ thỏa mãn khá đầy đủ các yêu cầu trên: <a href="http://www.pdftoword.com/">http://www.pdftoword.com/</a>. Đây là một ứng dụng trên nền Web do <a href="http://www.nitropdf.com/">Nitro software</a> cung cấp. Việc sử dụng quá đơn giản, có lẽ không cần phải trình bày nhiều. Xin đưa kết quả lên đây là đủ:<br /><br />Nguồn:<br /><br /><a href="http://duythang.net.googlepages.com/pdf2doc-pdf.jpg"><img src="http://duythang.net.googlepages.com/pdf2doc-pdf.jpg" width="600" /> </a><br /><br />Kết quả:<br /><br /><a href="http://duythang.net.googlepages.com/pdf2doc-doc.jpg"><img src="http://duythang.net.googlepages.com/pdf2doc-doc.jpg" width="600" /> </a><br /><br />Và đây là toàn bộ file kết quả: <a href="http://duythang.net.googlepages.com/SudungGrub.doc">http://duythang.net.googlepages.com/SudungGrub.doc</a> .</div>
+
+]]></content>
+  </entry>
+  
+</feed>
