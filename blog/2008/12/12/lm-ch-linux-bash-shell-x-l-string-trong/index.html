@@ -1,109 +1,91 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Làm chủ Linux Bash shell: Xử lý string trong Bash shell - just a lazy admin</title>
-  <meta name="author" content="Thang Pham">
+	<meta charset="utf-8">
+	<title>Làm chủ Linux Bash shell: Xử lý string trong Bash shell - just a lazy admin</title>
+	<meta name="author" content="Thang Pham">
 
-  
-  <meta name="description" content="Một trong những shell được sử dụng thường xuyên trong Linux là bash shell. Khi viết các shell script, công việc mà người sử dụng hay gặp phải nhất &hellip;">
-  
+	
+	<meta name="description" content="Một trong những shell được sử dụng thường xuyên trong Linux là bash shell. Khi viết các shell script, công việc mà người sử dụng hay gặp phải nhất &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://thangola.github.io/blog/2008/12/12/lm-ch-linux-bash-shell-x-l-string-trong">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="just a lazy admin" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
+	<link href="/atom.xml" rel="alternate" title="just a lazy admin" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">just a lazy admin</a></h1>
-  
-    <h2>don't ask how to use, just wonder how to make...</h2>
-  
-</hgroup>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">just a lazy admin</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:thangola.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/thangola" title="Twitter">Twitter</a>
+		
+		
+    
+		
+		
+		
+		
+		<a class="delicious" href="http://delicious.com/thangola" title="Delicious">Delicious</a>
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:thangola.github.io">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:thangola.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">Làm chủ Linux Bash shell: Xử lý string trong Bash shell</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-12-12T00:00:00+07:00" pubdate data-updated="true">Dec 12<span>th</span>, 2008</time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><div class='post'>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Làm chủ Linux Bash shell: Xử lý string trong Bash shell</h2>
+	<div class="entry-content"><div class='post'>
 Một trong những shell được sử dụng thường xuyên trong <span class="wiki_link">Linux</span> là bash shell. Khi viết các shell script, công việc mà người sử dụng hay gặp phải nhất có lẽ là xử lý string (tìm file, xử lý tên file, xử lý log, xử lý chuỗi nhập vào,&#8230;). Sau đây tôi xin trình bày một số điểm mấu chốt thú vị trong xử lý string với bash shell.<br /><br />Hai lệnh đầu tiên, đơn giản nhưng tương đối hữu ích, đó là<!--fonto:Courier New--> <span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->dirname<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc--> và <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->basename<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->. Cho một biến có chứa 1 string dạng đường dẫn đến 1 thư mục D hoặc 1 file X, lệnh <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->basename<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc--> sẽ trả về đúng tên thư mục D hoặc tên file X, còn lệnh <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->dirname<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc--> trả về phàn đường dẫn đến thư mục mẹ của D hoặc X. Ví dụ:<br /><!--c1--><blockquote style="font-family: courier new;"><div class="codemain"><!--ec1-->$ basename /home/thangphamduy/workspace/foo.txt<br />foo.txt<br />$ dirname /home/thangphamduy/workspace/foo.txt<br />/home/thangphamduy/workspace<br />$ basename /home/thangphamduy/workspace<br />workspace<br />$ dirname /home/thangphamduy/workspace<br /><br />/home/thangphamduy<!--c2--></div></blockquote><!--c1--><div class="codetop"><br /></div><div style="font-family: courier new;" class="codemain"><!--ec1--><blockquote>$ ALPHA=&#8221;/home/thangphamduy/temp/bar.txt&#8221;<br />$ BETA=`dirname $ALPHA`<br />$ echo $BETA<br />/home/thangphamduy/temp</blockquote><!--c2--></div><br />Đó chỉ là xử lý xâu đơn giản, tiếp đây, chúng ta thử xử lý xâu một cách &#8220;pro&#8221; hơn với bash shell. Trong 1 biểu thức, ta thường bắt gặp một biến được đặt trong cặp dấu ngoặc nhọn kiểu như<!--fonto:Courier New--> <span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->${MYVAR}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->. Và bash cũng cho phép chúng ta xử lý biến đó ngay trong cặp ngoặc nhọn. Chúng ta có thể dễ dàng cắt bỏ hay lấy ra một phần của string chứa trong biến một cách rất dễ dàng. Để dễ hình dung, các bạn có thể xem ví dụ sau:<br /><br /><div style="font-family: courier new;" class="codemain"><!--ec1--><blockquote>$ MYVAR=foodforthought.jpg<br />$ echo ${MYVAR##*fo}<br />rthought.jpg<br />$ echo ${MYVAR#*fo}<br />odforthought.jpg</blockquote><!--c2--></div><!--ec2--><br />Trong lệnh thứ nhất, ở phía trong dấu <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->${}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->, đầu tiên chúng ta viết tên biến, sau đó là hai dấu #, rồi đến 1 chuỗi ký tự đại diện (*fo). Vậy lệnh này có nghĩa là gì và nó được bash shell thực hiện như thế nào? Lệnh này (<!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->echo ${MYVAR##*fo}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->) sẽ khiến cho bash thực hiện việc cắt bỏ chuối dài nhất, tính từ ký tự đầu tiên, khớp với chuỗi ký tự đại diện (còn gọi là wildcard), sau đó in phần còn lại ra stdout. Khi gặp lệnh này, bash shell sẽ thực hiện việc tìm kiếm tất cả các xâu con khớp với chuỗi ký tự đại diện *fo trong xâu được chứa bởi<!--fonto:Courier New--> <span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->$MYVAR<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->(tức là tìm tất cả các xâu kết thúc với 2 ký tự fo):<br /><blockquote style="font-family: courier new;"><div class="codemain"><!--ec1-->f  <br />fo              MATCHES *fo<br />foo<br />food<br />foodf      <br />foodfo          MATCHES *fo<br />foodfor<br />foodfort   <br />foodforth<br />foodfortho <br />foodforthou<br />foodforthoug<br />foodforthought<br />foodforthought.j<br />foodforthought.jp<br />foodforthought.jpg</div></blockquote><div class="codemain"><!--c2--></div><br />Sau khi kết thúc tìm kiếm (trong VD trên bash tìm được 2 kết quả), bash sẽ lấy xâu kết quả dài nhất (foodfo), rồi loại bỏ nó ra khỏi xâu gốc (phần còn lại: rthought.jpg), rồi in kết quả ra màn hình.<br /><br />Trong câu lệnh thứ hai (<!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->echo ${MYVAR#*fo}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->), công việc cũng tương tự như trên, nhưng thay vì lấy kết quả dài nhất, bash shell lại lấy kết quả ngắn nhất (fo) rồi loại bỏ khỏi xâu gốc và in kết quả ra màn hình. Thực ra khi chỉ sử dụng 1 dấu # ở phần tùy biến, ngay khi tìm được kết quả đầu tiên, bash shell sẽ lập tức dừng việc tìm kiếm lại.<br /><br />Để tìm kiếm từ cuối xâu thay vì tìm kiếm từ đầu xâu, chúng ta thay các tùy biến # và ## bằng các tùy biến % và %%, cách sử dụng hoàn toàn tương tự. Ví dụ:<br /><!--c1--><div style="font-family: courier new;" class="codemain"><!--ec1--><blockquote>$ MYVAR=thangphamduy/workspace/bar.foo.txt<br />$ echo ${MYVAR%.*}<br />thangphamduy/workspace/bar.foo<br />$ echo ${MYVAR%%.*}<br />thangphamduy/workspace/bar</blockquote><!--c2--></div><br />Và một cách xử lý string nữa, ít được dùng tới hơn, nhưng nhiều lúc rất có ích, đó là cắt xâu theo vị trí:<br /><blockquote style="font-family: courier new;">$ MYVAR=http://thangphamduy.blogspot.com<br />$ echo ${MYVAR:0:13}<br />http://fotech<br />$ echo ${MYVAR:8:17}<br />fotech.org</blockquote><span style="font-style: italic;"><br /></span><span>Phần </span><span>xử lý string xin được dừng lại tại đây, cảm ơn quý vị và các bạn đã quan tâm theo dõi >:).</span><span style="font-style: italic;"><br />(Tham khảo từ </span><a style="font-style: italic;" href="http://www.ibm.com/developerworks/library/l-bash.html">Bash by example - IBM</a><span style="font-style: italic;">)</span><br /><br /><div class="codemain"><!--c2--></div><!--ec2--></div>
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Thang Pham</span></span>
-
-      
+<div class="meta">
+	<div class="date">
 
 
 
@@ -115,130 +97,49 @@ Một trong những shell được sử dụng thường xuyên trong <span clas
   
 
 
-<time datetime="2008-12-12T00:00:00+07:00" pubdate data-updated="true">Dec 12<span>th</span>, 2008</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/lam-chu-bash-shell/'>làm chủ Bash shell</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
-  
-</span>
+<time datetime="2008-12-12T00:00:00+07:00" pubdate data-updated="true">Dec 12<span>th</span>, 2008</time></div>
+	<div class="tags">
 
 
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://thangola.github.io/blog/2008/12/12/lm-ch-linux-bash-shell-x-l-string-trong/" data-via="thangola" data-counturl="http://thangola.github.io/blog/2008/12/12/lm-ch-linux-bash-shell-x-l-string-trong/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/lam-chu-bash-shell/'>làm chủ Bash shell</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
+
+
 </div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2008/12/01/roundup-of-vim-articles/" title="Previous Post: Vim mind share soaring: roundup of 10 vim articles, recent and older gems">&laquo; Vim mind share soaring: roundup of 10 vim articles, recent and older gems</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2008/12/28/every-os-suck/" title="Next Post: Every OS suck">Every OS suck &raquo;</a>
-      
-    </p>
-  </footer>
+	
+</div>
 </article>
 
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+		
+		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+		
+		
+		<a class="addthis_button_tweet"></a>
+		
+		
+		<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+		
+		
+	</div>
+	
 </div>
 
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/01/02/bai-viet-dau-tien-voi-octopress/">Bài viết đầu tiên với Octopress Blog</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac/">Ngăn ngừa quit nhầm Chrome trên Mac</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/">Problem with proftpd 1.3.4 on RPMForge repository</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/">Yum - Liệt kê danh sách file trong một gói</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/09/install-skypetab-ng-on-fedora/">Install SkypeTab-NG on Fedora</a>
-      </li>
-    
-  </ul>
-</section>
 
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
 
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/thangola?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/thangola">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Thang Pham -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    Thang Pham
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

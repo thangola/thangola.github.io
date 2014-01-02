@@ -1,100 +1,94 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>just a lazy admin</title>
-  <meta name="author" content="Thang Pham">
+	<meta charset="utf-8">
+	<title>just a lazy admin</title>
+	<meta name="author" content="Thang Pham">
 
-  
-  <meta name="description" content="Tiếp tục serie bài Làm chủ Linux Bash shell với một bài viết của anh Nguyễn Việt Cường, thành viên nhóm OSG ColTech. Bài viết đã được đăng ở diễn &hellip;">
-  
+	
+	<meta name="description" content="Tiếp tục serie bài Làm chủ Linux Bash shell với một bài viết của anh Nguyễn Việt Cường, thành viên nhóm OSG ColTech. Bài viết đã được đăng ở diễn &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://thangola.github.io/blog/page/3">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="just a lazy admin" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
+	<link href="/atom.xml" rel="alternate" title="just a lazy admin" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script async="true" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">just a lazy admin</a></h1>
-  
-    <h2>don't ask how to use, just wonder how to make...</h2>
-  
-</hgroup>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">just a lazy admin</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:thangola.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/thangola" title="Twitter">Twitter</a>
+		
+		
+    
+		
+		
+		
+		
+		<a class="delicious" href="http://delicious.com/thangola" title="Delicious">Delicious</a>
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+    
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:thangola.github.io">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:thangola.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/23/chuyen-huong-xuatnhap-trong-linux-tac/">Làm chủ Linux Bash shell: Chuyển hướng xuất/nhập trong Linux</a></h1>
-    
-    
-      <p class="meta">
-        
+	
+		
+	
+	<div id="content" class="inner">
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-23T00:00:00+07:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/06/23/chuyen-huong-xuatnhap-trong-linux-tac/">
+		
+			Làm chủ Linux Bash shell: Chuyển hướng xuất/nhập trong Linux</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 <span style="font-style: italic; color: rgb(0, 102, 0);">Tiếp tục serie bài </span><span style="color: rgb(0, 102, 0);">Làm chủ Linux Bash shell</span><span style="font-style: italic; color: rgb(0, 102, 0);"> với một bài viết của anh Nguyễn Việt Cường, thành viên nhóm OSG ColTech. Bài viết đã được đăng ở <a href="http://www.fotech.org/forum/">diễn đàn Fotech</a> ở <a href="http://www.fotech.org/forum/index.php?showtopic=15541">chủ đề này</a>.</span><br /><br />Hôm nay nhân chuyện có người hỏi về làm thế nào để chạy một lệnh một cách &#8220;âm thầm&#8221; tức là không in cái gì ra màn hình cả, mình viết một cái tut nhỏ về chuyện này. Ví dụ đưa ra ở đây là lệnh curl, chi tiết về cú pháp lệnh thì sử dụng &#8220;man curl&#8221; trên Linux hoặc trên Google.<br /><br />Trước hết, ta sẽ đi thẳng vào vấn đề rồi sau đó mới giải thích. Để một lệnh chạy trong chế độ &#8220;âm thầm&#8221; như vậy thì ta thêm đoạn sau vào đuôi lệnh:<br /><blockquote style="font-family: courier new; color: rgb(0, 102, 0);">> /dev/null 2>&amp;1</blockquote>Mà cụ thể nếu ta muốn làm công việc đó với lệnh curl thì như sau:<br /><blockquote  style="font-family:courier new;"><span style="color: rgb(0, 102, 0);">$ curl http://osg.vnu.edu.vn/ > /dev/null 2>&amp;1</span></blockquote>Vì sao lại làm thế? Dấu &#8220;>&#8221; có ý nghĩa gì? &#8221;<span style="font-family:courier new;">/dev/null</span>&#8221; là cái gì mà ghê gớm thế? &#8220;2>&amp;1&#8221; là cái gì mà trông kì lạ thế? Đó cũng là những thắc mắc của mình khi bước vào thế giới Linux/Unix.<br /><br /><span style="font-weight: bold;">1. Giới thiệu</span><br /><br />Trên hầu hết các hệ điều hành nói chung và Linux/Unix nói riêng thì có 3 dòng xuất nhập chuẩn (I/O) là STDIN, STDOUT và STDERR mà chức năng tương ứng là dòng nhập chuẩn, dòng xuất chuẩn và dòng xuất lỗi chuẩn. Chúng được gọi là các open file và hệ thống gán cho mỗi file này một con số gọi là file descriptor. Ba con số tương ứng với 3 dòng xuất nhập chuẩn ở trên là 0, 1 và  2. Cụ thể:<br /><blockquote style="font-family: arial; color: rgb(0, 102, 0);">standard input -> stdin -> 0<> stdout -> 1><br />standard error -> stderr -> 2></blockquote>Trong C++ thì 3 dòng xuất nhập chuẩn này tương ứng với 3 đối tượng cin, cout và cerr.<br /><br /><span style="font-style: italic;">Chú ý:</span> Trong bài tut này thì mình sử dụng Bourne shell trong đó dấu $ thể hiện user bình thường và # thể hiện user root. Tuy nhiên hầu hết nội dung trong bài này có thể áp dụng với một số loại shell khác như sh, csh, tcsh&#8230; Với C chell (csh, tcsh) thì không sử dụng được các con số (file descriptor).<br /><br /><span style="font-weight: bold;">2. Xuất/Nhập</span><br /><br />Trong chế độ command line của hầu hết các hệ điều hành thì &#8221;<" dùng cho chuyển hướng nhập và ">&#8221; dùng cho chuyển hướng xuất. Vì sao phải chuyển hướng? Vì có nhiều lúc ta muốn kết quả xuất ra màn hình được lưu lại vào một file và dữ liệu nhập vào thay vì từ bàn phím thì lại từ một file.<br /><br /><span style="font-style: italic;">2.1. STDIN</span><br /><br />STDIN chỉ các dòng nhập chuẩn nói chung và nó thường là từ bàn phím. Khi chúng ta gõ bàn phím tức là chúng ta đang nhập vào STDIN. Để dữ liệu đầu vào là một file thì ta dùng dấu &#8221;<". Ví dụ, nếu ta dùng lệnh cat mà không có tham số thì khi ta gõ gì nó sẽ hiển thị ra cái đó, hay nói đúng hơn sẽ hiển thị lại những gì ta nhập vào từ input chuẩn. Vậy thì giả dụ ta cần hiển thị file /etc/passwd thì ngoài cách truyền thống là   <blockquote style="font-family: courier new; color: rgb(0, 102, 0);">$ cat /etc/passwd</blockquote>  thì ta có thể sử dụng:<br /><span style="color: rgb(0, 102, 0);font-family:courier new;" ><blockquote> $ cat < /etc/passwd</blockquote></span>  hoặc<br /><blockquote style="font-family: courier new; color: rgb(0, 102, 0);">$ cat 0< /etc/passwd</blockquote>  Tại sao lại có thể bỏ số 0 mà chức năng vẫn tương tự? Đó là vì mỗi khi khởi tạo một process thì hệ thống đã gắn một dòng nhập chuẩn cho process đó mà ở đây là STDIN hay 0.<br /><br /><span style="font-style: italic;">2.2. STDOUT </span><br /><br />STDOUT là các dòng xuất chuẩn nói chung và nó thường là xuất ra màn hình, ra cửa sổ console hoặc terminal. Để dữ liệu đầu ra được ghi vào một file thì ta sử dụng dấu &#8220;>&#8221;. Ví dụ ta muốn danh sách các file trong một thư mục được ghi vào file dir.txt thì ta sử dụng lệnh sau:<br /><blockquote style="font-family: courier new; color: rgb(0, 102, 0);">$ ls -al > dir.txt</blockquote>hoặc<br /><blockquote style="font-family: courier new; color: rgb(0, 102, 0);">$ ls -al 1> dir.txt</blockquote>Lí do vì sao có thể bỏ số 1 đi tương tự như với STDIN, tức là khi khởi tạo một process thì hệ thống đã gắn một dòng xuất chuẩn cho process đó mà ở đây là STDOUT hay 1.<br /><br />Đến đây ta có thể kết hợp sử dụng song song STDIN và STDOUT để làm thao tác copy file. Ví dụ ta muốn backup file /etc/passwd thì ta có thể làm như sau:<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ cat < /etc/passwd > ~/passwd.bak</span></blockquote>Lệnh này tương đương với lệnh:<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ cp /etc/passwd ~/passwd.bak</span></blockquote>Có một ứng dụng cực kì có ích của việc kết hợp này là chuyển đổi file text giữa Windows và Unix. Như các bạn đều biết thì trong file text của Windows, việc xuống dòng được thể hiện bằng cặp kí tự <span style="font-family:courier new;">\r\n</span> còn trong Linux/Unix thì chỉ là <span style="font-family:courier new;">\n</span>. Ai phải  trên cả hai môi trường đều thấy sự bất tiện của việc chuyển đổi đó. Giải pháp đưa ra ở đây là sử dụng lệnh <span style="color: rgb(0, 102, 0);font-family:courier new;" >tr</span>, cụ thể như sau:<br /><blockquote style="font-family: courier new; color: rgb(0, 102, 0);">tr -d &#8216;\r&#8217; <> unix.cpp</blockquote>Lệnh này sẽ nhận dòng nhập chuẩn sau đó xoá các kí tự <span style="font-family:courier new;">\r</span> rồi ghi ra dòng xuất chuẩn. Dòng nhập và dòng xuất ở đây được định hướng lại để đến từ một file và ghi ra một file.<br /><br />Tuy nhiên nếu dùng &#8220;>&#8221; thì nội dung của file sẽ bị xoá trước khi ghi nội dung mới. Nếu ta muốn nội dung mới sẽ được ghi nối tiếp vào file thì ta sử dụng 2 dấu lớn hơn, tức là &#8220;>>&#8221;. Ví dụ nếu bạn muốn nối nội dung của thư mục <span style="font-family:courier new;">/home</span> vào cuối file <span style="font-family:courier new;">passwd.bak </span>ở trên thì bạn làm như sau:<br /><blockquote style="color: rgb(0, 102, 0);"><span style="font-family:courier new;">$ ls /home >> ~/passwd.bak</span></blockquote>Bây giờ nếu ta muốn lấy mã HTML của trang chủ của OSG và ghi vào file <span style="font-family:courier new;">osg.html</span> thì ta sử dụng lệnh sau:<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ curl http://osg.vnu.edu.vn/ > osg.html</span></blockquote>Thực hiện lệnh trên các bạn có thấy gì lạ không? Mặc dù mã HTML thay vì xuất ra màn hình mà được đưa vào file osg.html nhưng vẫn có các thông tin thể hiện trạng thái download hiển thị trên màn hình. Làm thế nào mà lại được như thế? Làm thế nào để lệnh curl câm lặng hoàn toàn? Hồi sau sẽ rõ.<br /><br /><span style="font-style: italic;">2.3. STDERR</span><br /><br />STDERR là dòng xuất lỗi chuẩn nói chung và nó cũng thường xuất trực tiếp ra màn hình, console hay terminal. Cú pháp tương tự như STDOUT, tức là sử dụng &#8221;<span style="font-family:courier new;">></span>&#8221; để xuất ra file và &#8220;>>&#8221; để nối vào một file đã có (chưa có thì hệ thống sẽ tự tạo ra). Tuy nhiên điểm khác biệt là bạn phải chỉ rõ số 2, tức là &#8220;2>&#8221; hoặc &#8220;2>>&#8221;. Lí do là vì chỉ có 1 dòng xuất chuẩn và 1 dòng nhập chuẩn cho mỗi process mà thông thường hệ thống chỉ định là STDOUT và STDIN.<br /><br />Vậy trong trường hợp của lệnh <span style="font-family:courier new;">curl </span>trong phần 2.2 ở trên, nếu ta muốn ghi cả 2 loại output đó ra file thì ta làm như sau:<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ curl http://osg.vnu.edu.vn/ > osg.html 2> osg.log</span></blockquote>Thế nào? Không có cái gì xuất ra màn hình hết đúng không? Vì nội dung trang web đã được lưu vào file <span style="font-family:courier new;">osg.html</span> còn các dòng lưu trạng thái download đã được ghi vào file<span style="font-family:courier new;"> osg.log</span>.<br /><br />Nhưng thế thì tốn dung lượng đĩa và có nguy cơ gây hỏng đĩa vì phải ghi file mà. Con người quả thật quá tham lam . Vậy thì phải sáng tạo ra cái gì đó như kiểu cái thùng không đáy hay gọi mĩ miều hơn thì nó là &#8220;lỗ đen&#8221; hay &#8220;black hole&#8221;, tức là một nơi mà cho cái gì vào cũng mất hút luôn. Linux/Unix có cái đó cho bạn, đó là <span style="font-family:courier new;">/dev/null.</span><br /><br /><span style="font-style: italic;">2.4. /dev/null</span><br />Theo định nghĩa trên Wikipedia của<span style="font-family:courier new;"> /dev/null</span>:<br /><blockquote>In Unix-like operating systems, <span style="font-family:courier new;">/dev/null</span> or the null device is a special file that discards all data written to it (but reports that the write operation succeeded), and provides no data to any process that reads from it (it returns <span style="font-family:courier new;">EOF</span>). In Unix programmer jargon, it may also be called the bit bucket or black hole.</blockquote>Tạm dịch là:<br /><blockquote>Trong các hệ điều hành kiểu Unix, <span style="font-family:courier new;">/dev/null</span> hay thiết bị null là một tệp tin đặc biệt, nó bỏ qua mọi dữ liệu ghi lên nó (nhưng có báo cáo về việc ghi dữ liệu thành công) và không cung cấp bất kì dữ liệu gì khi đọc từ nó (trả về <span style="font-family:courier new;">EOF</span>). Trong biệt ngữ của các lập trình viên Unix, nó đuợc gọi là &#8220;bit bucket&#8221; hoặc &#8220;black hole&#8221;.</blockquote>Vậy thì đó chính là cái ta cần rồi. Như vậy câu lệnh <span style="color: rgb(0, 102, 0);font-family:courier new;" >curl </span>ở trên có thể cho nó thực hiện câm lặng bằng cách:<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ curl http://osg.vnu.edu.vn/ > /dev/null  2> /dev/null</span></blockquote>Không có cái gì xuất ra màn hình cả, cũng không có cái gì được ghi lại cả. Nhưng&#8230; lại nhưng, con người vẫn tham lắm, làm thế nào để cái lệnh trên ngắn gọn hơn, trông technical hơn, nói chung là để ai không biết thì sẽ không hiểu gì (đôi khi đó là cái thú của dân kĩ thuật). Ta sẽ dùng &#8220;2>&amp;1&#8221; ở đây, tức là:<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ curl http://osg.vnu.edu.vn/ > /dev/null  2>&amp;1</span></blockquote>Câu lệnh trên tức là dòng xuất chuẩn (1) sẽ bị đưa vào <span style="font-family:courier new;">/dev/null</span> và dòng lỗi chuẩn (2) sẽ được đưa vào dòng xuất chuẩn (1) mà ở đây là<span style="font-family:courier new;"> /dev/null</span>.<br /><br />Đặc biệt lưu ý là với cú pháp sử dụng dấu <span style="font-family:courier new;">&amp;</span> thì dấu <span style="font-family:courier new;">&amp;</span> và dấu > phải đi liền nhau, không có khoảng cách.<br /><br />Ngoài các file descriptor 0, 1, 2 ở trên thì còn có từ 3 -> 9 nữa. Tuy nhiên bài viết này chỉ dành cho mức độ newbie nên không để cập sâu, chi tiết các bạn có thể tự tìm hiểu thêm trên Internet hoặc trong các sách về lập trình shell.<br /><br /><span style="font-weight: bold;">3. Pipe</span><br /><br />Như vậy chúng ta đã biết cách để chuyển hướng dòng xuất/nhập của một lệnh hay một process. Bằng cách này ta có thể chuyển dữ liệu xuất của một lệnh thành dữ liệu nhập của một lệnh khác thông qua một file trung gian. Tuy nhiên ta không muốn có file trung gian đó, một phần vì việc ghi lên đĩa cứng, phần khác là do&#8230; tham. Đó chính là vấn đề mà pipe giải quyết. Trong Linux, ta sử dụng dấu &#8220;|&#8221; để làm việc này.<br /><br />Ví dụ khi ta muốn xem lại nội dung thư mục<span style="font-family:courier new;"> /etc</span> nhưng kết quả của nó lại dài quá mà ta muốn xem lại thì ta làm như sau<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ ls -al /etc | more</span></blockquote>hoặc<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ ls -al /etc | less</span></blockquote>(thoát bằng phím q).<br /><br />hoặc ta muốn đếm số user trong hệ thống có sử dụng mặc định bash shell thì ta làm như sau:<br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >$ cat /etc/passwd | grep &#8220;/bin/bash&#8221; | wc -l</span></blockquote>Lệnh này có nghĩa là đưa nội dung file <span style="font-family:courier new;">/etc/passwd</span> ra dòng xuất chuẩn; dòng xuất chuẩn này thành dòng nhập chuẩn của lệnh <span style="color: rgb(0, 102, 0);font-family:courier new;" >grep </span>và lệnh này chỉ lọc ra các dòng có chưa xâu &#8221;<span style="font-family:courier new;">/bin/bash</span>&#8221; để đưa ra dòng xuất chuẩn; dòng xuất chuẩn này lại thành dòng nhập chuẩn của lệnh<span style="font-family:courier new;"> wc -l</span> là lệnh đếm số dòng của dòng nhập chuẩn và đưa ra số dòng ra dòng xuất chuẩn; cuối cùng dòng xuất chuẩn này sẽ được đưa ra trực tiếp màn hình vì nó không thành dòng nhập chuẩn của lệnh nào nữa.<br /><br /><span style="font-weight: bold;">4. Tài liệu tham khảo</span><br />[1] Google<br />[2] Wikipedia</div>
 <h2>Comments</h2>
 <div class='comments'>
@@ -114,42 +108,47 @@ quá hay :D<br />cam on bạn</div>
 passall: thank for support</div>
 </div>
 </div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-23T00:00:00+07:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/lam-chu-bash-shell/'>làm chủ Bash shell</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/05/13/linuxcom-luong-gio-moi-cho-cong-ong/">Linux.com, luồng gió mới cho cộng đồng</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-13T00:00:00+07:00" pubdate data-updated="true">May 13<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/05/13/linuxcom-luong-gio-moi-cho-cong-ong/">
+		
+			Linux.com, luồng gió mới cho cộng đồng</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 Khi Linux Foundation nhận lại tên miền Linux.com từ SourceForge đầu năm nay, họ đã có dự định xây dựng lại website, sao cho nó không chỉ là nơi đăng những tin tức liên quan đến Linux. Và sáng nay, khi bạn vào địa chỉ <a href="http://linux.com/">http://linux.com</a>, bạn sẽ nhận thấy một Linux.com hoàn toàn mới, và như một vài trang tin Linux nhận xét: &#8220;nó đủ khiến cho những người say mê Linux có thể tự hào&#8221;. Cộng đồng đã lên tiếng cảm ơn chính mình, bởi chính họ là những người đưa ra phần lớn ý kiến đóng góp cho website.<br /><br />Trên tinh thần nguồn mở thực sự, Linux Foundation đã thiết kế một website mang đậm chất tương tác, có thể tập hợp được tri thức của toàn cộng đồng. Dựa trên ý tưởng từ những người dùng, những nhà phát triển và những người đam mê Linux, website mới có khả năng thu thập thông tin và khiến thức từ nhiều nguồn và theo cách mà có thể tiếp cận được với cả người dùng mới và các bậc lão làng Linux.<br /><br />Một trong những tính năng thú vị và hấp dẫn của website Linux.com mới là &#8220;Linux Guru&#8221;. Người dùng đã đăng ký có thể kiếm điểm và nâng cấp trạng thái guru của mình bằng cách tham gia các hoạt động trên website. Top 50 người đóng góp nhiều nhất sẽ được ghi tên vào bản báo cáo hàng năm của tổ chức. Top 5 guru sẽ đại diện cho cộng đồng, được mời tới dự lễ họp mặt hàng năm của Linux Foundation (Linux Foundation Collaboration Summit). Mỗi năm sẽ có một thành viên trở thành &#8220;Ultimate Linux Guru&#8221; và sẽ được đích thân Linus Tovard tặng một máy notebook, để ghi nhận sự đóng góp cho cộng đồng.<br /><br />Website có năm phần chính: <a href="http://linux.com/news">News </a>- tin tức Linux; <a href="http://linux.com/community">Community </a>- là nơi những thành viên đã đăng ký có thể kết nối với những người khác; <a href="http://linux.com/distrocentral">Distribution Central</a> - các distro tương tác với người dùng ở đây; <a href="http://linux.com/learn">Learn </a>- là nơi các trang Man, HowTos và các tài liệu Linux khác được lưu trữ, đồng thời cũng là diễn đàn để cộng đồng hỏi và trả lời; <a href="http://linux.com/directory">Directory </a>- lưu trữ các phần mềm, ebook, dịch vụ,&#8230;<br /><br />Linux.com với giao diện và chức năng mới đã mang lại một luồng gió mới cho cộng đồng Linux. Chúng ta cùng chúc cho website sẽ đạt được những gì mà cộng đồng kỳ vọng, dựa trên chính sức mạnh của cộng đồng.<br /><br /><span style="font-weight: bold;">Update</span>: Cùng chúng tôi tham gia nhóm <a style="font-weight: bold;" href="http://linux.com/community/groups/viewgroup/258-Vietnamese+Linux+enthusiasts">Vietnamese Linux enthusiasts</a> ở <a href="http://linux.com/"><span style="font-weight: bold;">Linux.com</span></a>.</div>
 <h2>Comments</h2>
 <div class='comments'>
@@ -159,116 +158,127 @@ Khi Linux Foundation nhận lại tên miền Linux.com từ SourceForge đầu 
 cám ơn bạn rất nhiều..<a href="http://www.truyenhinhviet.net" title="xem truyen hinh , truyen hinh truc tuyen , truyen hinh online , xem phim online" rel="nofollow">.</a></div>
 </div>
 </div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-13T00:00:00+07:00" pubdate data-updated="true">May 13<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/news/'>news</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/04/21/oracle-mua-sun-roi-sao/">Oracle mua Sun, rồi sao?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-21T00:00:00+07:00" pubdate data-updated="true">Apr 21<span>st</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/04/21/oracle-mua-sun-roi-sao/">
+		
+			Oracle mua Sun, rồi sao?</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://www.techcrunch.com/wp-content/uploads/2009/04/oracle-sun.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 399px; height: 269px;" src="http://www.techcrunch.com/wp-content/uploads/2009/04/oracle-sun.png" alt="" border="0" /></a><br /><a href="http://www.sun.com/aboutsun/pr/2009-04/sunflash.20090420.1.xml">Oracle đã vượt qua IBM để mua được Sun</a> với giao dịch có giá trị xấp xỉ 7,4 tỷ USD. Bỏ qua những gì liên quan đến kinh tế và mớ cổ phiếu lộn xộn, bỏ qua những bình luận về khả năng của IBM và Oracle, tôi chỉ muốn biết quan điểm của các nhà lãnh đạo của cả Sun và Oracle đối với phần mềm mã nguồn mở như thế nào? Điều gĩ sẽ xảy ra với MySQL? Solaris sẽ như thế nào? Hướng phát triển của Java? Những câu hỏi và đến lúc này vẫn chưa có lời đáp cụ thể.<br /><br />Theo như <a href="http://www.sun.com/aboutsun/pr/2009-04/sunflash.20090420.1.xml">lời công bố từ Sun</a>, Java sẽ là nền tảng cho Oracle Fusion Middleware, trong khi hệ điều hành Solaris sẽ là nền tảng chính cho hệ quản trị cơ sở dữ liệu Oracle.<br /><br />Đồng thời, Oracle cũng đã nhận được một số công nghệ ảo hóa từ việc mua Sun. Nhưng nếu bạn là người có quan tâm tới mã nguồn mở, có lẽ bạn sẽ tự hỏi về số phận của OpenOffice và MySQL. Trong lời công bố trên, họ không nhắc đến hai phần mềm này. Có lẽ chúng ta sẽ phải chờ thêm.<br /><br />(Bạn nên ghé thăm <a href="http://www.sun.com/software/opensource/index.jsp">trang OSS của Sun</a> và <a href="http://oss.oracle.com/">của Oracle</a> nếu muốn biết thêm về các phần mềm nguồn mở liên quan đến hai tên tuổi này).<br /><br />Update:<br />- Đọc thêm bài <span style="font-weight: bold;">&#8220;Oracle mua Sun có ý nghĩa gì với Linux</span>&#8221; trên <a href="http://blog.360.yahoo.com/blog-LU.CUQA9b6gRyol5jVT.?p=3470">Nghialt&#8217;s blog</a>.<br />- Đọc thêm chủ đề &#8221;<span style="font-weight: bold;">Oracle mua Sun, rồi sao&#8221;</span> trên <a href="http://www.fotech.org/forum/index.php?showtopic=22781">FOTECH.ORG</a>.</div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-21T00:00:00+07:00" pubdate data-updated="true">Apr 21<span>st</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/news/'>news</a>, <a class='category' href='/blog/categories/oss/'>oss</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/04/14/what-does-it-mean-to-be-free/">What does it mean to be Free?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-14T00:00:00+07:00" pubdate data-updated="true">Apr 14<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/04/14/what-does-it-mean-to-be-free/">
+		
+			What does it mean to be Free?</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/qWEIQIv8zvY&amp;rel=0&amp;color1=0xb1b1b1&amp;color2=0xcfcfcf&amp;hl=en&amp;feature=player_embedded&amp;fs=1"><param name="allowFullScreen" value="true"><embed src="http://www.youtube.com/v/qWEIQIv8zvY&amp;rel=0&amp;color1=0xb1b1b1&amp;color2=0xcfcfcf&amp;hl=en&amp;feature=player_embedded&amp;fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="425" height="344"></embed></object><br /><br /><br /><h3>What does it mean to be Free?</h3><span style="font-style: italic; font-weight: bold;">(Transcript)</span><br /><blockquote style="font-style: italic;">Free is being able to choose. Choose your own space to be in. To form your surroundings in a way that will make you take the best out of you. Free is to say NO. It is to be able to choose your limits, to stretch them to a place only you can create, and change them when you feel they no longer fit you. Free is to say what ever you want, to whomever you want, and however you want. Free is to know you have a different option. Do you know you have a different option? Linux! Get your freedom.</blockquote>Đây là đoạn clip giành chiến thắng trong cuộc thi video clip mang chủ đề <span style="font-style: italic;">We&#8217;re Linux</span> do <a href="http://video.linuxfoundation.org/category/video-category/-linux-foundation-video-contest">Linux Foundation</a> tổ chức.<br />Để xem tất cả các clip thì click <a href="http://video.linuxfoundation.org/category/video-category/-linux-foundation-video-contest">vào đây</a>.</div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-14T00:00:00+07:00" pubdate data-updated="true">Apr 14<span>th</span>, 2009</time></div>
+	<div class="tags">
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/29/magic-pen-met-game-giai-tri-rat-hay-phu/">Cây bút ma thuật</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-29T00:00:00+07:00" pubdate data-updated="true">Mar 29<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/03/29/magic-pen-met-game-giai-tri-rat-hay-phu/">
+		
+			Cây bút ma thuật</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 Magic pen - một game giải trí rất hay, phù hợp mọi đối tượng, nhất là bạn yêu vật lý :D<div><br /></div><div><br /></div><br /><div align="center"><object width="760" height="494"><param name="movie" value="http://www.physicsgames.net/swf/magicpen2.swf"><embed src="http://www.physicsgames.net/swf/magicpen2.swf" type="application/x-shockwave-flash" width="760" height="494"></embed></object></div></div>
 <h2>Comments</h2>
 <div class='comments'>
@@ -278,42 +288,47 @@ Magic pen - một game giải trí rất hay, phù hợp mọi đối tượng, 
 Lởm vãi tè</div>
 </div>
 </div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-29T00:00:00+07:00" pubdate data-updated="true">Mar 29<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/fun/'>fun</a>, <a class='category' href='/blog/categories/game/'>game</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/22/lam-chu-linux-bash-shell-tuy-bien/">Làm chủ Linux Bash shell: Tùy biến command promt với biến $PS1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-22T00:00:00+07:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/03/22/lam-chu-linux-bash-shell-tuy-bien/">
+		
+			Làm chủ Linux Bash shell: Tùy biến command promt với biến $PS1</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_7HQMEKpIxtQ/SceuSTTESKI/AAAAAAAAAYU/1AoEwOUH9m0/s1600-h/T%C3%B9y+bi%E1%BA%BFn+command+promt+v%E1%BB%9Bi+bi%E1%BA%BFn+%24PS1.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 264px;" src="http://3.bp.blogspot.com/_7HQMEKpIxtQ/SceuSTTESKI/AAAAAAAAAYU/1AoEwOUH9m0/s400/T%C3%B9y+bi%E1%BA%BFn+command+promt+v%E1%BB%9Bi+bi%E1%BA%BFn+%24PS1.jpg" alt="" id="BLOGGER_PHOTO_ID_5316409514575284386" border="0" /></a><br /><span style="font-style: italic;">Tiếp tục seri bài làm chủ Linux Bash shell nào. Bài viết này được tôi dựa vào một tutorial của tôi trên FOTECH và mở rộng thêm, nếu bạn nào thấy hơi quen xin đừng thắc mắc >:).</span><br /><br />Bash shell có khả năng hiển thị trước mỗi dòng lệnh một đoạn thông tin ngắn, gọi là <span style="font-weight: bold;">dấu nhắc lệnh</span>, hay <span style="font-weight: bold;">command promt</span>. Mặc định có dạng:<br /><div class="codemain"><!--ec1--><span style="font-family:courier new;"></span><blockquote style="color: rgb(0, 102, 0);"><span style="font-family:courier new;">[user]@[host]:[đường dẫn]$ </span></blockquote><span style="font-weight: bold;">VD:</span><br /><span style="color: rgb(0, 102, 0);font-family:courier new;" ><blockquote>thangphamduy@mr-PC:~$</blockquote></span><!--c2--></div>Bạn có thể tùy biến bằng cách sửa lại giá trị của biến môi trường PS1 như sau:<div class="codemain"><!--ec1--><span style="font-family:courier new;"></span><blockquote style="color: rgb(0, 102, 0);"><span style="font-family:courier new;">PS1=&#8217;<span style="font-style: italic;">[Noi dung muon hien thi]</span>&#8217;</span></blockquote><span style="font-weight: bold;">VD:</span> nếu dòng trên có nội dung là:<br /><span style="font-family:courier new;"></span><blockquote style="color: rgb(0, 102, 0);"><span style="font-family:courier new;">PS1=&#8217;Welcome to my Linux  &#8217;</span></blockquote>thì trước mỗi dòng lệnh sẽ hiển thị đúng xâu trên.<!--c2--></div><!--ec2--><br />Bạn có thể tùy biến xâu <span style="font-style: italic;font-family:courier new;" >[Noi dung muon hien thi]</span> bằng cách chèn vào một ký tự sau dấu thoát (backslash \) như sau:<div class="codemain" face="courier new"><!--ec1--><blockquote>\!    Hiển thị số thứ tự của lệnh trong history<br />\#    Hiển thị số thứ tự lệnh của lệnh hiện tại<br />\$    Hiển thị dấu $ nếu là user bình thường và dấu # nếu là user root<br />&#92;    Hiển thị dấu backslash (\)<br />\d    Hiển thị ngày hiện tại<br />\h    Hiển thị host name<br />\n    In dấu xuống dòng<br />\s    Hiển thị tên shell<br />\t    Hiển thị giờ hiện tại<br />\u    Hiển thị username<br />\W    Hiển thị tên thư mục hiện hành<br />\w    Hiển thị đường dẫn đầy đủ của thư mục hiện hành</blockquote><!--c2--></div><!--ec2--><span style="font-weight: bold;">Ví dụ:</span><div class="codemain" style="font-family: courier new;"><!--ec1--><blockquote><span style="color: rgb(0, 102, 0);">PS1=&#8217;\u\$&#8217;</span><br />sẽ cho kết quả: &#8221;<span style="color: rgb(0, 102, 0);">root#</span>&#8221;<br /><span style="color: rgb(0, 102, 0);">PS1=&#8217;\u@\t \w\$&#8217;</span><br />sẽ cho kết quả: &#8221;<span style="color: rgb(0, 102, 0);">root@20:49:48 /etc/httpd</span>#<br /><span style="color: rgb(0, 102, 0);">PS1=&#8217;\t \u@\h \s \$&#8217;</span><br />sẽ cho kết quả: &#8221;<span style="color: rgb(0, 102, 0);">20:49:48 root@proLappy -bash #</span>&#8221;<br /></blockquote><!--c2--></div><!--ec2--><span style="font-weight: bold;">[*]Hiển thị màu:</span><br />Bạn thử thiết lập biến PS1 như sau và xem kết quả như thế nào ^^<div style="font-family: courier new; color: rgb(0, 102, 0);" class="codemain"><blockquote><!--ec1-->PS1=&#8217;\[\033[01;32m\]\t \u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#8217;<!--c2--></blockquote></div><!--ec2-->Bây giờ dấu nhắc lệnh đã có màu xanh lá cây :D. Quy tắc ở đây là thư thế nào? Nếu bạn muốn đặt một màu cho một phần tử nào đó của promt, bạn hãy đặt mã màu trước phần tử đó, và mã xóa màu sau phần tử đó.<br /><br /><span style="font-style: italic;">Mã màu có dạng:</span><br /><blockquote><span style="color: rgb(0, 102, 0);font-family:courier new;" >\[\033\[01;32m\]\]</span><br /></blockquote>Hãy thay thế 32 với các số trong khoảng 30 - 37 để nhận được các màu khác nhau, thay thế 01 với các số trong khoảng 00 - 07 để nhận được các cách tô màu khác nhau (làm nhạt màu, màu gạch chân, màu highlight,&#8230;)<br /><br /><span style="font-style: italic;">Mã đóng màu:</span><br /><blockquote></blockquote><blockquote style="font-family: courier new; color: rgb(0, 102, 0);">\[\033[00m\]</blockquote><span style="font-weight: bold;">[*] Lưu ý:</span><br />- Nếu bạn không sử dụng mã đóng màu thì màu đó sẽ còn hiệu lực cho tới khi bạn dùng một mã màu khác thay thế.<br />- Việc thiết lập mã màu chỉ có ý nghĩa với những terminal có hỗ trợ màu 16bit trở lên như <span style="font-family:courier new;">xterm</span>, <span style="font-family:courier new;">rxvt</span>, hay <span style="font-family:courier new;">gnome-terminal</span>, <span style="font-family:courier new;">konsole</span>,&#8230;<br /><u><b><br /></b></u>Okie. Như thế là bạn đã có thể thêm các thông tin hữu ích và đẹp mắt vào trước mỗi dòng lệnh trong terminal. Nhưng nếu bạn logout, giá trị vừa thiết lập cho biến $PS1 sẽ bị reset về giá trị default! Để không phải thiết lập lại giá trị của biến này, hãy thêm vào cuối file ~/.bashrc dòng lệnh sau để export giá trị mới cho biến môi trường PS1:<br /><blockquote style="color: rgb(0, 102, 0);"><span style="font-family:courier new;">export </span><span style="font-family:courier new;">PS1=&#8217;\n\[\033[02;31m\]. ___ ___ ___\[\033[00m\] |&#8212; \[\033[02;33m\]\t \d\n\[\033[02;31m\] /__// _// ./\[\033[00m\] &#8212; \[\033[01;32m\]\w\n\[\033[02;31m\]/ . / \ /__/\[\033[00m\] \[\033[02;35m\]\u@\h \[\033[02;37m\]\$ \[\033[02;38m\]&#8217;</span></blockquote>Chúc các bạn ngày chủ nhật vui vẻ.<br /><br /><span style="font-weight: bold; color: rgb(0, 51, 0);">Update</span><span style="color: rgb(0, 51, 0);">:</span> Để xem danh sách các mã màu và một số ví dụ khác, xin đọc entry <a href="http://tuyetkiem.wordpress.com/2009/03/25/command-prompt-ps1/">Command promt và biến PS1</a> trên <a href="http://tuyetkiem.wordpress.com/">blog của tuyetkiem</a>.</div>
 <h2>Comments</h2>
 <div class='comments'>
@@ -323,79 +338,89 @@ Lởm vãi tè</div>
 Good blog.<BR/>Portugal</div>
 </div>
 </div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-22T00:00:00+07:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/lam-chu-bash-shell/'>làm chủ Bash shell</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/16/giai-phap-hoan-chinh-cho-viec-convert/">Giải pháp hoàn chỉnh cho việc convert file PDF thành file DOC</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-16T00:00:00+07:00" pubdate data-updated="true">Mar 16<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/03/16/giai-phap-hoan-chinh-cho-viec-convert/">
+		
+			Giải pháp hoàn chỉnh cho việc convert file PDF thành file DOC</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 PDF và DOC, hai loại file văn bản phổ biến nhất hiện nay. Khi chúng ta soạn thảo, chúng ta tạo một file doc và sử dụng MS Word, OpenOffice Write hoặc một chương trình soạn thảo văn bản khác để chỉnh sửa file doc đó. File doc quả thật rất tiện dụng trong trường hợp này.<br /><br />Tuy vậy, để &#8220;mang vác&#8221; file văn bản từ nơi này sang nơi khác mà vẫn giữ nguyên định dạng, đọc file văn bản tiện lợi, tốn ít tài nguyên hệ thống thì file doc không còn là một lựa chọn hợp lý. Nào, đoán xem&#8230; Okay, bạn đã đoán đúng: chúng ta nên sử dụng định dạng pdf. Hầu hết các tài liệu dạng read-only (ebook, scanned book,&#8230;) đều được xuất bản dưới định dạng pdf.<br /><br />Và một quá trình rất hợp lý bắt đầu từ người viết đến người đọc diễn ra:<br /><blockquote>Soạn thảo file doc -> convert DOC to PDF -> đọc file pdf</blockquote>Tuy nhiên đôi khi quá trình này không nên kết thúc ở đây: người đọc cũng muốn chỉnh sửa file pdf đã xuất bản. Có hai lựa chọn: sử dụng một chương trình chỉnh sửa file pdf, hoặc convert ngược từ pdf về doc. Thường thì chương trình chỉnh sửa file pdf sẽ không có đầy đủ tính năng như một chương trình soạn thảo văn bản chuyên dụng. Do đó chúng ta thường chọn cách thứ hai.<br /><br />Tuy nhiên việc chuyển một file pdf về file doc một cách hoàn chỉnh cũng là một vấn đề nan giải. Đã một thời gian dài, chúng ta luôn cố tìm một ứng dụng convert như thế: Convert giữ nguyên font chữ, bullet, căn lề, bảng,&#8230; và&#8230; tiếng Việt.<br /><br />Trong bài viết này tôi xin giới thiệu một công cụ thỏa mãn khá đầy đủ các yêu cầu trên: <a href="http://www.pdftoword.com/">http://www.pdftoword.com/</a>. Đây là một ứng dụng trên nền Web do <a href="http://www.nitropdf.com/">Nitro software</a> cung cấp. Việc sử dụng quá đơn giản, có lẽ không cần phải trình bày nhiều. Xin đưa kết quả lên đây là đủ:<br /><br />Nguồn:<br /><br /><a href="http://duythang.net.googlepages.com/pdf2doc-pdf.jpg"><img src="http://duythang.net.googlepages.com/pdf2doc-pdf.jpg" width="600" /> </a><br /><br />Kết quả:<br /><br /><a href="http://duythang.net.googlepages.com/pdf2doc-doc.jpg"><img src="http://duythang.net.googlepages.com/pdf2doc-doc.jpg" width="600" /> </a><br /><br />Và đây là toàn bộ file kết quả: <a href="http://duythang.net.googlepages.com/SudungGrub.doc">http://duythang.net.googlepages.com/SudungGrub.doc</a> .</div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-16T00:00:00+07:00" pubdate data-updated="true">Mar 16<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/convert/'>convert</a>, <a class='category' href='/blog/categories/softwares/'>softwares</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/01/day-routers-die/">The day the routers die</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-01T00:00:00+07:00" pubdate data-updated="true">Mar 1<span>st</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/03/01/day-routers-die/">
+		
+			The day the routers die</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 <embed flashvars="blogmode=1&amp;file=http://chacha.vn/embedded/v1.0/getMedia.php?songId=57690" type="application/x-shockwave-flash" src="http://chacha.vn/embedded/v1.0/mp3player.swf" wmode="transparent" allowscriptaccess="none" width="368" height="130"></embed><br />Bài hát khá thú vị của Gary Fieldman, nói về kết cục của IPv4 và sự cần thiết của IPv6.<br /><br /><span style="font-style: italic; font-weight: bold;">Lyrics:</span><br /><blockquote style="font-family: courier new;">a long long time ago<br />i can still remember<br />when my laptop could connect elsewhere<br /><br />   and i tell you all there was a day<br />the network card i threw away<br />had a purpose - and it worked for you and me…<br /><br />   but 18 years completely wasted<br />with each address we’ve aggregated<br />the tables overflowing<br />the traffic just stopped flowing…<br /><br />and now we’re bearing all the scars<br />and all my traceroutes showing stars…<br />the packets would travel faster in cars…<br />the day… the routers died…<br /><br /><span style="font-style: italic;">    Chorus (ALL!!!!!)</span><br /><br />   so bye bye, folks at RIPE 55<br />be persuaded to upgrade it or your network will die<br />IPv6 just makes me let out a sigh<br />but I s’pose we’d better give it a try<br />I suppose we’d better give it a try<br /><br />   now did you write an RFC<br />that dictated how we all should be<br />did we listen like we should that day<br /><br />now you back at RIPE fifty-four<br />where we heard the same things months before<br />and the people knew they’d have to change their ways…<br /><br />and we - knew that all the ISPs<br />could be - future proof for centuries<br /><br />but that was then not now<br />spent too much time playing WoW<br /><br />ooh there was time we sat on IRC<br />making jokes on how this day would be<br />now there’s no more use for TCP<br />the day the routers died…<br /><br /><span style="font-style: italic;">Chorus (chime in now)</span><br /><br />so bye bye, folks at RIPE 55<br />be persuaded to upgrade it or your network will die<br />IPv6 just makes me let out a sigh<br />but I s’pose we’d better give it a try<br />I suppose we’d better give it a try<br /><br />I remember those old days I mourn<br />sitting in my room, downloading porn<br />yeah that’s how it used to be…<br /><br />when the packets flowed from A to B<br />via routers that could talk IP<br />There was data… that could be exchanged between you and me…<br /><br />oh but - I could see you all ignore<br />the fact - we’d fill up IPv4<br /><br />but we all lost the nerve<br />and we got what we deserved!<br /><br />and while… we threw our network kit away<br />and wished we’d heard the things they say<br />put all our lives in disarray<br /><br />the day… the routers died…<br /><br /><span style="font-style: italic;">Chorus (those silent will be shot)</span><br /><br />so bye bye, folks at RIPE 55<br />be persuaded to upgrade it or your network will die<br />IPv6 just makes me let out a sigh<br />but I s’pose we’d better give it a try<br />I suppose we’d better give it a try<br /><br />saw a man with whom I used to peer<br />asked him to rescue my career<br />he just sighed and turned away…<br /><br />I went down to the net cafe<br />that I used to visit everyday<br />but the man there said I might as well just leave…<br /><br />and now we’ve all lost our purpose..<br />my cisco shares completely worthless…<br /><br />no future meetings for me<br />at the Hotel Krasnapolsky<br /><br />and the men that make us push and push<br />like Geoff Huston and Randy Bush<br />should’ve listened to what they told us…<br />The day… the routers… died<br /><br /><span style="font-style: italic;">Chorus (time to lose your voice)</span><br /><br />bye bye, folks at RIPE 55<br />be persuaded to upgrade it or your network will die<br />IPv6 just makes me let out a sigh<br />but I spose we’d better give it a try<br />I suppose we’d better give it a try</blockquote></div>
 <h2>Comments</h2>
 <div class='comments'>
@@ -405,42 +430,47 @@ PDF và DOC, hai loại file văn bản phổ biến nhất hiện nay. Khi chú
 Vui</div>
 </div>
 </div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-01T00:00:00+07:00" pubdate data-updated="true">Mar 1<span>st</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/it-music/'>IT  music</a>, <a class='category' href='/blog/categories/fun/'>fun</a>, <a class='category' href='/blog/categories/network/'>network</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/11/anh-gia-kde-42/">[Đánh giá] KDE 4.2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-11T00:00:00+07:00" pubdate data-updated="true">Feb 11<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/02/11/anh-gia-kde-42/">
+		
+			[Đánh giá] KDE 4.2</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 KDE 4.2 vẫn kế thừa các ưu điểm của KDE 4.1 như sự tiện dụng, tính tuỳ biến cao. Những bổ sung mới của bản này chủ yếu tâp trụng vào sự tiện dụng của các ứng dụng cũ, đồng thời nâng cao tính ổn định của hệ thống, thể hiện sự tỷ mỷ của nhóm phát triển.<br /><br />Một số screenshot:<br /><br />Desktop (Cái widget nhỏ nhỏ trống trống ở phía dưới là Pastebin, một tính năng mới của KDE4.2):<br /><br /><img title="Click Here To See Image Full Size " style="width: 600px; cursor: pointer;" src="http://lh5.ggpht.com/_7HQMEKpIxtQ/SZKrIAqKx4I/AAAAAAAAAV8/8IGZFI1PNGU/s800/VRWySwzw.png" alt="Hình ảnh" /><br /><br /><br />Main menu (Lancelot):<br /><br /><img title="Click Here To See Image Full Size " style="width: 600px; cursor: pointer;" src="http://lh5.ggpht.com/_7HQMEKpIxtQ/SZKrH3EH4LI/AAAAAAAAAVs/QXN7MljKHWA/s800/screenshot-valentine1.png" alt="Hình ảnh" /><br /><br /><br />Hộp thoại Run:<br /><br /><img src="http://lh5.ggpht.com/_7HQMEKpIxtQ/SZKrINjqaGI/AAAAAAAAAV0/Af71DkggycA/s800/bOvjN2o.png" alt="Hình ảnh" /><br /><br /><br />Các tính năng mới:<br />- Pastebin : Upload ảnh/file lên server bằng cách kéo file thả vào Pastebin widget trên destop, đường link được trả về và lưu trong clipboard (cực kỳ tiện lợi - 3 cái ảnh trên đều được upload theo kiểu này, từ khi shot đến khi upload xong chỉ mất 8s).<br />- Main menu Lancelot, tiện lợi hơn hẳn so với các kiểu Start menu của KDE 4.1 và 3.5 : Sắp xếp hợp lý, search thông minh, có thể kích hoạt các ứng dụng mà chỉ cần di chuột (ko cần click - mình đánh giá cao tính năng này).<br /><br />Cải thiện:<br />- System tray: có thể ẩn các biểu tượng không mong muốn<br />- Task manager đã có thể hiển thị trên nhiều dòng cũng như nhóm các cửa sổ theo group.<br />- Điều khiển Widgets trên Destop vô cùng dề dàng<br />- Bộ ứng dụng Kontact, Kmail, KNotifier đã có thể sánh ngang được với MS Office Outlook.<br />- Widgets đã có thể được phát triển bằng JS và Ruby, đồng nghĩa với số Widget sẽ gia tăng nhanh chóng, và chúng ta có thể quên đi SuperKaramba (trình hỗ trợ Desktop Widget).<br />- Các hiệu ứng được kế thừa từ Compiz nhưng không chạy theo số lượng mà chú trọng vào chất lượng. Các hiệu ứng đã được chỉnh sửa lại cực kỳ tốt, nhìn rất mượt và không bị răng cưa.<br /><br />Ngoài ra, còn rất nhiều các chỉnh sửa nhỏ khác như hộp thoại Run (Alt + F2), file preview và icon zoom trong Dolphin,&#8230; Tóm lại, cảm nhận của tớ về phiên bản này được túm gọn trong mấy chữ: hiệu ứng mượt mà, giao diện mát mắt và chức năng tiện dụng.</div>
 <h2>Comments</h2>
 <div class='comments'>
@@ -455,112 +485,97 @@ Hi ban Thăng,<br />Minh đã quen dung KDE - Fedora rôi.<br />Từ khi chuyể
 KDE 4.2 chạy rất giật trên mấy card đồ họa 8xxx và 9xxx do driver của nVidia vẫn chưa tốt. Giao diện đúng là rất đẹp.</div>
 </div>
 </div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-11T00:00:00+07:00" pubdate data-updated="true">Feb 11<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/kde/'>KDE</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/danh-gia/'>đánh giá</a>
+
+
 </div>
-  
-  
+	
+</div>
+</article>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/08/tuyen-tap-linux-ebooks/">Tuyển tập Linux Ebooks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-08T00:00:00+07:00" pubdate data-updated="true">Feb 8<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/02/08/tuyen-tap-linux-ebooks/">
+		
+			Tuyển tập Linux Ebooks</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
 <a href="http://sites.google.com/site/thangola/">http://sites.google.com/site/thangola/</a><br /><br />Tuyển tập một số ebook về Linux có giá trị, nội dung bao gồm những kiến thức cơ bản về Linux (FHS, Bash shell, Grub,&#8230;), hướng dẫn sử dụng một số phần mềm Linux thông dụng (Apache, Bind, DHCP, Vsftpd,&#8230;) và một số ebook dạng cheat-sheets.<br /><br />Have fun ^^.</div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-08T00:00:00+07:00" pubdate data-updated="true">Feb 8<span>th</span>, 2009</time></div>
+	<div class="tags">
+
 </div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/4/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
-    
-  </div>
+	
 </div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+</article>
+
+<nav id="pagenavi">
     
-      <li class="post">
-        <a href="/blog/2014/01/02/bai-viet-dau-tien-voi-octopress/">Bài viết đầu tiên với Octopress Blog</a>
-      </li>
+        <a href="/blog/page/2/" class="prev">Prev</a>
     
-      <li class="post">
-        <a href="/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac/">Ngăn ngừa quit nhầm Chrome trên Mac</a>
-      </li>
     
-      <li class="post">
-        <a href="/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/">Problem with proftpd 1.3.4 on RPMForge repository</a>
-      </li>
+        <a href="/blog/page/4/" class="next">Next</a>
     
-      <li class="post">
-        <a href="/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/">Yum - Liệt kê danh sách file trong một gói</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/09/install-skypetab-ng-on-fedora/">Install SkypeTab-NG on Fedora</a>
-      </li>
-    
-  </ul>
-</section>
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
 
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/thangola?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/thangola">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Thang Pham -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    Thang Pham
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = 'Disqus';
@@ -570,43 +585,10 @@ KDE 4.2 chạy rất giật trên mấy card đồ họa 8xxx và 9xxx do driver
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//go.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
