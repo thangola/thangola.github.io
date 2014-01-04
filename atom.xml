@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[just a lazy admin]]></title>
+  <title><![CDATA[just some lazy admins]]></title>
   <link href="http://thangola.github.io/atom.xml" rel="self"/>
   <link href="http://thangola.github.io/"/>
-  <updated>2014-01-04T09:24:51+07:00</updated>
+  <updated>2014-01-04T23:56:22+07:00</updated>
   <id>http://thangola.github.io/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
@@ -15,30 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[Bài viết đầu tiên với Octopress Blog]]></title>
-    <link href="http://thangola.github.io/blog/2014/01/02/bai-viet-dau-tien-voi-octopress/"/>
-    <updated>2014-01-02T00:30:08+07:00</updated>
-    <id>http://thangola.github.io/blog/2014/01/02/bai-viet-dau-tien-voi-octopress</id>
-    <content type="html"><![CDATA[<p><strong>In đậm</strong></p>
+    <link href="http://thangola.github.io/blog/2014/01/01/bai-viet-dau-tien-voi-octopress/"/>
+    <updated>2014-01-01T00:30:08+07:00</updated>
+    <id>http://thangola.github.io/blog/2014/01/01/bai-viet-dau-tien-voi-octopress</id>
+    <content type="html"><![CDATA[<p>Quyết định chuyển nhà qua <a href="http://octopress.org/" title="Octopress">Octopress</a> + <a href="http://pages.github.com/">Github pages</a>. <code>Octopress</code> xứng đáng được gọi là <em>blogging framework for harkers</em>, nhanh, tiện, thú vị. <code>Octopress</code> là framework dựa trên nền Jekyll, một trình tạo các trang nội dung tĩnh, rất phù hợp để làm blog. Với <code>Octopress</code>, chúng ta không cần database, không cần một webserver có hỗ trợ PHP, chỉ cần 1 server support file tĩnh là quá đủ. Trên máy cá nhân, viết blog bằng Markdown, vừa nhanh vừa tiện, sau đó, Octopress sẽ giúp chúng ta sinh ra các file HTML, CSS cần thiết, và có thể giúp ta deploy luôn lên Github, nếu hosting bằng <code>Github pages</code>. Miễn phí, nguồn mở, file tĩnh nên nhanh, tuỳ biến cao, lại hỗ trợ plugin, rất đáng để thử.</p>
 
-<p><em>In nghiêng</em></p>
+<p>Chúng tôi đã gặp một chút khó khăn khi import bài viết từ Blogger qua, nhưng đã giải quyết ổn, và giờ thì chăm chỉ viết bài thôi ;). Nội dung của blog này từ nay, sẽ bao gồm tất cả những gì liên quan đến công việc của một Linux system administrator, và sẽ được nhiều người cùng đóng góp.</p>
 
-<figure class='code'><figcaption><span>Thử một block Bash shell</span><a href='http://localhost:4000/'>src start:2 mark:3</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">##!/bin/bash</span>
-</span><span class='line'><span class="k">if</span> <span class="o">[</span> -d /etc <span class="o">]</span>; <span class="k">then</span>
-</span><span class='line'><span class="k">    </span>ls /etc | head
-</span><span class='line'><span class="k">fi</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>Cuối cùng:</p>
 
-
-<p>Đây là đường dẫn file: <code>/etc/my.cnf</code></p>
-
-<!--more-->
-
-
-<p>Blogging sẽ vui hơn chăng?</p>
+<h3>Chúc mừng năm mới 2014.</h3>
 ]]></content>
   </entry>
   
