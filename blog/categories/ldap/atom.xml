@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ldap | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/ldap/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-04-19T23:17:37+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to clone LDAP Database]]></title>
+    <link href="http://lazyadmin.me/blog/2014/01/06/how-to-clone-ldap-database/"/>
+    <updated>2014-01-06T09:45:45+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/01/06/how-to-clone-ldap-database</id>
+    <content type="html"><![CDATA[<p>With root, run command to Export your DB with slapcat:</p>
+
+<p><code>
+slapcat &gt; ldif
+</code></p>
+
+<p>Import the DB with slapadd (make sure the LDAP server is stopped):</p>
+
+<p><code>
+slapadd -l ldif
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

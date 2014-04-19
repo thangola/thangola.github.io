@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: epel | just some lazy admins]]></title>
-  <link href="http://thangola.github.io/blog/categories/epel/atom.xml" rel="self"/>
-  <link href="http://thangola.github.io/"/>
-  <updated>2014-01-05T00:01:36+07:00</updated>
-  <id>http://thangola.github.io/</id>
+  <link href="http://lazyadmin.me/blog/categories/epel/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-04-19T23:17:37+07:00</updated>
+  <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Problem with proftpd 1.3.4 on RPMForge repository]]></title>
-    <link href="http://thangola.github.io/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/"/>
+    <link href="http://lazyadmin.me/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/"/>
     <updated>2012-08-30T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge</id>
+    <id>http://lazyadmin.me/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge</id>
     <content type="html"><![CDATA[<div class='post'>
 Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:<br /><br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">proftpd: PAM unable to dlopen(/lib64/security/pam_stack.so): /lib64/security/pam_stack.so: cannot open shared object file: No such file or directory</span></blockquote><br />Google một vòng thì ra kết quả là do lỗi của proftpd bản build 1.3.4 trên repository RPMForge. Nếu bạn cũng gặp lỗi tương tự với bản build trên repo này, hãy gỡ ra và cài bản build của epel:<br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># yum remove proftpd</span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># rpm -Uvh <span class="s2"><a href="http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm">http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</a></span></span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;"># yum install proftpd --disablerepo=rpmforge</span></blockquote><br /></div>
 

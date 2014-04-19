@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: game | just some lazy admins]]></title>
-  <link href="http://thangola.github.io/blog/categories/game/atom.xml" rel="self"/>
-  <link href="http://thangola.github.io/"/>
-  <updated>2014-01-05T00:01:36+07:00</updated>
-  <id>http://thangola.github.io/</id>
+  <link href="http://lazyadmin.me/blog/categories/game/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-04-19T23:17:37+07:00</updated>
+  <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cây bút ma thuật]]></title>
-    <link href="http://thangola.github.io/blog/2009/03/29/magic-pen-met-game-giai-tri-rat-hay-phu/"/>
+    <link href="http://lazyadmin.me/blog/2009/03/29/magic-pen-met-game-giai-tri-rat-hay-phu/"/>
     <updated>2009-03-29T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2009/03/29/magic-pen-met-game-giai-tri-rat-hay-phu</id>
+    <id>http://lazyadmin.me/blog/2009/03/29/magic-pen-met-game-giai-tri-rat-hay-phu</id>
     <content type="html"><![CDATA[<div class='post'>
 Magic pen - một game giải trí rất hay, phù hợp mọi đối tượng, nhất là bạn yêu vật lý :D<div><br /></div><div><br /></div><br /><div align="center"><object width="760" height="494"><param name="movie" value="http://www.physicsgames.net/swf/magicpen2.swf"><embed src="http://www.physicsgames.net/swf/magicpen2.swf" type="application/x-shockwave-flash" width="760" height="494"></embed></object></div></div>
 

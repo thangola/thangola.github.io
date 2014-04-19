@@ -7,7 +7,7 @@
 	<meta name="author" content="Thang Pham">
 
 	
-	<meta name="description" content="Quyết định chuyển nhà qua Octopress + Github pages. Octopress xứng đáng được gọi là blogging framework for harkers, nhanh, tiện, thú vị. Octopress &hellip;">
+	<meta name="description" content="Lệnh dmidecode đọc bảng DMI hệ thống (SMBIOS) và hiển thị thông tin về phần cứng và BIOS của máy chủ. Bảng DMI lưu rất nhiều thông tin hữu ích của &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -42,7 +42,7 @@
 		<div class="container">
 			<form action="http://google.com/search" method="get">
 				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:thangola.github.io">
+				<input type="hidden" name="q" value="site:lazyadmin.me">
 			</form>
 		</div>
 	</div>
@@ -69,7 +69,7 @@
 	</div>
 	<form class="search" action="http://google.com/search" method="get">
 		<input class="alignright" type="text" name="q" results="0">
-		<input type="hidden" name="q" value="site:thangola.github.io">
+		<input type="hidden" name="q" value="site:lazyadmin.me">
 	</form>
 </nav>
 
@@ -78,6 +78,415 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/04/19/lay-thong-tin-phan-cung-voi-dmidecode/">
+		
+			Lấy thông tin phần cứng với dmidecode</a>
+	</h2>
+	<div class="entry-content">
+		<p>Lệnh <strong>dmidecode</strong> đọc bảng DMI hệ thống (SMBIOS) và hiển thị thông tin về phần cứng và BIOS của máy chủ. Bảng DMI lưu rất nhiều thông tin hữu ích của hệ thống như cấu hình của từng thiết bị, số serial, hoặc cấu hình tối đa mà máy chủ có thể hỗ trợ (dung lượng RAM tối đa chẳng hạn).</p>
+
+<p>Tham số hay được sử dụng nhất của <code>dmidecode</code> là <code>--type TYPE</code>, với <code>TYPE</code> là ID của một kiểu DMI cụ thể, hoặc là một trong các từ khoá sau: <code>bios,  system,  baseboard,  chassis,  processor,  memory,  cache,  connector,  slot.</code></p>
+
+<p>Danh sách đầy đủ của các kiểu DMI:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>   Type   Information
+</span><span class='line'>   --------------------------------------------
+</span><span class='line'>      0   BIOS
+</span><span class='line'>      1   System
+</span><span class='line'>      2   Baseboard
+</span><span class='line'>      3   Chassis
+</span><span class='line'>      4   Processor
+</span><span class='line'>      5   Memory Controller
+</span><span class='line'>      6   Memory Module
+</span><span class='line'>      7   Cache
+</span><span class='line'>      8   Port Connector
+</span><span class='line'>      9   System Slots
+</span><span class='line'>     10   On Board Devices
+</span><span class='line'>     11   OEM Strings
+</span><span class='line'>     12   System Configuration Options
+</span><span class='line'>     13   BIOS Language
+</span><span class='line'>     14   Group Associations
+</span><span class='line'>     15   System Event Log
+</span><span class='line'>     16   Physical Memory Array
+</span><span class='line'>     17   Memory Device
+</span><span class='line'>     18   32-bit Memory Error
+</span><span class='line'>     19   Memory Array Mapped Address
+</span><span class='line'>     20   Memory Device Mapped Address
+</span><span class='line'>     21   Built-in Pointing Device
+</span><span class='line'>     22   Portable Battery
+</span><span class='line'>     23   System Reset
+</span><span class='line'>     24   Hardware Security
+</span><span class='line'>     25   System Power Controls
+</span><span class='line'>     26   Voltage Probe
+</span><span class='line'>     27   Cooling Device
+</span><span class='line'>     28   Temperature Probe
+</span><span class='line'>     29   Electrical Current Probe
+</span><span class='line'>     30   Out-of-band Remote Access
+</span><span class='line'>     31   Boot Integrity Services
+</span><span class='line'>     32   System Boot
+</span><span class='line'>     33   64-bit Memory Error
+</span><span class='line'>     34   Management Device
+</span><span class='line'>     35   Management Device Component
+</span><span class='line'>     36   Management Device Threshold Data
+</span><span class='line'>     37   Memory Channel
+</span><span class='line'>     38   IPMI Device
+</span><span class='line'>     39   Power Supply
+</span><span class='line'>     40   Additional Information
+</span><span class='line'>     41   Onboard Devices Extended Information
+</span><span class='line'>     42   Management Controller Host Interface</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Mỗi từ khoá dùng với tham số <code>--type</code> tương ứng với một hoặc nhiều kiểu DMI:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>   Keyword     Types
+</span><span class='line'>   ------------------------------
+</span><span class='line'>   bios        0, 13
+</span><span class='line'>   system      1, 12, 15, 23, 32
+</span><span class='line'>   baseboard   2, 10, 41
+</span><span class='line'>   chassis     3
+</span><span class='line'>   processor   4
+</span><span class='line'>   memory      5, 6, 16, 17
+</span><span class='line'>   cache       7
+</span><span class='line'>   connector   8
+</span><span class='line'>   slot        9</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ví dụ, để xem thông tin về chassis, có thể dùng lệnh:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>dmidecode --type chassis
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>hoặc:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>dmidecode --type 3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Output sẽ có dạng:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># dmidecode 2.12
+</span><span class='line'>SMBIOS 2.7 present.
+</span><span class='line'>
+</span><span class='line'>Handle 0x0300, DMI type 3, 21 bytes
+</span><span class='line'>Chassis Information
+</span><span class='line'>  Manufacturer: HP
+</span><span class='line'>  Type: Rack Mount Chassis
+</span><span class='line'>  Lock: Not Present
+</span><span class='line'>  Version: Not Specified
+</span><span class='line'>  Serial Number: SGH3519Y51
+</span><span class='line'>  Asset Tag:
+</span><span class='line'>  Boot-up State: Safe
+</span><span class='line'>  Power Supply State: Safe
+</span><span class='line'>  Thermal State: Safe
+</span><span class='line'>  Security Status: Unknown
+</span><span class='line'>  OEM Information: 0x00000000
+</span><span class='line'>  Height: 1 U
+</span><span class='line'>  Number Of Power Cords: 2
+</span><span class='line'>  Contained Elements: 0</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Với DMI type 16, ta có thể lấy thông tin về Physical memory array, với số khe cắm RAM và dung lượng tối đa mà hệ thống hỗ trợ:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># dmidecode -t 16
+</span><span class='line'># dmidecode 2.12
+</span><span class='line'>SMBIOS 2.7 present.
+</span><span class='line'>
+</span><span class='line'>Handle 0x1000, DMI type 16, 23 bytes
+</span><span class='line'>Physical Memory Array
+</span><span class='line'>  Location: System Board Or Motherboard
+</span><span class='line'>  Use: System Memory
+</span><span class='line'>  Error Correction Type: Single-bit ECC
+</span><span class='line'>  Maximum Capacity: 384 GB
+</span><span class='line'>  Error Information Handle: Not Provided
+</span><span class='line'>  Number Of Devices: 12
+</span><span class='line'>
+</span><span class='line'>Handle 0x1001, DMI type 16, 23 bytes
+</span><span class='line'>Physical Memory Array
+</span><span class='line'>  Location: System Board Or Motherboard
+</span><span class='line'>  Use: System Memory
+</span><span class='line'>  Error Correction Type: Single-bit ECC
+</span><span class='line'>  Maximum Capacity: 384 GB
+</span><span class='line'>  Error Information Handle: Not Provided
+</span><span class='line'>  Number Of Devices: 12</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Như vậy, dung lượng bộ nhớ tối đa mà hệ thống có thể hỗ trợ là 384GB, với 12 khe cắm RAM, mỗi khe cắm một thanh RAM 32GB.</p>
+
+<p>Tương tự, các bạn có thể thử với các type khác để lấy các kết quả mình cần. Nếu cần giúp đỡ, chúng ta có thể dùng <code>man dmidecode</code>, dĩ nhiên.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-19T22:28:02+07:00" pubdate data-updated="true">Apr 19<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/hardware/'>hardware</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/01/07/tong-hop-mot-so-cau-lenh-check-file-config-cua-cac-services/">
+		
+			Tổng hợp một số câu lệnh check file config của các services</a>
+	</h2>
+	<div class="entry-content">
+		<p><img src="http://i1017.photobucket.com/albums/af300/nhanct/Screenshotfrom2014-01-07141758_zpsb4ead1c2.png" alt="Alt text" /></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-07T14:22:05+07:00" pubdate data-updated="true">Jan 7<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/syntax/'>syntax</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/01/06/how-to-clone-ldap-database/">
+		
+			How to clone LDAP Database</a>
+	</h2>
+	<div class="entry-content">
+		<p>With root, run command to Export your DB with slapcat:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>slapcat &gt; ldif </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Import the DB with slapadd (make sure the LDAP server is stopped):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>slapadd -l ldif</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-06T09:45:45+07:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ldap/'>ldap</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/01/06/count-ip-addresses-in-access-log/">
+		
+			Count IP Addresses in Access Log </a>
+	</h2>
+	<div class="entry-content">
+		<p><strong>$</strong>echo &ldquo;most frequent IPs in last 10000 lines in log&rdquo;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo tail -10000 /var/log/nginx/lazyadmin.me.log | awk ‘{print $1}’ | sort | uniq -c | sort -g
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-06T09:31:05+07:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/english/'>English</a>, <a class='category' href='/blog/categories/log/'>log</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -329,196 +738,6 @@ First, you need to install latest version of Java. You can download it from <a h
 
 
 	<a class='category' href='/blog/categories/chrome/'>chrome</a>, <a class='category' href='/blog/categories/fedora/'>fedora</a>, <a class='category' href='/blog/categories/fix/'>fix</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/03/24/snaggy-upload-anh-tu-clipboard/">
-		
-			Snag.gy - Upload ảnh từ clipboard</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-Bình thường khi muốn chia sẻ ảnh chụp màn hình lên web, chúng ta cần thao tác các bước như sau:<br /><br />1. Dùng phím PrintScr để chụp màn hình, hoặc Alt+PrintScr để chụp cửa sổ hiện hành. Hình ảnh được chụp sẽ được lưu vào clipboard.<br />2. Mở một chương trình chỉnh sửa ảnh, Paint chẳng hạn, và paste hình ảnh từ clipboard. Sau một vài bước chỉnh sửa đơn giản, chúng ta lưu ra một file JPG, PNG hoặc GIF.<br />3. Upload ảnh lên một dịch vụ chia sẻ ảnh như Photobucket hoặc Imagebin, rồi lấy link và chia sẻ mọi người.<br /><br />Tuy nhiên, có một phương pháp hữu hiệu hơn, giúp rút ngắn quá trình trên:<br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><object width="320" height="266" class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://1.gvt0.com/vi/kizVzWV-cYk/0.jpg"><param name="movie" value="http://www.youtube.com/v/kizVzWV-cYk&fs=1&source=uds" /><param name="bgcolor" value="#FFFFFF" /><embed width="320" height="266"  src="http://www.youtube.com/v/kizVzWV-cYk&fs=1&source=uds" type="application/x-shockwave-flash"></embed></object></div><br />Đây là dịch vụ được cung cấp bởi <a href="http://snag.gy/">snag.gy</a>. Khi sử dụng dịch vụ này, bạn chỉ cần chụp ảnh màn hình và lưu vào clipboard bằng phím PrintScr, sau đấy mở trang snag.gy, dùng phím tắt Ctrl + V. Xong phần của bạn, còn sau đó snag.gy sẽ đọc ảnh từ clipboard và upload lên dịch vụ, rồi trả về một URL, bạn chỉ cần gửi địa chỉ này cho bạn bè.<br /><br />Ngoài ra, nếu bạn muốn, snag.gy cũng cho phép bạn chỉnh sửa ảnh sau khi tải lên, với một số thao tác cơ bản như crop hoặc add text.<br /><br />Và đây là một ảnh mình vừa screenshot:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://snag.gy/bQCBf.jpg"><img border="0" height="307" src="http://i.snag.gy/bQCBf.jpg" width="640" /></a></div><br /></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Lam ao lop</div>
-<div class='content'>
-Một ứng dụng rất hay, cảm ơn Thắng đã chia sẻ !</div>
-</div>
-</div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-24T00:00:00+07:00" pubdate data-updated="true">Mar 24<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/03/18/5-cong-cu-ma-sysadmin-nen-dung/">
-		
-			5 Linux GUI tool giúp tăng hiệu suất làm việc</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-<br /><i>Trên máy tính cá nhân của tôi, chạy Fedora Linux, đây là những tiện ích bắt buộc phải có. Thực sự những công cụ này đã giúp tôi nâng cao hiệu suất làm việc. Và hôm nay chợt nghĩ đến việc viết entry này, để chia sẻ cho những người cần biết. Nếu bạn cũng biết những công cụ tương tự, hoặc hay hơn, hãy chia sẻ cùng tôi. Xin chân thành cảm ơn.</i><br /><br /><b><a href="http://sourceforge.net/apps/mediawiki/clusterssh/index.php?title=Main_Page">1. Cluster-SSH</a></b><br /><blockquote class="tr_bq"><i>I hate doing something again and again and again. And CSSH came to save my life.</i></blockquote>Thông qua một cửa sổ admin, CSSH cho phép điều khiển cùng một lúc nhiều cửa sổ xterm, tương tác đồng thời với nhiều server, thông qua giao thức kết nối SSH. Chỉ cần gõ bất cứ kí tự nào trên giao diện quản lý, nó đều được chuyển trực tiếp qua các cửa sổ xterm của các server (tất nhiên, bạn vẫn có thể làm việc riêng trên giao diện xterm của từng server). Công cụ này đặc biệt hữu ích khi phải làm một loạt thao tác giống nhau trên nhiều máy chủ (một webserver cluster chẳng hạn).<br /><br /><div class="separator" style="clear: both; text-align: center;"><object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://3.gvt0.com/vi/5Uj7Ns0Ihdc/0.jpg" height="266" width="320"><param name="movie" value="http://www.youtube.com/v/5Uj7Ns0Ihdc&fs=1&source=uds" />     <param name="bgcolor" value="#FFFFFF" />     <embed width="320" height="266"  src="http://www.youtube.com/v/5Uj7Ns0Ihdc&fs=1&source=uds" type="application/x-shockwave-flash"></embed></object></div><br /><b><a href="http://keepass.info/">2. KeePassX</a></b><br /><blockquote class="tr_bq"><i>A person may have about 100 accounts. But a sysadmin must hold up to a billion password for user accounts.</i></blockquote>Đùa đấy, chỉ tầm vài trăm đến một ngàn thôi, nhưng cũng đủ mệt rồi bạn nhỉ? Để quản lý mớ lằng nhằng này, chúng ta cần một công cụ an toàn, tiện dụng và tốt nhất là đa nền tảng. Và có một tiện ích nguồn mở đáp ứng rất tốt những yêu cầu này: KeePassX. Nó an toàn vì nó được <b>mã hóa và bảo vệ bằng một master key</b>, là mật khẩu duy nhất mà ta phải nhớ. Tất cả các mật khẩu khác đều có thể được lưu trữ trong một cây thư mục, với bao nhiêu cấp tùy ý, và có thể search dễ dàng nhờ <b>công cụ tìm kiếm hoàn hảo</b>. Hệ thống <b>phím tắt local/global </b>rất tiện dụng, giúp ta có thể kích hoạt KeePassX bất cứ lúc nào, và hỗ trợ copy username/password vào clipboard. Ta cũng cần phải nhắc đến hai tính năng hữu ích khác là<b> auto-type </b>và<b> password generator</b>. Cuối cùng, bạn có thể mở file database của KeePass trên<b> bất cứ nền tảng nà</b>o: Linux, Windows, iOs, Android, RIM, J2ME&#8230;<br /><br /><br /><b>3. <a href="http://guake.org/">Guake</a>/<a href="http://yakuake.kde.org/">Yakuake</a></b><br /><blockquote class="tr_bq"><i>I am a system administrator. So I&#8217;d love to type commands anywhere and anytime.</i></blockquote>Tiếp đến là terminal. Công cụ mặc định trên Gnome là gnome-terminal, và trên KDE là Konsole. Đây là những terminal chỉ ở mức đủ dùng. Nếu muốn nâng cao hơn nữa năng suất làm việc, hãy thử các terminal dạng drop-down như Guake cho Gnome (hoặc Yakuake cho KDE). Sau khi cài, bất cứ khi nào bạn muốn, hãy nhấn phím F12, một terminal sẽ trải xuống từ đỉnh màn hình, cho phép bạn gõ lệnh ngay lập tức. Thử đi, bạn sẽ thấy thực sự hữu ích, và đẹp nữa. Thêm vào đó, kể cả nếu bạn không phải là quản trị viên, chỉ cần bạn sử dụng Linux, bạn cũng sẽ thích Guake.<br /><br /><div class="separator" style="clear: both; text-align: center;"><object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://0.gvt0.com/vi/VvHbpQYlgmg/0.jpg" height="266" width="320"><param name="movie" value="http://www.youtube.com/v/VvHbpQYlgmg&fs=1&source=uds" />     <param name="bgcolor" value="#FFFFFF" />     <embed width="320" height="266"  src="http://www.youtube.com/v/VvHbpQYlgmg&fs=1&source=uds" type="application/x-shockwave-flash"></embed></object></div><br /><b>4. <a href="http://www.google.com.vn/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CDMQFjAA&amp;url=http%3A%2F%2Fwww.phpmyadmin.net%2F&amp;ei=y-FlT7jJBayviQf4j_neBQ&amp;usg=AFQjCNEVUIHBxbZboIeYNUd_4abvz6M1zw">phpMyAdmin</a>/<a href="http://www.google.com.vn/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CDMQFjAA&amp;url=http%3A%2F%2Fwww.navicat.com%2F&amp;ei=0OFlT8vvNoeiiAelgrW7BQ&amp;usg=AFQjCNHkK4ErCXtlBazXA2wl0bqmHXipaw">Navicat</a></b><br /><blockquote class="tr_bq"><i>I love my commandline, but I also need a GUI tool</i></blockquote>Nếu phải làm việc với một hệ quản trị CSDL như MySQL, bạn sẽ cảm thấy cần đến sự giúp sức của một công cụ đồ họa. Tôi xin đề xuất 2 cái tên là Navicat và phpMyAdmin, một công cụ có phí và một tiện ích nguồn mở, và cả hai đều thực sự là những sản phẩm xuất sắc, hỗ trợ đầy đủ các tính năng mà một người quản trị cơ sở dữ liệu cần.<br /><br /><a href="http://www.sublimetext.com/"><b>5. Sublime Text 2 (beta)</b></a><br /><blockquote class="tr_bq"><i>This is the text editor you&#8217;ll fall in love with.</i></blockquote>Cuối cùng, chúng ta cần một text editor. Tất nhiên Vim/Emacs/Gedit/Kate đều là các tiện ích rất tốt. Nhưng khi mình thử Sublime Text 2, mình nhận ra rằng đây mới xứng đáng là GUI text editor tốt nhất, dù bạn đang dùng Linux, Windows hay Mac OSX. Ngoài việc nhẹ, nhanh, tự động hóa (thông qua snippet và macro) và hỗ trợ rất nhiều ngôn ngữ, Sublime Text 2 còn có thêm những tính năng chết người khác như <b>minimap</b> (một bản đồ nhỏ cho ta biết ta đang ở đâu, nhất là khi đang chỉnh sửa những file dài),<b> multi-select </b>(chọn và sửa đồng thời nhiều chỗ khác nhau), và một số lượng ngày một lớn các plugin có thể cài đặt thông qua một<b> công cụ quản lý gói </b>tuyệt vời. Nhưng có một điểm duy nhất có thể làm bạn không vui: &nbsp;Sublime Text không phải là một công cụ miễn phí. Tuy nhiên họ cho phép bạn thoải mái sử dụng bản beta, và dù sao, trả tiền cho một sản phẩm mình hoàn toàn hài lòng cũng là một việc hợp đạo lý thôi &gt;:).<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-owNfuN9L9Fs/T2XnoEr4_mI/AAAAAAAAA60/3HDYWj7RAis/s1600/Sublime-Text-2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="360" src="http://1.bp.blogspot.com/-owNfuN9L9Fs/T2XnoEr4_mI/AAAAAAAAA60/3HDYWj7RAis/s640/Sublime-Text-2.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Cài thêm gói plugin trong Sublime Text 2</td></tr></tbody></table><br /></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Thăng Phạm</div>
-<div class='content'>
-Anh dùng Ansible, nhưng nói chung không liên quan lắm đến chủ đề này ^^</div>
-</div>
-<div class='comment'>
-<div class='author'>Tũn</div>
-<div class='content'>
-Không đưa Puppet hay Chef vào là cả 1 thiếu xót anh Thắng ạ <br /><br />Lâu lắm mới vào lại blog anh . Hehe</div>
-</div>
-<div class='comment'>
-<div class='author'>itnyek</div>
-<div class='content'>
-With me, vim still is the best, we can use vim in every environment, especially in server :-)</div>
-</div>
-</div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-18T00:00:00+07:00" pubdate data-updated="true">Mar 18<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/navicat/'>Navicat</a>, <a class='category' href='/blog/categories/cssh/'>cssh</a>, <a class='category' href='/blog/categories/guake/'>guake</a>, <a class='category' href='/blog/categories/keepass/'>keepass</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/phpmyadmin/'>phpmyadmin</a>, <a class='category' href='/blog/categories/sublime-text/'>sublime text</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>, <a class='category' href='/blog/categories/terminal/'>terminal</a>, <a class='category' href='/blog/categories/text-editor/'>text editor</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/11/28/quan-tri-he-thong-va-8-ieu-can-nho/">
-		
-			Quản trị hệ thống và 8 điều cần nhớ</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-OLARK_BITZ4/TtJ35-1sKcI/AAAAAAAAA4U/W7dToKyva14/s1600/2680168375_97369493e2_o.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://2.bp.blogspot.com/-OLARK_BITZ4/TtJ35-1sKcI/AAAAAAAAA4U/W7dToKyva14/s320/2680168375_97369493e2_o.jpg" width="320" /></a></div><br /><br /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">1.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Không tiến lên nếu không có đường lùi:</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;Đừng thực hiện bất cứ hành động gì mà không thể phục hồi, kể cả việc xoá file tạm (tốt nhất là đừng dùng lệnh xoá, hãy dùng lệnh move).</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">2.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Luôn kiểm tra dữ liệu sao lưu</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">, đừng mù quáng khẳng định rằng mọi thứ vẫn ổn. Hệ thống sao lưu tự động có thể bị lỗi vào một ngày xấu trời. Phải đảm bảo rằng&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">luôn có thể phục hồi&nbsp;</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">dữ liệu từ bản sao lưu.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">3.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Ghi chép</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;lại các công việc đã làm, kể cả những việc không thể quên, vì kiểu gì chúng ta cũng sẽ quên ;).</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">4. Nếu làm 1 công việc đến lần thứ 2,&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">hãy viết script</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">5. Luôn nhớ: Chúng ta đang làm việc phục vụ người khác,</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;chúng ta không phải là chủ của hệ thống</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">, nên đừng đùa nghịch với hệ thống. Đừng đem hệ thống ra làm chuột bạch thí nghiệm.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">6.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Kiểm tra dữ liệu sao lưu</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">7.</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;Bác học cũng không ngừng học.</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;Những kiến thức mới sẽ giúp công việc chúng ta nhẹ nhàng hơn, và giúp hệ thống hoạt động ổn định và an toàn hơn.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">8. Một lần nữa,</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;hãy kiểm tra bản backup</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">.</span></div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-28T00:00:00+07:00" pubdate data-updated="true">Nov 28<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/quan-tri-he-thong/'>quản trị hệ thống</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/11/02/tro-lai-voi-blogger/">
-		
-			Trở lại với Blogger</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-Hôm nay vào <a href="http://gmailblog.blogspot.com/2011/11/gmails-new-look.html">blog Gmail </a>thấy giao diện khác quá, vội quay lại Blogspot của mình thì cảm thấy rất thú vị khi biết nó đã bổ sung giao diện mới Dynamic view, với nhiều kiểu hay ho như Timeline, Mosaic hoặc Magazine. Sau một hồi vọc vạch, quyết định change giao diện blog mình về kiểu <strike>magazine</strike>&nbsp;sidebar, và từ nay sẽ tìm lại thói quen viết, hehe.<br /><br />Về phần bạn Blogspot, phải công nhận là dạo này bạn ấy thay đổi rất nhiều. Trong bối cảnh các mạng xã hội lên ngôi, các tumblelog cũng được đà phát triển, rõ ràng là blog truyền thống, với những sự bất tiện của mình, đang mất thị phần nghiêm trọng. Google ý thức được điều này, nên đã thực hiện rất nhiều &#8220;biến tấu&#8221; đối với Blogspot, với sự đơn giản hóa và tiết kiệm thời gian, đồng thời nâng cao tính thẩm mĩ và tiện dụng, từ giao diện admin tới khung soạn thảo, và cả giao diện chính của blog. Đó là sự đổi mới toàn diện, từ tổng quan đến chi tiết. Bạn có thể xem chi tiết những sự thay đổi này <a href="http://j.mp/sbzwAt">ở đây</a>.&nbsp;Có thể nói, với sự thay máu đợt này, Blogspot đã trở thành dịch vụ blog tiện dụng nhất.<br /><br />Để kết thúc entry này, chúng ta hãy quay trở lại với giao diện Dynamic Views qua&nbsp;clip giới thiệu từ Blogger team:<br /><div style="text-align: center;"><br /></div><div style="text-align: center;"><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/lpDQF2lFnBU" width="560"></iframe></div></div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-02T00:00:00+07:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/blogger/'>blogger</a>, <a class='category' href='/blog/categories/blogspot/'>blogspot</a>
 
 
 </div>

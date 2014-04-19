@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[just some lazy admins]]></title>
-  <link href="http://thangola.github.io/atom.xml" rel="self"/>
-  <link href="http://thangola.github.io/"/>
-  <updated>2014-01-05T00:01:19+07:00</updated>
-  <id>http://thangola.github.io/</id>
+  <link href="http://lazyadmin.me/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-04-19T23:17:37+07:00</updated>
+  <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
     
@@ -14,10 +14,291 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Lấy thông tin phần cứng với dmidecode]]></title>
+    <link href="http://lazyadmin.me/blog/2014/04/19/lay-thong-tin-phan-cung-voi-dmidecode/"/>
+    <updated>2014-04-19T22:28:02+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/04/19/lay-thong-tin-phan-cung-voi-dmidecode</id>
+    <content type="html"><![CDATA[<p>Lệnh <strong>dmidecode</strong> đọc bảng DMI hệ thống (SMBIOS) và hiển thị thông tin về phần cứng và BIOS của máy chủ. Bảng DMI lưu rất nhiều thông tin hữu ích của hệ thống như cấu hình của từng thiết bị, số serial, hoặc cấu hình tối đa mà máy chủ có thể hỗ trợ (dung lượng RAM tối đa chẳng hạn).</p>
+
+<p>Tham số hay được sử dụng nhất của <code>dmidecode</code> là <code>--type TYPE</code>, với <code>TYPE</code> là ID của một kiểu DMI cụ thể, hoặc là một trong các từ khoá sau: <code>bios,  system,  baseboard,  chassis,  processor,  memory,  cache,  connector,  slot.</code></p>
+
+<p>Danh sách đầy đủ của các kiểu DMI:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>   Type   Information
+</span><span class='line'>   --------------------------------------------
+</span><span class='line'>      0   BIOS
+</span><span class='line'>      1   System
+</span><span class='line'>      2   Baseboard
+</span><span class='line'>      3   Chassis
+</span><span class='line'>      4   Processor
+</span><span class='line'>      5   Memory Controller
+</span><span class='line'>      6   Memory Module
+</span><span class='line'>      7   Cache
+</span><span class='line'>      8   Port Connector
+</span><span class='line'>      9   System Slots
+</span><span class='line'>     10   On Board Devices
+</span><span class='line'>     11   OEM Strings
+</span><span class='line'>     12   System Configuration Options
+</span><span class='line'>     13   BIOS Language
+</span><span class='line'>     14   Group Associations
+</span><span class='line'>     15   System Event Log
+</span><span class='line'>     16   Physical Memory Array
+</span><span class='line'>     17   Memory Device
+</span><span class='line'>     18   32-bit Memory Error
+</span><span class='line'>     19   Memory Array Mapped Address
+</span><span class='line'>     20   Memory Device Mapped Address
+</span><span class='line'>     21   Built-in Pointing Device
+</span><span class='line'>     22   Portable Battery
+</span><span class='line'>     23   System Reset
+</span><span class='line'>     24   Hardware Security
+</span><span class='line'>     25   System Power Controls
+</span><span class='line'>     26   Voltage Probe
+</span><span class='line'>     27   Cooling Device
+</span><span class='line'>     28   Temperature Probe
+</span><span class='line'>     29   Electrical Current Probe
+</span><span class='line'>     30   Out-of-band Remote Access
+</span><span class='line'>     31   Boot Integrity Services
+</span><span class='line'>     32   System Boot
+</span><span class='line'>     33   64-bit Memory Error
+</span><span class='line'>     34   Management Device
+</span><span class='line'>     35   Management Device Component
+</span><span class='line'>     36   Management Device Threshold Data
+</span><span class='line'>     37   Memory Channel
+</span><span class='line'>     38   IPMI Device
+</span><span class='line'>     39   Power Supply
+</span><span class='line'>     40   Additional Information
+</span><span class='line'>     41   Onboard Devices Extended Information
+</span><span class='line'>     42   Management Controller Host Interface</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Mỗi từ khoá dùng với tham số <code>--type</code> tương ứng với một hoặc nhiều kiểu DMI:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>   Keyword     Types
+</span><span class='line'>   ------------------------------
+</span><span class='line'>   bios        0, 13
+</span><span class='line'>   system      1, 12, 15, 23, 32
+</span><span class='line'>   baseboard   2, 10, 41
+</span><span class='line'>   chassis     3
+</span><span class='line'>   processor   4
+</span><span class='line'>   memory      5, 6, 16, 17
+</span><span class='line'>   cache       7
+</span><span class='line'>   connector   8
+</span><span class='line'>   slot        9</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ví dụ, để xem thông tin về chassis, có thể dùng lệnh:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>dmidecode --type chassis
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>hoặc:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>dmidecode --type 3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Output sẽ có dạng:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># dmidecode 2.12
+</span><span class='line'>SMBIOS 2.7 present.
+</span><span class='line'>
+</span><span class='line'>Handle 0x0300, DMI type 3, 21 bytes
+</span><span class='line'>Chassis Information
+</span><span class='line'>  Manufacturer: HP
+</span><span class='line'>  Type: Rack Mount Chassis
+</span><span class='line'>  Lock: Not Present
+</span><span class='line'>  Version: Not Specified
+</span><span class='line'>  Serial Number: SGH3519Y51
+</span><span class='line'>  Asset Tag:
+</span><span class='line'>  Boot-up State: Safe
+</span><span class='line'>  Power Supply State: Safe
+</span><span class='line'>  Thermal State: Safe
+</span><span class='line'>  Security Status: Unknown
+</span><span class='line'>  OEM Information: 0x00000000
+</span><span class='line'>  Height: 1 U
+</span><span class='line'>  Number Of Power Cords: 2
+</span><span class='line'>  Contained Elements: 0</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Với DMI type 16, ta có thể lấy thông tin về Physical memory array, với số khe cắm RAM và dung lượng tối đa mà hệ thống hỗ trợ:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># dmidecode -t 16
+</span><span class='line'># dmidecode 2.12
+</span><span class='line'>SMBIOS 2.7 present.
+</span><span class='line'>
+</span><span class='line'>Handle 0x1000, DMI type 16, 23 bytes
+</span><span class='line'>Physical Memory Array
+</span><span class='line'>  Location: System Board Or Motherboard
+</span><span class='line'>  Use: System Memory
+</span><span class='line'>  Error Correction Type: Single-bit ECC
+</span><span class='line'>  Maximum Capacity: 384 GB
+</span><span class='line'>  Error Information Handle: Not Provided
+</span><span class='line'>  Number Of Devices: 12
+</span><span class='line'>
+</span><span class='line'>Handle 0x1001, DMI type 16, 23 bytes
+</span><span class='line'>Physical Memory Array
+</span><span class='line'>  Location: System Board Or Motherboard
+</span><span class='line'>  Use: System Memory
+</span><span class='line'>  Error Correction Type: Single-bit ECC
+</span><span class='line'>  Maximum Capacity: 384 GB
+</span><span class='line'>  Error Information Handle: Not Provided
+</span><span class='line'>  Number Of Devices: 12</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Như vậy, dung lượng bộ nhớ tối đa mà hệ thống có thể hỗ trợ là 384GB, với 12 khe cắm RAM, mỗi khe cắm một thanh RAM 32GB.</p>
+
+<p>Tương tự, các bạn có thể thử với các type khác để lấy các kết quả mình cần. Nếu cần giúp đỡ, chúng ta có thể dùng <code>man dmidecode</code>, dĩ nhiên.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tổng hợp một số câu lệnh check file config của các services]]></title>
+    <link href="http://lazyadmin.me/blog/2014/01/07/tong-hop-mot-so-cau-lenh-check-file-config-cua-cac-services/"/>
+    <updated>2014-01-07T14:22:05+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/01/07/tong-hop-mot-so-cau-lenh-check-file-config-cua-cac-services</id>
+    <content type="html"><![CDATA[<p><img src="http://i1017.photobucket.com/albums/af300/nhanct/Screenshotfrom2014-01-07141758_zpsb4ead1c2.png" alt="Alt text" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to clone LDAP Database]]></title>
+    <link href="http://lazyadmin.me/blog/2014/01/06/how-to-clone-ldap-database/"/>
+    <updated>2014-01-06T09:45:45+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/01/06/how-to-clone-ldap-database</id>
+    <content type="html"><![CDATA[<p>With root, run command to Export your DB with slapcat:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>slapcat &gt; ldif </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Import the DB with slapadd (make sure the LDAP server is stopped):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>slapadd -l ldif</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Count IP Addresses in Access Log ]]></title>
+    <link href="http://lazyadmin.me/blog/2014/01/06/count-ip-addresses-in-access-log/"/>
+    <updated>2014-01-06T09:31:05+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/01/06/count-ip-addresses-in-access-log</id>
+    <content type="html"><![CDATA[<p><strong>$</strong>echo &ldquo;most frequent IPs in last 10000 lines in log&rdquo;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo tail -10000 /var/log/nginx/lazyadmin.me.log | awk ‘{print $1}’ | sort | uniq -c | sort -g
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Bài viết đầu tiên với Octopress Blog]]></title>
-    <link href="http://thangola.github.io/blog/2014/01/01/bai-viet-dau-tien-voi-octopress/"/>
+    <link href="http://lazyadmin.me/blog/2014/01/01/bai-viet-dau-tien-voi-octopress/"/>
     <updated>2014-01-01T00:30:08+07:00</updated>
-    <id>http://thangola.github.io/blog/2014/01/01/bai-viet-dau-tien-voi-octopress</id>
+    <id>http://lazyadmin.me/blog/2014/01/01/bai-viet-dau-tien-voi-octopress</id>
     <content type="html"><![CDATA[<p>Quyết định chuyển nhà qua <a href="http://octopress.org/" title="Octopress">Octopress</a> + <a href="http://pages.github.com/">Github pages</a>. <code>Octopress</code> xứng đáng được gọi là <em>blogging framework for harkers</em>, nhanh, tiện, thú vị. <code>Octopress</code> là framework dựa trên nền Jekyll, một trình tạo các trang nội dung tĩnh, rất phù hợp để làm blog. Với <code>Octopress</code>, chúng ta không cần database, không cần một webserver có hỗ trợ PHP, chỉ cần 1 server support file tĩnh là quá đủ. Trên máy cá nhân, viết blog bằng Markdown, vừa nhanh vừa tiện, sau đó, Octopress sẽ giúp chúng ta sinh ra các file HTML, CSS cần thiết, và có thể giúp ta deploy luôn lên Github, nếu hosting bằng <code>Github pages</code>. Miễn phí, nguồn mở, file tĩnh nên nhanh, tuỳ biến cao, lại hỗ trợ plugin, rất đáng để thử.</p>
 
 <p>Chúng tôi đã gặp một chút khó khăn khi import bài viết từ Blogger qua, nhưng đã giải quyết ổn, và giờ thì chăm chỉ viết bài thôi ;). Nội dung của blog này từ nay, sẽ bao gồm tất cả những gì liên quan đến công việc của một Linux system administrator, và sẽ được nhiều người cùng đóng góp.</p>
@@ -30,9 +311,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ngăn ngừa quit nhầm Chrome trên Mac]]></title>
-    <link href="http://thangola.github.io/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac/"/>
+    <link href="http://lazyadmin.me/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac/"/>
     <updated>2012-10-17T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac</id>
+    <id>http://lazyadmin.me/blog/2012/10/17/ngan-ngua-quit-nham-chrome-tren-mac</id>
     <content type="html"><![CDATA[<div class='post'>
 Từ lúc mình dùng Mac đến giờ, nhầm lẫn giữa <b>⌘Q</b> và <b>⌘W</b> là một trong những điều gây bực mình nhất: Thi thoảng muốn đóng một tab bằng tổ hợp <b>⌘W</b>, nhưng lại bấm nhầm&nbsp;<b>⌘Q</b>, và a lê hấp, cả trình duyệt biến mất.<br /><br />Ấm ức bấy lâu, tình cờ hôm nay phát hiện ra giải pháp vô cùng đơn giản mà bạn Chrome làm hộ mình: Click vào menu Chrome ở thanh menu, chọn <b>&#8220;Warn before quitting&#8221;</b>, dzầy là xong, haha.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-gy1afi49bmM/TfaWLwIDZlI/AAAAAAAAAmk/6po2urmuFjE/s1600/confirmquit.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="289" src="http://3.bp.blogspot.com/-gy1afi49bmM/TfaWLwIDZlI/AAAAAAAAAmk/6po2urmuFjE/s640/confirmquit.png" width="640" /></a></div><br /></div>
 ]]></content>
@@ -40,9 +321,9 @@ Từ lúc mình dùng Mac đến giờ, nhầm lẫn giữa <b>⌘Q</b> và <b>�
   
   <entry>
     <title type="html"><![CDATA[Problem with proftpd 1.3.4 on RPMForge repository]]></title>
-    <link href="http://thangola.github.io/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/"/>
+    <link href="http://lazyadmin.me/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/"/>
     <updated>2012-08-30T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge</id>
+    <id>http://lazyadmin.me/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge</id>
     <content type="html"><![CDATA[<div class='post'>
 Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:<br /><br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">proftpd: PAM unable to dlopen(/lib64/security/pam_stack.so): /lib64/security/pam_stack.so: cannot open shared object file: No such file or directory</span></blockquote><br />Google một vòng thì ra kết quả là do lỗi của proftpd bản build 1.3.4 trên repository RPMForge. Nếu bạn cũng gặp lỗi tương tự với bản build trên repo này, hãy gỡ ra và cài bản build của epel:<br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># yum remove proftpd</span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># rpm -Uvh <span class="s2"><a href="http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm">http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</a></span></span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;"># yum install proftpd &#8211;disablerepo=rpmforge</span></blockquote><br /></div>
 ]]></content>
@@ -50,9 +331,9 @@ Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:
   
   <entry>
     <title type="html"><![CDATA[Yum - Liệt kê danh sách file trong một gói]]></title>
-    <link href="http://thangola.github.io/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/"/>
+    <link href="http://lazyadmin.me/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/"/>
     <updated>2012-08-07T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi</id>
+    <id>http://lazyadmin.me/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi</id>
     <content type="html"><![CDATA[<div class='post'>
 Để liệt kê nội dung một gói, có thể đã cài hoặc chưa cài, chúng ta sử dụng công cụ <span style="font-family: Courier New, Courier, monospace;">repoquery</span> trong gói <span style="font-family: Courier New, Courier, monospace;">yum-utils</span>. Nếu chưa cài gói này, chạy lệnh sau để cài đặt:&nbsp;<div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><span style="font-size: small; line-height: normal; white-space: normal;"><span style="font-family: Courier New, Courier, monospace;"># yum install yum-utils -y</span></span></pre></div><div><br /></div><div>Lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> có 2 option hữu ích:</div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">  -l, --list            list files in this package/group<br />  -q, --query           no-op for rpmquery compatibility</span></code></pre></div><div><br /></div><div>Chạy lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> với 2 option trên cùng với tên gói để liệt kê danh sách các file có trong gói:</div><div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;">$ repoquery -ql mlocate<br />/etc/cron.daily/mlocate.cron<br />/etc/updatedb.conf<br />/usr/bin/locate<br />/usr/bin/updatedb<br />/usr/share/doc/mlocate-0.22.2<br />/usr/share/doc/mlocate-0.22.2/AUTHORS<br />/usr/share/doc/mlocate-0.22.2/COPYING<br />...</pre></div><div><br /></div></div></div>
 ]]></content>
@@ -60,9 +341,9 @@ Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:
   
   <entry>
     <title type="html"><![CDATA[Install SkypeTab-NG on Fedora]]></title>
-    <link href="http://thangola.github.io/blog/2012/06/09/install-skypetab-ng-on-fedora/"/>
+    <link href="http://lazyadmin.me/blog/2012/06/09/install-skypetab-ng-on-fedora/"/>
     <updated>2012-06-09T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/06/09/install-skypetab-ng-on-fedora</id>
+    <id>http://lazyadmin.me/blog/2012/06/09/install-skypetab-ng-on-fedora</id>
     <content type="html"><![CDATA[<div class='post'>
 <div class="separator" style="clear: both; text-align: center;"><object height="360" width="480"><param name="movie" value="http://www.youtube.com/v/mZ_NvXhGEu0?version=3&amp;hl=vi_VN"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mZ_NvXhGEu0?version=3&amp;hl=vi_VN" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object></div><br /><span style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 22px;">SkypeTab-ng is a program that adds tabs to Skype™ for Linux (<i>ng</i> stands for <i>next generation</i>).</span><br /><span style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 22px;">SkypeTab-ng on Github:&nbsp;</span><a href="https://github.com/kekekeks/skypetab-ng">https://github.com/kekekeks/skypetab-ng</a><br /><br />To install it on Fedora 16-17, just run following command as root<br /><br /><blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">rpm -Uvh &#8220;http://widehat.opensuse.org/repositories/home:/keks-n:/skypetab-ng/Fedora_16/noarch/skypetab-ng-0.4.10-23.1.noarch.rpm&#8221;</span></blockquote><div>For other instructions (other distro, description), see <a href="http://keks-n.net/skypetab/">see here</a>.</div><div><br /></div></div>
 ]]></content>
@@ -70,9 +351,9 @@ Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:
   
   <entry>
     <title type="html"><![CDATA[How to fix Java for Google Chrome on Fedora]]></title>
-    <link href="http://thangola.github.io/blog/2012/05/24/how-to-fix-java-for-google-chrome-on/"/>
+    <link href="http://lazyadmin.me/blog/2012/05/24/how-to-fix-java-for-google-chrome-on/"/>
     <updated>2012-05-24T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/05/24/how-to-fix-java-for-google-chrome-on</id>
+    <id>http://lazyadmin.me/blog/2012/05/24/how-to-fix-java-for-google-chrome-on</id>
     <content type="html"><![CDATA[<div class='post'>
 First, you need to install latest version of Java. You can download it from <a href="http://java.com/en/download/manual.jsp?locale=en">here</a>.<br /><br />Next, restart Google Chrome browser. If the problem is not solved, execute these commands as root:<br /><br /><blockquote class="tr_bq"><pre># mkdir /opt/google/chrome/plugins </pre></blockquote><blockquote class="tr_bq"><pre># ln -s ln -s /usr/java/jre1.7.0_04/lib/i386/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so </pre></blockquote>That&#8217;s all.</div>
 ]]></content>
@@ -80,9 +361,9 @@ First, you need to install latest version of Java. You can download it from <a h
   
   <entry>
     <title type="html"><![CDATA[Snag.gy - Upload ảnh từ clipboard]]></title>
-    <link href="http://thangola.github.io/blog/2012/03/24/snaggy-upload-anh-tu-clipboard/"/>
+    <link href="http://lazyadmin.me/blog/2012/03/24/snaggy-upload-anh-tu-clipboard/"/>
     <updated>2012-03-24T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/03/24/snaggy-upload-anh-tu-clipboard</id>
+    <id>http://lazyadmin.me/blog/2012/03/24/snaggy-upload-anh-tu-clipboard</id>
     <content type="html"><![CDATA[<div class='post'>
 Bình thường khi muốn chia sẻ ảnh chụp màn hình lên web, chúng ta cần thao tác các bước như sau:<br /><br />1. Dùng phím PrintScr để chụp màn hình, hoặc Alt+PrintScr để chụp cửa sổ hiện hành. Hình ảnh được chụp sẽ được lưu vào clipboard.<br />2. Mở một chương trình chỉnh sửa ảnh, Paint chẳng hạn, và paste hình ảnh từ clipboard. Sau một vài bước chỉnh sửa đơn giản, chúng ta lưu ra một file JPG, PNG hoặc GIF.<br />3. Upload ảnh lên một dịch vụ chia sẻ ảnh như Photobucket hoặc Imagebin, rồi lấy link và chia sẻ mọi người.<br /><br />Tuy nhiên, có một phương pháp hữu hiệu hơn, giúp rút ngắn quá trình trên:<br /><div class="separator" style="clear: both; text-align: center;"><br /></div><div class="separator" style="clear: both; text-align: center;"><object width="320" height="266" class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://1.gvt0.com/vi/kizVzWV-cYk/0.jpg"><param name="movie" value="http://www.youtube.com/v/kizVzWV-cYk&fs=1&source=uds" /><param name="bgcolor" value="#FFFFFF" /><embed width="320" height="266"  src="http://www.youtube.com/v/kizVzWV-cYk&fs=1&source=uds" type="application/x-shockwave-flash"></embed></object></div><br />Đây là dịch vụ được cung cấp bởi <a href="http://snag.gy/">snag.gy</a>. Khi sử dụng dịch vụ này, bạn chỉ cần chụp ảnh màn hình và lưu vào clipboard bằng phím PrintScr, sau đấy mở trang snag.gy, dùng phím tắt Ctrl + V. Xong phần của bạn, còn sau đó snag.gy sẽ đọc ảnh từ clipboard và upload lên dịch vụ, rồi trả về một URL, bạn chỉ cần gửi địa chỉ này cho bạn bè.<br /><br />Ngoài ra, nếu bạn muốn, snag.gy cũng cho phép bạn chỉnh sửa ảnh sau khi tải lên, với một số thao tác cơ bản như crop hoặc add text.<br /><br />Và đây là một ảnh mình vừa screenshot:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://snag.gy/bQCBf.jpg"><img border="0" height="307" src="http://i.snag.gy/bQCBf.jpg" width="640" /></a></div><br /></div>
 <h2>Comments</h2>
@@ -98,9 +379,9 @@ Một ứng dụng rất hay, cảm ơn Thắng đã chia sẻ !</div>
   
   <entry>
     <title type="html"><![CDATA[5 Linux GUI tool giúp tăng hiệu suất làm việc]]></title>
-    <link href="http://thangola.github.io/blog/2012/03/18/5-cong-cu-ma-sysadmin-nen-dung/"/>
+    <link href="http://lazyadmin.me/blog/2012/03/18/5-cong-cu-ma-sysadmin-nen-dung/"/>
     <updated>2012-03-18T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2012/03/18/5-cong-cu-ma-sysadmin-nen-dung</id>
+    <id>http://lazyadmin.me/blog/2012/03/18/5-cong-cu-ma-sysadmin-nen-dung</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><i>Trên máy tính cá nhân của tôi, chạy Fedora Linux, đây là những tiện ích bắt buộc phải có. Thực sự những công cụ này đã giúp tôi nâng cao hiệu suất làm việc. Và hôm nay chợt nghĩ đến việc viết entry này, để chia sẻ cho những người cần biết. Nếu bạn cũng biết những công cụ tương tự, hoặc hay hơn, hãy chia sẻ cùng tôi. Xin chân thành cảm ơn.</i><br /><br /><b><a href="http://sourceforge.net/apps/mediawiki/clusterssh/index.php?title=Main_Page">1. Cluster-SSH</a></b><br /><blockquote class="tr_bq"><i>I hate doing something again and again and again. And CSSH came to save my life.</i></blockquote>Thông qua một cửa sổ admin, CSSH cho phép điều khiển cùng một lúc nhiều cửa sổ xterm, tương tác đồng thời với nhiều server, thông qua giao thức kết nối SSH. Chỉ cần gõ bất cứ kí tự nào trên giao diện quản lý, nó đều được chuyển trực tiếp qua các cửa sổ xterm của các server (tất nhiên, bạn vẫn có thể làm việc riêng trên giao diện xterm của từng server). Công cụ này đặc biệt hữu ích khi phải làm một loạt thao tác giống nhau trên nhiều máy chủ (một webserver cluster chẳng hạn).<br /><br /><div class="separator" style="clear: both; text-align: center;"><object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://3.gvt0.com/vi/5Uj7Ns0Ihdc/0.jpg" height="266" width="320"><param name="movie" value="http://www.youtube.com/v/5Uj7Ns0Ihdc&fs=1&source=uds" />     <param name="bgcolor" value="#FFFFFF" />     <embed width="320" height="266"  src="http://www.youtube.com/v/5Uj7Ns0Ihdc&fs=1&source=uds" type="application/x-shockwave-flash"></embed></object></div><br /><b><a href="http://keepass.info/">2. KeePassX</a></b><br /><blockquote class="tr_bq"><i>A person may have about 100 accounts. But a sysadmin must hold up to a billion password for user accounts.</i></blockquote>Đùa đấy, chỉ tầm vài trăm đến một ngàn thôi, nhưng cũng đủ mệt rồi bạn nhỉ? Để quản lý mớ lằng nhằng này, chúng ta cần một công cụ an toàn, tiện dụng và tốt nhất là đa nền tảng. Và có một tiện ích nguồn mở đáp ứng rất tốt những yêu cầu này: KeePassX. Nó an toàn vì nó được <b>mã hóa và bảo vệ bằng một master key</b>, là mật khẩu duy nhất mà ta phải nhớ. Tất cả các mật khẩu khác đều có thể được lưu trữ trong một cây thư mục, với bao nhiêu cấp tùy ý, và có thể search dễ dàng nhờ <b>công cụ tìm kiếm hoàn hảo</b>. Hệ thống <b>phím tắt local/global </b>rất tiện dụng, giúp ta có thể kích hoạt KeePassX bất cứ lúc nào, và hỗ trợ copy username/password vào clipboard. Ta cũng cần phải nhắc đến hai tính năng hữu ích khác là<b> auto-type </b>và<b> password generator</b>. Cuối cùng, bạn có thể mở file database của KeePass trên<b> bất cứ nền tảng nà</b>o: Linux, Windows, iOs, Android, RIM, J2ME&#8230;<br /><br /><br /><b>3. <a href="http://guake.org/">Guake</a>/<a href="http://yakuake.kde.org/">Yakuake</a></b><br /><blockquote class="tr_bq"><i>I am a system administrator. So I&#8217;d love to type commands anywhere and anytime.</i></blockquote>Tiếp đến là terminal. Công cụ mặc định trên Gnome là gnome-terminal, và trên KDE là Konsole. Đây là những terminal chỉ ở mức đủ dùng. Nếu muốn nâng cao hơn nữa năng suất làm việc, hãy thử các terminal dạng drop-down như Guake cho Gnome (hoặc Yakuake cho KDE). Sau khi cài, bất cứ khi nào bạn muốn, hãy nhấn phím F12, một terminal sẽ trải xuống từ đỉnh màn hình, cho phép bạn gõ lệnh ngay lập tức. Thử đi, bạn sẽ thấy thực sự hữu ích, và đẹp nữa. Thêm vào đó, kể cả nếu bạn không phải là quản trị viên, chỉ cần bạn sử dụng Linux, bạn cũng sẽ thích Guake.<br /><br /><div class="separator" style="clear: both; text-align: center;"><object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="http://0.gvt0.com/vi/VvHbpQYlgmg/0.jpg" height="266" width="320"><param name="movie" value="http://www.youtube.com/v/VvHbpQYlgmg&fs=1&source=uds" />     <param name="bgcolor" value="#FFFFFF" />     <embed width="320" height="266"  src="http://www.youtube.com/v/VvHbpQYlgmg&fs=1&source=uds" type="application/x-shockwave-flash"></embed></object></div><br /><b>4. <a href="http://www.google.com.vn/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CDMQFjAA&amp;url=http%3A%2F%2Fwww.phpmyadmin.net%2F&amp;ei=y-FlT7jJBayviQf4j_neBQ&amp;usg=AFQjCNEVUIHBxbZboIeYNUd_4abvz6M1zw">phpMyAdmin</a>/<a href="http://www.google.com.vn/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CDMQFjAA&amp;url=http%3A%2F%2Fwww.navicat.com%2F&amp;ei=0OFlT8vvNoeiiAelgrW7BQ&amp;usg=AFQjCNHkK4ErCXtlBazXA2wl0bqmHXipaw">Navicat</a></b><br /><blockquote class="tr_bq"><i>I love my commandline, but I also need a GUI tool</i></blockquote>Nếu phải làm việc với một hệ quản trị CSDL như MySQL, bạn sẽ cảm thấy cần đến sự giúp sức của một công cụ đồ họa. Tôi xin đề xuất 2 cái tên là Navicat và phpMyAdmin, một công cụ có phí và một tiện ích nguồn mở, và cả hai đều thực sự là những sản phẩm xuất sắc, hỗ trợ đầy đủ các tính năng mà một người quản trị cơ sở dữ liệu cần.<br /><br /><a href="http://www.sublimetext.com/"><b>5. Sublime Text 2 (beta)</b></a><br /><blockquote class="tr_bq"><i>This is the text editor you&#8217;ll fall in love with.</i></blockquote>Cuối cùng, chúng ta cần một text editor. Tất nhiên Vim/Emacs/Gedit/Kate đều là các tiện ích rất tốt. Nhưng khi mình thử Sublime Text 2, mình nhận ra rằng đây mới xứng đáng là GUI text editor tốt nhất, dù bạn đang dùng Linux, Windows hay Mac OSX. Ngoài việc nhẹ, nhanh, tự động hóa (thông qua snippet và macro) và hỗ trợ rất nhiều ngôn ngữ, Sublime Text 2 còn có thêm những tính năng chết người khác như <b>minimap</b> (một bản đồ nhỏ cho ta biết ta đang ở đâu, nhất là khi đang chỉnh sửa những file dài),<b> multi-select </b>(chọn và sửa đồng thời nhiều chỗ khác nhau), và một số lượng ngày một lớn các plugin có thể cài đặt thông qua một<b> công cụ quản lý gói </b>tuyệt vời. Nhưng có một điểm duy nhất có thể làm bạn không vui: &nbsp;Sublime Text không phải là một công cụ miễn phí. Tuy nhiên họ cho phép bạn thoải mái sử dụng bản beta, và dù sao, trả tiền cho một sản phẩm mình hoàn toàn hài lòng cũng là một việc hợp đạo lý thôi &gt;:).<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://1.bp.blogspot.com/-owNfuN9L9Fs/T2XnoEr4_mI/AAAAAAAAA60/3HDYWj7RAis/s1600/Sublime-Text-2.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="360" src="http://1.bp.blogspot.com/-owNfuN9L9Fs/T2XnoEr4_mI/AAAAAAAAA60/3HDYWj7RAis/s640/Sublime-Text-2.png" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Cài thêm gói plugin trong Sublime Text 2</td></tr></tbody></table><br /></div>
 <h2>Comments</h2>
@@ -126,9 +407,9 @@ With me, vim still is the best, we can use vim in every environment, especially 
   
   <entry>
     <title type="html"><![CDATA[Quản trị hệ thống và 8 điều cần nhớ]]></title>
-    <link href="http://thangola.github.io/blog/2011/11/28/quan-tri-he-thong-va-8-ieu-can-nho/"/>
+    <link href="http://lazyadmin.me/blog/2011/11/28/quan-tri-he-thong-va-8-ieu-can-nho/"/>
     <updated>2011-11-28T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2011/11/28/quan-tri-he-thong-va-8-ieu-can-nho</id>
+    <id>http://lazyadmin.me/blog/2011/11/28/quan-tri-he-thong-va-8-ieu-can-nho</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-OLARK_BITZ4/TtJ35-1sKcI/AAAAAAAAA4U/W7dToKyva14/s1600/2680168375_97369493e2_o.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://2.bp.blogspot.com/-OLARK_BITZ4/TtJ35-1sKcI/AAAAAAAAA4U/W7dToKyva14/s320/2680168375_97369493e2_o.jpg" width="320" /></a></div><br /><br /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">1.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Không tiến lên nếu không có đường lùi:</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;Đừng thực hiện bất cứ hành động gì mà không thể phục hồi, kể cả việc xoá file tạm (tốt nhất là đừng dùng lệnh xoá, hãy dùng lệnh move).</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">2.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Luôn kiểm tra dữ liệu sao lưu</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">, đừng mù quáng khẳng định rằng mọi thứ vẫn ổn. Hệ thống sao lưu tự động có thể bị lỗi vào một ngày xấu trời. Phải đảm bảo rằng&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">luôn có thể phục hồi&nbsp;</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">dữ liệu từ bản sao lưu.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">3.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Ghi chép</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;lại các công việc đã làm, kể cả những việc không thể quên, vì kiểu gì chúng ta cũng sẽ quên ;).</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">4. Nếu làm 1 công việc đến lần thứ 2,&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">hãy viết script</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">5. Luôn nhớ: Chúng ta đang làm việc phục vụ người khác,</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;chúng ta không phải là chủ của hệ thống</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">, nên đừng đùa nghịch với hệ thống. Đừng đem hệ thống ra làm chuột bạch thí nghiệm.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">6.&nbsp;</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">Kiểm tra dữ liệu sao lưu</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">7.</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;Bác học cũng không ngừng học.</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;Những kiến thức mới sẽ giúp công việc chúng ta nhẹ nhàng hơn, và giúp hệ thống hoạt động ổn định và an toàn hơn.</span><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><br style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;" /><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">8. Một lần nữa,</span><strong style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">&nbsp;hãy kiểm tra bản backup</strong><span style="background-color: white; color: #333333; font-family: Arial, Tahoma, Helvetica, FreeSans, sans-serif; font-size: 13px;">.</span></div>
 ]]></content>
@@ -136,9 +417,9 @@ With me, vim still is the best, we can use vim in every environment, especially 
   
   <entry>
     <title type="html"><![CDATA[Trở lại với Blogger]]></title>
-    <link href="http://thangola.github.io/blog/2011/11/02/tro-lai-voi-blogger/"/>
+    <link href="http://lazyadmin.me/blog/2011/11/02/tro-lai-voi-blogger/"/>
     <updated>2011-11-02T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2011/11/02/tro-lai-voi-blogger</id>
+    <id>http://lazyadmin.me/blog/2011/11/02/tro-lai-voi-blogger</id>
     <content type="html"><![CDATA[<div class='post'>
 Hôm nay vào <a href="http://gmailblog.blogspot.com/2011/11/gmails-new-look.html">blog Gmail </a>thấy giao diện khác quá, vội quay lại Blogspot của mình thì cảm thấy rất thú vị khi biết nó đã bổ sung giao diện mới Dynamic view, với nhiều kiểu hay ho như Timeline, Mosaic hoặc Magazine. Sau một hồi vọc vạch, quyết định change giao diện blog mình về kiểu <strike>magazine</strike>&nbsp;sidebar, và từ nay sẽ tìm lại thói quen viết, hehe.<br /><br />Về phần bạn Blogspot, phải công nhận là dạo này bạn ấy thay đổi rất nhiều. Trong bối cảnh các mạng xã hội lên ngôi, các tumblelog cũng được đà phát triển, rõ ràng là blog truyền thống, với những sự bất tiện của mình, đang mất thị phần nghiêm trọng. Google ý thức được điều này, nên đã thực hiện rất nhiều &#8220;biến tấu&#8221; đối với Blogspot, với sự đơn giản hóa và tiết kiệm thời gian, đồng thời nâng cao tính thẩm mĩ và tiện dụng, từ giao diện admin tới khung soạn thảo, và cả giao diện chính của blog. Đó là sự đổi mới toàn diện, từ tổng quan đến chi tiết. Bạn có thể xem chi tiết những sự thay đổi này <a href="http://j.mp/sbzwAt">ở đây</a>.&nbsp;Có thể nói, với sự thay máu đợt này, Blogspot đã trở thành dịch vụ blog tiện dụng nhất.<br /><br />Để kết thúc entry này, chúng ta hãy quay trở lại với giao diện Dynamic Views qua&nbsp;clip giới thiệu từ Blogger team:<br /><div style="text-align: center;"><br /></div><div style="text-align: center;"><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/lpDQF2lFnBU" width="560"></iframe></div></div>
 ]]></content>
@@ -146,9 +427,9 @@ Hôm nay vào <a href="http://gmailblog.blogspot.com/2011/11/gmails-new-look.htm
   
   <entry>
     <title type="html"><![CDATA[Sunday clip: The Story of Linux -  Câu chuyện của 20 năm]]></title>
-    <link href="http://thangola.github.io/blog/2011/07/03/sunday-clip-story-of-linux-cau-chuyen/"/>
+    <link href="http://lazyadmin.me/blog/2011/07/03/sunday-clip-story-of-linux-cau-chuyen/"/>
     <updated>2011-07-03T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2011/07/03/sunday-clip-story-of-linux-cau-chuyen</id>
+    <id>http://lazyadmin.me/blog/2011/07/03/sunday-clip-story-of-linux-cau-chuyen</id>
     <content type="html"><![CDATA[<div class='post'>
 <div>Chủ nhật là ngày thoải mái nhất để xem các video clip. Hôm nay chúng ta sẽ xem một clip của Linux Foundation, thực hiện nhân dịp kỉ niệm 20 năm Linux. Chúng ta sẽ cùng nhớ lại Linus Torvald đã viết ra Linux như thế nào, liên hệ với dự án GNU ra sao, và cùng xem cách  mà Linux đã làm thay đổi thế giới 20 năm qua. </div><div><br /></div><iframe width="640" height="390" src="http://www.youtube.com/embed/5ocq6_3-nEw" frameborder="0" allowfullscreen=""></iframe><div><br /></div><div>P/S: Tất nhiên, mỗi chúng ta đều xuất hiện trong câu chuyện này ;))</div></div>
 ]]></content>
@@ -156,9 +437,9 @@ Hôm nay vào <a href="http://gmailblog.blogspot.com/2011/11/gmails-new-look.htm
   
   <entry>
     <title type="html"><![CDATA[Sunday clip: Linux AD - What does it me]]></title>
-    <link href="http://thangola.github.io/blog/2011/06/26/sunday-clip-linux-ad-what-does-it-me/"/>
+    <link href="http://lazyadmin.me/blog/2011/06/26/sunday-clip-linux-ad-what-does-it-me/"/>
     <updated>2011-06-26T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2011/06/26/sunday-clip-linux-ad-what-does-it-me</id>
+    <id>http://lazyadmin.me/blog/2011/06/26/sunday-clip-linux-ad-what-does-it-me</id>
     <content type="html"><![CDATA[<div class='post'>
 <div>Clip rất hay và sáng tạo, nội dung thể hiện triết lý của Linux ^^. Tác phẩm lọt vào top 5 của cuộc thi &#8220;We&#8217;re Linux&#8221;.</div><div><br /></div><div><br /></div><iframe width="480" height="390" src="http://www.youtube.com/embed/qWEIQIv8zvY" frameborder="0" allowfullscreen=""></iframe><div><br /></div></div>
 <h2>Comments</h2>
@@ -174,9 +455,9 @@ nghe giọng giống châu Phi nhể ^^</div>
   
   <entry>
     <title type="html"><![CDATA[Cài đặt server SVN trên nền CentOS]]></title>
-    <link href="http://thangola.github.io/blog/2010/12/23/cai-at-server-svn-tren-nen-centos/"/>
+    <link href="http://lazyadmin.me/blog/2010/12/23/cai-at-server-svn-tren-nen-centos/"/>
     <updated>2010-12-23T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2010/12/23/cai-at-server-svn-tren-nen-centos</id>
+    <id>http://lazyadmin.me/blog/2010/12/23/cai-at-server-svn-tren-nen-centos</id>
     <content type="html"><![CDATA[<div class='post'>
 <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><a href="" name="OLE_LINK3"></a><a href="" name="OLE_LINK2"></a><a href="" name="OLE_LINK1"><span style="color: black; font-family: 'Times New Roman', serif; font-size: 12pt;"></span></a></div><blockquote></blockquote><a href="" name="OLE_LINK1"><span style="color: black; font-family: 'Times New Roman', serif; font-size: 12pt;">Subversion (SVN) là một phần mềm mã nguồn mở dùng để quản lý và kiểm tra các phiên bản mã nguồn khác nhau trong quá trình phát triển phần mềm.</span></a><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p></o:p></span><br /><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="color: black; font-family: 'Times New Roman', serif; font-size: 12pt;">Trong bài viết này tôi sẽ trình bày các bước thiết lập một máy chủ Subversion trên nền hệ điều hành CentOS. Bài hướng dẫn này bao gồm các nội dung chính:</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- Cài đặt subversion và cách tạo một repository mới<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- Thiết lập WebDAV để có thể sử dụng SVN qua giao thức HTTP<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Bạn cần hiểu về các khái niệm của SVN trước khi cài đặt. Có thể tham khảo ở link sau: </span><a href="http://svnbook.red-bean.com/en/1.5/svn.basic.html"><span style="color: blue; font-family: 'Times New Roman', serif; font-size: 12pt;">http://svnbook.red-bean.com/en/1.5/svn.basic.html</span></a><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b><br /></b></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b>1.</b> Cài đặt Subversion<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Trên Centos, cài đặt subversion rất đơn giản, bạn chỉ cần sử dụng lệnh yum:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># yum install subversion<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br /></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b>2.</b> Bước tiếp theo sẽ là tạo một repository mới. Giả sử bạn đã có thư mục </span><span style="font-family: 'Courier New'; font-size: 12pt;">/services/subversion</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">, và muốn tạo repository mới ở đây, tên là </span><span style="font-family: 'Courier New'; font-size: 12pt;">new_project</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">. Các lệnh để thiết lập như sau:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># svnadmin create &#8211;fs-type fsfs /services/subversion/repositories/new_project<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br /></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b>3.</b> Cài đặt và cấu hình </span><span courier="" new="" style="font-size: 12pt;" times="">mod_dav_svn</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> của Apache<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><i><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">WebDAV (</span></i><a href="http://andrew2.andrew.cmu.edu/rfc/rfc2518.html"><i><span style="color: blue; font-family: 'Times New Roman', serif; font-size: 12pt;">RFC 2518</span></i></a><i><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">) là một tập hợp các chuẩn mở rộng của giao thức HTTP, để cho phép nhiều người dùng có thể hợp tác sửa đổi và quản lý từ xa các file trên một webserver. Được viết dựa trên tập chuẩn WebDAV, module dav_svn của Apache cho phép chúng ta truy cập repository SVN của mình thông qua máy chủ web Apache.</span></i><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- Cài đặt </span><span style="font-family: 'Courier New'; font-size: 12pt;">mod_dav_svn</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># yum install mod_dav_svn<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- File </span><span style="font-family: 'Courier New'; font-size: 12pt;">/etc/httpd/conf.d/subversion.conf</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"></span></div><blockquote><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">LoadModule dav_svn_module     modules/mod_dav_svn.so<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">LoadModule authz_svn_module   modules/mod_authz_svn.so<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"> &lt; Location /repos/ &gt;<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  DAV svn<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  SVNParentPath /<span style="color: black;">services/subversion</span>/repositories/<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  AuthzSVNAccessFile /<span style="color: black;">services</span>/subversion/auth/acl<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  SVNListParentPath on<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  SVNPathAuthz off<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  AuthType Basic<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  AuthName &#8220;SVN Center&#8221;<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  AuthUserFile /<span style="color: black;">services</span>/subversion/auth/account<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">  Require valid-user<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">&lt;/Location &gt;</span></div></blockquote><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Các tham số quan trọng của file <span style="color: black;">subversion.conf:</span><o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Tham số </span><span style="font-family: 'Courier New'; font-size: 12pt;">Location</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> quy định URL SVN của bạn (VD: <i>http://example.com/repos/new_project</i>).<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Tham số </span><span style="color: black; font-family: 'Courier New'; font-size: 12pt;">SVNParentPath</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> khai báo đường dẫn tới thư mục chứa các repository.<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Tham số </span><span style="color: black; font-family: 'Courier New'; font-size: 12pt;">AuthUserFile</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> khai báo đường dẫn tới file chứa các tài khoản người dùng SVN.<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Giá trị của tham số  </span><span style="color: black; font-family: 'Courier New'; font-size: 12pt;">AuthzSVNAccessFile</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> là đường dẫn đầy đủ của file cấu hình ACL, có chức năng phân quyền cho người dùng.<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- Tạo thư mục auth: <o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># mkdir /<span style="color: black;">services</span>/subversion/auth<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- Tạo file tài khoản:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># touch /<span style="color: black;">services</span>/subversion/auth/account<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- Tạo file access control list:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># touch <span style="color: black;">services</span>/subversion/auth/acl<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">- Restart Apache:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># service httpd restart<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b><br /></b></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b>4.</b> Để có thể sử dụng repository </span><span style="font-family: 'Courier New'; font-size: 12pt;">new_project</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> ta đã tạo ở bước 2, cần thiết lập permission cho phép Apache sử dụng thư mục repository (giả sử Apache đang được chạy bởi user apache):<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># chown -R apache:apache /<span style="color: black;">services</span>/subversion/repositories/new_project<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># chmod -R g+w /<span style="color: black;">services</span>/subversion/repositories/new_project<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># chmod g+s /<span style="color: black;">services</span>/subversion/repositories/new_project/db<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br /></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b>5.</b> Tạo một tài khoản SVN mới bằng lệnh (hệ thống sẽ yêu cầu bạn khai báo mật khẩu cho tài khoản này):<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"># htpasswd -m /<span style="color: black;">services</span>/subversion/auth/account svn_user<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br /></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><b>6.</b> Cấp quyền truy cập cho tài khoản </span><span style="font-family: 'Courier New'; font-size: 12pt;">svn_user</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> bằng cách khai báo repository và tài khoản vào file acl như sau:<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"></span></div><blockquote><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">[new_project:/]<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;">svn_user = rw</span></div></blockquote><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Courier New'; font-size: 12pt;"><o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br /></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Như vậy, tài khoản </span><span style="font-family: 'Courier New'; font-size: 12pt;">svn_user</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"> sẽ có quyền đọc và ghi đối với repository </span><span style="font-family: 'Courier New'; font-size: 12pt;">new_project</span><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">. Bạn có thể check out repository của mình thông qua URL <i>http://example.com/repos/new_project </i>với tài khoản trên.<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Nếu bạn muốn tạo thêm một repository mới, hãy thực hiện lại các bước 2, 4, 5, 6.<o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><br /></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;">Để tìm hiểu thêm về cách cài đặt và cấu hình Subversion, bạn hãy đọc chương 5 của ebook: </span><span style="color: blue; font-family: 'Times New Roman', serif; font-size: 12pt;"><a href="http://svnbook.red-bean.com/en/1.5/svn-book.html">http://svnbook.red-bean.com/en/1.5/svn-book.html</a></span><a href="http://svnbook.red-bean.com/en/1.5/svn-book.html"></a><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p></o:p></span></div><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><br /></div><br /><div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;"><span style="font-family: 'Times New Roman', serif; font-size: 12pt;"><o:p> </o:p></span></div></div>
 <h2>Comments</h2>
@@ -192,9 +473,9 @@ I like it more ;)</div>
   
   <entry>
     <title type="html"><![CDATA[Google sắp mở Chrome Web Store]]></title>
-    <link href="http://thangola.github.io/blog/2010/12/04/google-sap-mo-chrome-web-store/"/>
+    <link href="http://lazyadmin.me/blog/2010/12/04/google-sap-mo-chrome-web-store/"/>
     <updated>2010-12-04T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2010/12/04/google-sap-mo-chrome-web-store</id>
+    <id>http://lazyadmin.me/blog/2010/12/04/google-sap-mo-chrome-web-store</id>
     <content type="html"><![CDATA[<div class='post'>
 <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://i165.photobucket.com/albums/u59/Thangola/linh%20tinh/Chromeapp.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 600px;" src="http://i165.photobucket.com/albums/u59/Thangola/linh%20tinh/Chromeapp.png" border="0" alt="" /></a><br /><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px; "><p>Đang code thì nhận được email từ team Chrome/Chromium. Như vậy là Google sắp tung ra chiêu mới: Web Store, để chọn đường cho việc kinh doanh apps trên Chrome OS sau này. Các bạn tập tành viết app dần đi, sắp bán được rồi đấy ^^.</p><p><br /></p><p><span></span></p><blockquote><p><span><i><span class="Apple-style-span" style="font-size: medium; "></span></i></span></p><h1 class="ha" style="font-family: arial, sans-serif; font-size: 16px; margin-top: 12px; margin-right: 150px !important; margin-bottom: 5px; margin-left: 10px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: rgb(0, 0, 0); background: inherit; border-right: inherit; position: relative; z-index: 10; "><span id=":q1" class="hP" style="padding-right: 10px; "><i>Upcoming Launch of the Chrome Web Store</i></span></h1><p></p><p><i>Hello!</i></p><p><span><i> </i></span></p><p><i><span>Thank you for developing for Google Chrome. These last few months, our team has been hard at work, preparing for the</span><span><a href="http://chrome.google.com/extensions" target="_blank" style="color: rgb(25, 107, 123); "> </a></span><span><a href="http://chrome.google.com/extensions" target="_blank" style="color: rgb(25, 107, 123); ">Chrome Web Store</a></span><span><a href="http://chrome.google.com/extensions" target="_blank" style="color: rgb(25, 107, 123); ">l</a></span><span>aunch later this year. Extensions and themes for Google Chrome will be part of this new store. With this email we wanted to inform you of some upcoming developments and changes in the extensions gallery and how you can best prepare the items you have listed in the gallery for the upcoming launch.</span></i></p><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>We have updated our guidelines for extension and theme creative assets</span><span>: We recommend you to produce all the creative materials described in our</span><span><a href="http://code.google.com/chrome/webstore/docs/images.html" target="_blank" style="color: rgb(25, 107, 123); "> </a></span><span><a href="http://code.google.com/chrome/webstore/docs/images.html" target="_blank" style="color: rgb(25, 107, 123); ">docs</a></span><span>. These are currently available only to apps developers but the same guidelines will apply to all items listed in the store</span><span> </span><span>once we launch. So, </span><span>if you get these prepared now, you are going to be ready when the store launches. For those of you with complex extensions, we also highly recommend investing some time in preparing videos and slideshows, describing how your extensions work.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="2" style="margin-left: 15px; "><i><span>Double-check our </span><span><a href="http://code.google.com/chrome/webstore/branding.html" target="_blank" style="color: rgb(25, 107, 123); ">branding policies</a></span><span>: If you are using Google trademarks and brand names to describe your items, please take a moment to re-read our branding policies to help you avoid common mistakes.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>Verify your listed items using Google’s Webmaster Tools</span><span>: This new feature allows you to associate your website with the items you have posted in the store. This will make users more comfortable trying them out. Access this feature at the</span><span><a href="https://chrome.google.com/extensions/developer/dashboard" target="_blank" style="color: rgb(25, 107, 123); "> </a></span><span><a href="https://chrome.google.com/extensions/developer/dashboard" target="_blank" style="color: rgb(25, 107, 123); ">developer dashboard</a></span><span>.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>Set up your Google Checkout merchant account and associate it with your developer account</span><span>: If you are </span><span>located in the US</span><span> and want to sell apps and eventually extensions or themes through the store, you’ll need to register for a Google Checkout merchant account. You can find more information on this new </span><span><a href="http://www.google.com/support/chrome/bin/answer.py?answer=96832" target="_blank" style="color: rgb(25, 107, 123); ">help article</a></span><span>.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>Make your extensions more discoverable:</span><span> We will be launching a robust system of extensions categories in the gallery. You now have the option to classify your extension in up to three of these categories through the developer dashboard. This will help your extension be discovered by users who will be browsing the pages for each category.</span></i></li></ol><p><span><i> </i></span></p><p><span><i>Thank you again for making Google Chrome a better browser.</i></span></p><p><span><i> </i></span></p><p><span><i>The Google Chrome Extensions team</i></span></p></blockquote><p><span></span></p></span></div>
 <h2>Comments</h2>
@@ -210,9 +491,9 @@ I like this ;))</div>
   
   <entry>
     <title type="html"><![CDATA[Bảo vệ mắt tốt hơn với Redshift]]></title>
-    <link href="http://thangola.github.io/blog/2010/06/02/bao-ve-mat-tot-hon-voi-redshift/"/>
+    <link href="http://lazyadmin.me/blog/2010/06/02/bao-ve-mat-tot-hon-voi-redshift/"/>
     <updated>2010-06-02T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2010/06/02/bao-ve-mat-tot-hon-voi-redshift</id>
+    <id>http://lazyadmin.me/blog/2010/06/02/bao-ve-mat-tot-hon-voi-redshift</id>
     <content type="html"><![CDATA[<div class='post'>
 Bạn là người làm việc với máy tính? Bạn sử dụng máy nhiều hơn 10 giờ mỗi ngày? Và mỗi tối bạn có hơn 5 tiếng dùng máy? Mắt bạn luôn ở trong trạng thái mệt mỏi hoặc buồn ngủ do ánh sáng từ màn hình máy tính. Hãy thử sử dụng phần mềm <a href="http://jonls.dk/redshift/">Redshift</a>. Redshift sẽ tinh chỉnh nhiệt độ màu của màn hình cho phù hợp với ánh sáng xung quanh bạn, dựa vào toạ độ địa lý của bạn. <div><br /></div><div>Vào ban đêm, nhiệt độ màu sẽ được chỉnh cho phù hợp với nhiệt độ màu của đèn trong phòng (khoảng 3700K đối với bóng dây tóc). Ban ngày, nhiệt độ màu sẽ tương ứng với nhiệt độ màu của ánh sáng tự nhiên, khoảng 5500K - 6500K (mặc định là 5500K). Ánh sáng sẽ có nhiệt độ cao hơn vào những ngày nhiều mây. Khi nhiệt độ màu màn hình phù hợp với nhiệt độ màu của ngoại cảnh, mắt bạn sẽ không còn cảm giác mệt mỏi do làm việc lâu bên máy tính nữa.</div><div><br /></div><div>Để cài đặt Redshift cho Ubuntu Lucid và Karmic, bạn có thể thêm repository và cài như sau:</div><div><span class="Apple-style-span"   style="  color: rgb(51, 51, 51); line-height: 19px; font-family:Arial, Tahoma, Verdana;font-size:12px;"><ul><li><b><span class="Apple-style-span"  style="font-family:'courier new';">sudo add-apt-repository</span></b><span class="Apple-style-span"  style="font-family:'courier new';"> </span><strong><span class="Apple-style-span"  style="font-family:'courier new';">ppa:jonls/redshift-ppa</span></strong></li><li><strong><span class="Apple-style-span"  style="font-family:'courier new';">sudo apt-get update &amp;&amp; sudo apt-get install redshift</span></strong></li></ul></span></div><div>Sau khi cài đặt thành công, bạn vào website <a href="http://www.getlatlon.com/">http://www.getlatlon.com/</a> để lấy vĩ độ và kinh độ chính xác nơi bạn ở. Ví dụ, toạ độ ở Yên Phụ, Hà Nội là khoảng (21.1, 105.9). Sau đó, bạn mở một cửa sổ Terminal và chạy lệnh sau để redshift hoạt động:</div><div><ul><li><span class="Apple-style-span"   style="font-size:100%;color:#333333;"><span class="Apple-style-span"  style=" line-height: 19px;font-size:12px;"><b><span class="Apple-style-span"  style="font-family:'courier new';">gtk-redshift -l 21.1:105:9 </span></b></span></span></li></ul></div><div>Để chương trình có thể chạy lúc khởi động, bạn thêm lệnh trên vào danh mục các ứng dụng chạy start-up (<span class="Apple-style-span"   style="  color: rgb(51, 51, 51); line-height: 19px; font-family:Arial, Tahoma, Verdana;font-size:12px;"><em class=" aptureTMMSelection">System > Preferences > Start-up Application</em></span>). </div><div><br /></div><div>Bạn có thể sử dụng tham số -t để thay đổi nhiệt độ màu mặc định của redshift. Ví dụ:</div><span class="Apple-style-span"   style="  color: rgb(51, 51, 51); font-weight: bold; line-height: 19px; font-family:Arial, Tahoma, Verdana;font-size:12px;"><ul><li><span class="Apple-style-span"  style="font-family:'courier new';">gtk-redshift  -l  21.1:105:9 -t 6700:4700</span></li></ul></span><div>Trong đó 6700 là nhiệt độ màu ban ngày, 4700 là nhiệt độ màu ban đêm. Mình thấy để nhiệt độ là 6700:4700 sẽ vừa với mắt hơn ^^ (mặc định là 5500:3700).</div><div><br /></div><div>Bạn cũng có thể tạm thời tắt redshift để xem ảnh hoặc phim với màu sắc thực bằng cách kích chuột vào biểu tượng của redshift trên khay hệ thống.</div><br /><br />Chúc các bạn sức khoẻ để thành công ^^.</div>
 <h2>Comments</h2>
@@ -228,72 +509,11 @@ Lâu rùi mới ghé thăm blog của bạn. ^_^<br />Mời bạn <a href="http:
   
   <entry>
     <title type="html"><![CDATA[Sunday clip: Linux everything is possible]]></title>
-    <link href="http://thangola.github.io/blog/2010/05/30/linux-everything-is-possible/"/>
+    <link href="http://lazyadmin.me/blog/2010/05/30/linux-everything-is-possible/"/>
     <updated>2010-05-30T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2010/05/30/linux-everything-is-possible</id>
+    <id>http://lazyadmin.me/blog/2010/05/30/linux-everything-is-possible</id>
     <content type="html"><![CDATA[<div class='post'>
 <object height="385" width="480"><param name="movie" value="http://www.youtube.com/v/bSEGj3PK4Is&amp;hl=en_US&amp;fs=1&amp;"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/bSEGj3PK4Is&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="385" width="480"></embed></object><br /><br />Imagine a place, where everyone can by fly ^^&#8230;</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sunday clip: Linux Sets You Free]]></title>
-    <link href="http://thangola.github.io/blog/2010/05/23/sunday-clip-linux-sets-you-free/"/>
-    <updated>2010-05-23T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2010/05/23/sunday-clip-linux-sets-you-free</id>
-    <content type="html"><![CDATA[<div class='post'>
-<div><br /></div><object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/8bVDQ4rVrM4&amp;hl=en_US&amp;fs=1&amp;"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/8bVDQ4rVrM4&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object><div><br /></div><div>Bài hát vui nhộn được sáng tác và thể hiện bởi Scott Dastrup. </div></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Những phần mềm nào sẽ được cài mặc định cho Ubuntu Netbook Edition 10.10?]]></title>
-    <link href="http://thangola.github.io/blog/2010/05/14/nhung-phan-mem-nao-se-uoc-cai-mac-inh/"/>
-    <updated>2010-05-14T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2010/05/14/nhung-phan-mem-nao-se-uoc-cai-mac-inh</id>
-    <content type="html"><![CDATA[<div class='post'>
-<div style="text-align: center;"><br /></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/unity-2.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 640px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/unity-2.png" border="0" alt="" /></a><br /><a href="https://blueprints.edge.launchpad.net/ubuntu/+spec/desktop-maverick-une-app-selection">Bản kế hoạch các phần mềm mặc định</a> cho Ubuntu Netbook Edition 10.10 (UNE 10.10) vừa được đưa lên Launchpad ngày hôm nay. Tất nhiên danh sách này vẫn đang trong quá trình thảo luận, và có thể có những thay đổi nếu cần ^^.<div><br /></div><div>Đầu tiên là<b> trình duyệt web</b>. Trình duyệt mặc định cho UNE 10.10 sẽ là <a href="http://code.google.com/chromium/">Chromium</a>, phần mềm nguồn mở do Google hậu thuẫn. Bản kế hoạch viết rằng Chromium sẽ là trình duyệt mặc định cho đến bản Alpha3, nếu như nó phù hợp với kích thước của đĩa LiveCD. Chromium cũng còn một số vấn đề khác cần xem xét. Các vấn đề này chủ yếu liên quan đến sự tương thích về phần mềm (in ấn, <span class="Apple-style-span"   style="  line-height: 17px; font-family:'dejavu sans', 'bitstream vera sans', verdana, sans-serif;font-size:14px;">ffmepg, openjdk,&#8230;</span>) cũng như giao diện (menu, buttons). Nếu Chromium không được chọn, trình duyệt mặc định sẽ là Midori.</div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /><img src="http://yorba.org/static/images/shotwell/shotwell1.jpg" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 640px; " /></span></div><div><br /></div><div><a href="http://yorba.org/shotwell/">Shotwell</a> nhiều khả năng sẽ được chọn làm trình <b>quản lý ảnh</b>. Shotwell tương đối nhẹ, và tương thích khá tốt với các dịch vụ. Đây là trình quản lý ảnh duy nhất trên Gnome hiện có thể tương tác với cả Picasa, Flick và Facebook.</div><div><br /></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><img src="http://projects.gnome.org/gnumeric/images/gnumeric-sample.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 640px; " /></span></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /></span></div><div><b>Bộ công cụ văn phòng</b> OpenOffice sẽ được thay thế bởi ba phần mềm tương ứng là Abiword, <a href="http://projects.gnome.org/gnumeric/">Gnumeric</a> và <a href="http://blogs.gnome.org/racarr/2010/04/20/introducing-glide-presentations-for-gnome/">Glide</a>. Cũng như Ubuntu 10.04, Zoho sẽ vẫn được cung cấp kèm theo, tuy nhiên nhược điểm của dịch vụ này là không phục vụ chỉnh sửa ngoại tuyến! </div><div><br /></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /><img src="http://download.banshee-project.org/shots/1.5.1/banshee-autodj.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 600px; height: 369px; " /></span></div><div><br /></div><div>Về <b>chương trình multimedia</b>, khả năng Banshee được chọn vẫn cao nhất. Trình chơi nhạc của Moblin (<span class="Apple-style-span"   style="  line-height: 17px; font-family:'dejavu sans', 'bitstream vera sans', verdana, sans-serif;font-size:14px;">hornsey</span>) đã bị bỏ rơi. XBMC tuy tốt nhưng lại không sử dung gstreamer. Vấn đề của Banshee chỉ là liệu nó có phù hợp với đĩa LiveCD (lại vấn đề dung lượng ^.-). </div><div><br /></div><div>Cuối cùng, nhóm phát triển vẫn đang thảo luận về việc trình khách email nào sẽ được cài mặc định. Có vẻ như họ sẽ tuỳ biến lại Evolution cho phù hợp với netbook. Đã có một bản tuỳ biến của Evolution là <span class="Apple-style-span"   style="  ;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;"><a href="http://live.gnome.org/Evolution/Art" style="color: rgb(23, 57, 75); text-decoration: underline; font-weight: bold; ">Evolution Express</a></span>, nhưng hình như có nhiều người không thích nó.</div><div><br /></div><div>Về phần mình, mình vẫn khoái nghe nhạc bằng Rthymbox, Symphony cho tác vụ văn phòng và webmail + 1 tool notify cho thư điện tử :&#8221;>.</div></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Anonymous</div>
-<div class='content'>
-Nhìn trông giống bản dành cho smart phone quá :)). k0 giống ubuntu thường nữa. Đâm hơi chán</div>
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Cần làm gì sau khi cài Ubuntu: Chạy script này ngay]]></title>
-    <link href="http://thangola.github.io/blog/2010/05/09/can-lam-gi-sau-khi-cai-ubuntu-chay/"/>
-    <updated>2010-05-09T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2010/05/09/can-lam-gi-sau-khi-cai-ubuntu-chay</id>
-    <content type="html"><![CDATA[<div class='post'>
-<div><br /></div>Script được viết bởi Andrew[at]webupd8.org, Mục đích của script này là đơn giản hoá việc cấu hình mọi thứ của Lucid ngay sau khi cài đặt. Việc cấu hình bao gồm tự động mount các ổ NTFS lúc khởi động, thêm các kho (repository) bổ sung như Medibuntu hay GetDeb, xoá các gói không cần thiết, cài đặt các phần mềm quan trọng (VLC, Chrome, Dropbox,&#8230;) cho đến những tinh chỉnh nhỏ như chuyển windows button về bên trái theo kiểu Karmic, tắt âm thanh đăng nhập hoặc đổi ngày đầu tuần thành Thứ 2 thay vì chủ Nhật,&#8230;<br /><br />Nhờ script, chúng ta có thể tiến hành nhanh chóng và đơn giản những công việc mà ta có thể phải tốn hàng chục câu lệnh.<br /><br />Phiên bản mới nhất 0.4.9.1 đã hỗ trợ tiếng Việt. Các bạn có thể tải về từ địa chỉ:<br /><a href="http://launchpad.net/ubuntustart/0.4.x/0.4.9/+download/ubuntu-10.04-start-0.4.9.1.tar.gz">http://launchpad.net/ubuntustart/0.4.x/0.4.9/+download/ubuntu-10.04-start-0.4.9.1.tar.gz</a><br /><br />Một vài screenshot:<br /><br /><div><a href="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/Lucid-start-script-1.png"><br /><img src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/Lucid-start-script-1.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 499px; height: 691px; " /></a><a href="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/Lucid-start-script-2.png"><br /><img src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/Lucid-start-script-2.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 647px; height: 542px; " /></a><br /></div></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Tìm hiểu những cải tiến của KDE SC 4.4b]]></title>
-    <link href="http://thangola.github.io/blog/2009/12/15/beta-1-la-ban-thu-nghiem-moi-nhat-cua/"/>
-    <updated>2009-12-15T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2009/12/15/beta-1-la-ban-thu-nghiem-moi-nhat-cua</id>
-    <content type="html"><![CDATA[<div class='post'>
-Beta 1 là bản thử nghiệm mới nhất của KDE SC 4.4. Tin rằng nó sẽ có nhiều cải tiến, tôi đã cài thử lên OpenSUSE 11.2 và làm việc trên đó liên tục trong vài ngày gần đây. Và giờ đây tôi xin được tổng hợp một số tính năng mới của bản KDE này (Video demo có ở cuối bài viết này).<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/kdesc-44-window-tabbed-3.png"><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; width: 700px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/kdesc-44-window-tabbed-3.png" alt="" border="0" /></a><br /><br />Bản 4.4 beta là bản đầu tiên sử dụng tên mới KDE SC (KDE Software Compilation) [*], thay cho tên cũ là KDE desktop environment. Ở phiên bản này, nhóm phát triển đã xây dựng những tính năng mới rất thú vị.<br /><br />Nếu bạn rất thích cách bố trí tab trên title bar của Google Chrome, hãy nghía qua bức ảnh sau của Mozilla FireFox trên KDE SC 4.4, và chú ý vào thanh tiêu đề của cửa sổ:<br /><br /><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; width: 700px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/kdesc-44-window-tabbed-1.png" alt="" border="0" /><br /><br /><br />Bạn nghĩ rằng Mozilla đã cải tiến giao diện cho FF? Không. Đây là tính năng &#8220;Tabbed windows&#8221; của KWin. Tính năng này cho phép người dùng nhóm các cửa sổ khác nhau vào một group hiển thị dạng tab. Điều này thực sự tiện lợi khi người dùng phải làm việc với rất nhiều cửa sổ đồng thời.<br /><br /><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/kdesc-44-window-tabbed-2.png" alt="" border="0" /><br /><br /><br />Cũng như KWin, Plasma cũng đã có rất nhiều thay đổi. Folder Viewer đã được cải tiến đến mức tiện lợi nhất, giúp chúng ta có thể view một file ở bất kỳ thư mục nào mà không tốn đến một lần click chuột:<br /><br /><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; width: 700px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/kde-44-folder-viewer.png" alt="" border="0" /><br /><br /><br />Hộp thoại Add Widgets đã được thay đổi, tích hợp xuống đáy màn hình, gọn gàng và tiện dụng:<br /><br /><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; width: 700px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/112-snapshot8.png" alt="" border="0" /><br /><br /><br />Trong khi đó, hộp thoại Run lại được chuyển lên trên, tích hợp tính năng search desktop được cung cấp bởi dự án Nepomuk:<br /><br /><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/kdesc-44-runbox-1.png" alt="" border="0" />      <img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/kdesc-44-runbox-2.png" alt="" border="0" /><br /><br /><br />Từ phiên bản KDE 4.0, nhóm phát triển đã muốn thay đổi khái niệm Desktop truyền thống, bản chất là một thư mục bình thường. Để làm điều đó, họ đã đưa ra khái niệm Activity, kèm theo đó là các Widgets. KDE SC 4.4 đã cụ thể hóa khái niệm này. Một desktop có thể được cài đặt trở thành một trong 3 loại Activity:<br />- Desktop Activity: Là Desktop trong các version trước của KDE4: Một không gian và chúng ta thêm thoải mái các Widgets để có các chức năng mong muốn.<br />- Search and Launch Activity: Activity này cho phép chúng ta search và khởi động các chương trình trên máy cá nhân một cách nhanh nhất.<br />- News Activity: Activity này được tối ưu cho việc đọc tin (RSS, microblog,&#8230;) bằng việc chia các Widgets tin tức vào hai cột. Tuy nhiên chức năng này chưa được hoàn thiện (còn khá nhiều bug).<br /><br /><span style="font-style: italic;">Desktop Activity:</span><br /><br /><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; width: 700px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/112-snapshot7.png" alt="" border="0" /><br /><br /><br /><span style="font-style: italic;">Search and Launch Activity:</span><br /><br /><img style="display: block; margin: 0px auto 10px; text-align: center; cursor: pointer; width: 700px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/112-snapshot4-1.png" alt="" border="0" /><br /><br />Ngoài ra, các ứng dụng khác trong KDE SC 4.4 như Dolphin, Konsole, Knotifier, Klipper cũng có nhiều thay đổi tích cực. Để có những trải nghiệm cụ thể, bạn hãy cài thử lên VirtualBox ^^.<br /><br />Have fun ^^.<br /><br /><a name="comment">[*]</a> Nhãn hiệu KDE đã được xác định lại từ <span style="font-weight: bold;">&#8220;K Desktop Environment&#8221;</span> thành <strong>&#8220;KDE Software Compilation&#8221;</strong>, thể hiện rằng KDE hiện nay không còn là một phần mềm như trước, mà đã trở thành một tập hợp các phần mềm xây dựng trên một nền tảng chung (KDE Platform).<br /><br /><span style="font-weight: bold;">Update:</span> Video giới thiệu tính năng của KDE SC 4.4<br /><br />Part I:<br /><br /><object height="385" width="640"><param name="movie" value="http://www.youtube.com/v/aEuapaLJF8g&amp;hl=en_US&amp;fs=1&amp;color1=0x234900&amp;color2=0x4e9e00"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/aEuapaLJF8g&amp;hl=en_US&amp;fs=1&amp;color1=0x234900&amp;color2=0x4e9e00" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" height="385" width="640"></embed></object><br /><br /><br />Part II:<br /><br /><object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/WrcIUkQnYjk&hl=en_US&fs=1&color1=0x234900&color2=0x4e9e00"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/WrcIUkQnYjk&hl=en_US&fs=1&color1=0x234900&color2=0x4e9e00" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Anonymous</div>
-<div class='content'>
-win 7 van la nhat<br />-dai ca cua chu&#39;-</div>
-</div>
-<div class='comment'>
-<div class='author'>sunflower</div>
-<div class='content'>
-Mặc dù bài viết còn nhiều bug (tác giả đã sửa) nhưng cũng chúc mừng bạn Phạm Duy Thăng vì đã trở lại với blog sau 6 tháng vắng bóng ;))</div>
-</div>
-</div>
 ]]></content>
   </entry>
   

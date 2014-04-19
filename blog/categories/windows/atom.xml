@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: windows | just some lazy admins]]></title>
-  <link href="http://thangola.github.io/blog/categories/windows/atom.xml" rel="self"/>
-  <link href="http://thangola.github.io/"/>
-  <updated>2014-01-05T00:01:36+07:00</updated>
-  <id>http://thangola.github.io/</id>
+  <link href="http://lazyadmin.me/blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-04-19T23:17:56+07:00</updated>
+  <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Truy cập phân vùng Linux từ Windows]]></title>
-    <link href="http://thangola.github.io/blog/2008/11/01/truy-cp-phn-vng-linux-t-windows/"/>
+    <link href="http://lazyadmin.me/blog/2008/11/01/truy-cp-phn-vng-linux-t-windows/"/>
     <updated>2008-11-01T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2008/11/01/truy-cp-phn-vng-linux-t-windows</id>
+    <id>http://lazyadmin.me/blog/2008/11/01/truy-cp-phn-vng-linux-t-windows</id>
     <content type="html"><![CDATA[<div class='post'>
 Bạn dùng song song 2 hệ điều hành Windows và Linux? Trong Linux có thể truy cập phân vùng NTFS bằng NTFS-3G, thật là dễ dàng. Nhưng từ Windows nếu muốn truy cập vào phân vùng ext2, ext3 thì bạn phải làm thế nào? Thực ra là có khá nhiều cách, và đều không phức tạp hơn NTFS-3G. Bài viết này tớ sẽ giới thiệu 2 phương pháp đơn giản và hiệu quả nhất ^^.<br /><br /><span style="font-weight: bold;">1. Ext2 Installable File System (Ext2IFS)</span><br />Bạn có thể download phần mềm này từ địa chỉ: <a href="http://www.fs-driver.org/index.html">http://www.fs-driver.org/index.html</a>.<br /><br />Quá trình cài đặt rất đơn giản, bộ cài đặt sẽ tự scan (các) ổ cứng của bạn và hiển thị tất cả các phân vùng như hình dưới. Bạn có thể chọn chữ cái cho các phân vùng bạn muốn sử dụng.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_7HQMEKpIxtQ/SQyCavxhdTI/AAAAAAAAAJ4/FI6a6yzjF5s/s1600-h/Ext2IFS.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 461px; height: 265px;" src="http://2.bp.blogspot.com/_7HQMEKpIxtQ/SQyCavxhdTI/AAAAAAAAAJ4/FI6a6yzjF5s/s400/Ext2IFS.jpg" alt="" id="BLOGGER_PHOTO_ID_5263725460501656882" border="0" /></a><br />Sau khi chọn Next, bộ cài sẽ hiển thị phần Release note của version. Phần này có rất nhiều thông tin có ích, các bạn nên đọc kỹ:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_7HQMEKpIxtQ/SQyCbVAPnxI/AAAAAAAAAKA/zn6c0lPLTXo/s1600-h/Ext2IFS-Readme.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 396px;" src="http://3.bp.blogspot.com/_7HQMEKpIxtQ/SQyCbVAPnxI/AAAAAAAAAKA/zn6c0lPLTXo/s400/Ext2IFS-Readme.jpg" alt="" id="BLOGGER_PHOTO_ID_5263725470495514386" border="0" /></a><br />Và đây là kết quả ^^:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_7HQMEKpIxtQ/SQyJSQRiciI/AAAAAAAAAKQ/ATK_e4AdxxM/s1600-h/Ext2IFS-Explorer.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 473px; height: 432px;" src="http://2.bp.blogspot.com/_7HQMEKpIxtQ/SQyJSQRiciI/AAAAAAAAAKQ/ATK_e4AdxxM/s400/Ext2IFS-Explorer.jpg" alt="" id="BLOGGER_PHOTO_ID_5263733011188445730" border="0" /></a><br />Ưu điểm: Truy cập dễ dàng với Windows Explorer như là một phân vùng Windows ^^. Có thể tùy biến quyền ReadOnly hoặc không :D.<br />Nhược điểm: Chỉ hỗ trợ số inode tối đa là 128bytes, do đó chỉ hoạt động tốt với phân vùng Ext2 và cả Ext3 nếu Ext3 được format dưới dạng số inode 128bytes (tham số -i của lệnh mkfs.ext3).<br />* Khuyến cáo: Nếu bạn sử dụng Windows Vista, hãy tắt tính năng User Account Control để đảm bảo không xảy ra lỗi khi truy cập phân vùng Linux .<br /><br /><span style="font-weight: bold;">2. Total Commander + Plugin <span style="font-style: italic;">ext2+reiser</span></span><br />(Nguồn: <a href="http://tuyetkiem.wordpress.com/2008/10/28/l%E1%BA%A5y-d%E1%BB%AF-li%E1%BB%87u-%E1%BB%9F-phan-vung-linux-t%E1%BB%AB-windows/">http://tuyetkiem.wordpress.com/2008/10/28/l%...B-windows/</a>)<br /><br />Nếu bạn đã khá quen với sự tiện dụng của Total Commader (TC) thì có một plug-in khá hữu ích, bổ sung cho TC tính năng truy cập các định dạng phân vùng Linux như ext2, ext3, reiserfs.<br /><br />Bạn có thể download plugin trên ở đây: <a href="http://www.ghisler.com/plugins.htm">http://www.ghisler.com/plugins.htm</a>.<br /><br />Ưu điểm: Sử dụng tốt với các phân vùng định dạng ext2, ext3 (ReiserFs thì tớ không có điều kiện kiểm chứng). Tận dụng được sự tiện dụng của TC.<br />Nhược điểm: Hơi chậm :D.</div>
 
@@ -26,9 +26,9 @@ Bạn dùng song song 2 hệ điều hành Windows và Linux? Trong Linux có th
   
   <entry>
     <title type="html"><![CDATA[Top secret routine of Microsoft Vista]]></title>
-    <link href="http://thangola.github.io/blog/2008/10/30/top-secret-routine-of-microsoft-vista/"/>
+    <link href="http://lazyadmin.me/blog/2008/10/30/top-secret-routine-of-microsoft-vista/"/>
     <updated>2008-10-30T00:00:00+07:00</updated>
-    <id>http://thangola.github.io/blog/2008/10/30/top-secret-routine-of-microsoft-vista</id>
+    <id>http://lazyadmin.me/blog/2008/10/30/top-secret-routine-of-microsoft-vista</id>
     <content type="html"><![CDATA[<div class='post'>
 That's Vista =))<br /><blockquote style="font-family: courier new;"><div class="codetop">CODE</div><div class="codemain"><!--ec1-->    /*<br />    TOP SECRET Microsoft(c) Project:Longhorn(TM) SP1<br />    Estimated release date:2008<br />    */<br />    #include “win95.h”<br />    #include “win98.h”<br />    #include “leopard.h”<br /><br />    char chew_up_some_ram[10000000];<br /><br />    void main () {<br />    while (!CRASHED) {<br /><br />    if (first_time_install) {<br />    make_10_gigabyte_swapfile();<br />    do_nothing_loop();<br />    search_and_destroy(FIREFOX | OPENOFFICEORG | ANYTHING_GOOGLE);<br />    hang_system();<br />    }<br /><br />    if (still_not_crashed) {<br />    basically_run_windows_xp();<br />    do_nothing_loop();<br />    }<br />    }<br /><br />    if (!DX10GPU()) {<br />    set_graphics(aero, very_slow);<br />    set_mouse(reaction, sometimes);<br />    }<br /><br />    // printf(”Welcome to Windows 2000″);<br />    // printf(”Welcome to Windows XP”);<br />    printf(”Welcome to Windows Vista”);<br /><br />    while (something) {<br />    sleep(10);<br />    get_user_input();<br />    sleep(10);<br />    act_on_user_input();<br />    sleep(10);<br />    flicker_led_promisingly(hard_disk);<br />    }<br /><br />    creat_general_protection_fault();<br />    }<!--c2--></div><!--ec2--> <!--IBF.ATTACHMENT_229848-->        <br /></blockquote>(From <a href="http://silverhat.wordpress.com/2008/04/08/windows-vista-code-revealed/">http://silverhat.wordpress.com/2008/04/08/windows-vista-code-revealed/</a>)</div>
 

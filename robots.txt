@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://thangola.github.io/sitemap.xml 
+Sitemap: http://lazyadmin.me/sitemap.xml 
