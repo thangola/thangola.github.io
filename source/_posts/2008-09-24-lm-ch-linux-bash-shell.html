@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Làm chủ Linux Bash shell với kí tự"
+date: 2008-09-24
+comments: false
+categories:
+ - linux
+ - làm chủ Bash shell
+ - tutorial
+---
+
+<div class='post'>
+<span class="Apple-style-span" style="color: rgb(34, 34, 34); font-weight: bold; line-height: 19px;font-family:Verdana;font-size:48;"  ><span class="Apple-style-span" style="font-weight: normal;font-size:12;" >- <i>Cú pháp:</i> !{Some chars} <i></i></span></span><div><span class="Apple-style-span" style="color: rgb(34, 34, 34); font-weight: bold; line-height: 19px;font-family:Verdana;font-size:48;"  ><span class="Apple-style-span" style="font-weight: normal;font-size:12;" ><i>Ý nghĩa:</i> gọi và thực thi lệnh gần nhất trong đã thực thi có phần bắt đầu là {some chars}</span></span></div><div><span class="Apple-style-span" style="color: rgb(34, 34, 34); font-weight: bold; line-height: 19px;font-family:Verdana;font-size:48;"  ><span class="Apple-style-span" style="font-weight: normal;font-size:12;" ><br /><div class="codetop" style="margin: 0px auto; padding: 3px; background-image: url(http://www.fotech.org/forum/style_images/fotech/css_img_code.gif); background-repeat: no-repeat; background-color: rgb(253, 219, 204); color: rgb(0, 0, 0); font-weight: bold; background-position: 100% 50%;">CODE</div><div class="codemain" style="border: 1px dotted rgb(0, 0, 0); margin: 0px auto; padding: 2px; background-color: rgb(250, 252, 254); color: rgb(70, 85, 132); font-family: 'Courier New',Courier,Verdana,Arial;">$ cat /home/mrpc/workspace/learning-bash/test.txt<br />dong thu nhat<br />$ echo "bo sung them dong thu hai" >> ~/test.txt<br />$!cat<br />cat /home/mrpc/workspace/learning-bash/test.txt<br />dong thu nhat<br />bo sung them dong thu hai</div>- <i>Cú pháp:</i> {tên lệnh} [danh sách tham số | !$]<br /><i>Ý nghĩa</i>: Gọi lệnh và thay tham số !$ trong danh sách tham số bằng tham số cuối cùng của lệnh vừa gõ<br /><div class="codetop" style="margin: 0px auto; padding: 3px; background-image: url(http://www.fotech.org/forum/style_images/fotech/css_img_code.gif); background-repeat: no-repeat; background-color: rgb(253, 219, 204); color: rgb(0, 0, 0); font-weight: bold; background-position: 100% 50%;">CODE</div><div class="codemain" style="border: 1px dotted rgb(0, 0, 0); margin: 0px auto; padding: 2px; background-color: rgb(250, 252, 254); color: rgb(70, 85, 132); font-family: 'Courier New',Courier,Verdana,Arial;">$ touch /home/mrpc/workspace/learning-bash/ten.file.rat.la.dai.txt<br />$ echo "dong dau tien" >> !$<br />$ cat !$<br />dong dau tien</div><br /></span></span></div></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Nguyễn Thành Hải</div>
+<div class='content'>
+Tuyệt quá anh Thắng ơi, mấy cái này bây giờ em mới thấy đó :D</div>
+</div>
+</div>
