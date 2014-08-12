@@ -4,7 +4,7 @@
   <title><![CDATA[just some lazy admins]]></title>
   <link href="http://lazyadmin.me/atom.xml" rel="self"/>
   <link href="http://lazyadmin.me/"/>
-  <updated>2014-08-12T14:17:04+07:00</updated>
+  <updated>2014-08-12T14:25:03+07:00</updated>
   <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
@@ -19,7 +19,7 @@
     <updated>2014-08-12T14:08:37+07:00</updated>
     <id>http://lazyadmin.me/blog/2014/08/12/python-quan-ly-ket-noi-mysql</id>
     <content type="html"><![CDATA[<p>Khi sử dụng Python để code 1 vài tool hay script với Mysql,tornado&hellip;. mình hay gặp lỗi &ldquo;Dealing with OperationalError 2006, &lsquo;MySQL server has gone away&rdquo;. Cái này do kết nối giữa mysql
-và python bị timeout, lúc gọi lại hàm thì nó chưa được reconnect.Dưới đây là đoạn code đơn giản để bạn &ldquo;&#8221;avoid&rdquo; chuyện đấy:</p>
+và python bị timeout, lúc gọi lại hàm thì nó chưa được reconnect.Dưới đây là đoạn code đơn giản để bạn <strong>avoid</strong> chuyện đấy:</p>
 
 <pre><code>
 import MySQLdb
@@ -66,8 +66,8 @@ Sau đây là các bước để vào single mode trong ubuntu 12.04 ( 14.04 cũ
 <p>Bước 1: Lúc bật máy lên bạn giữ phím shift  để vào màn hình grub2 load  <br />
 Bước 2: Chọn phiên bản kernel  <br />
 Bước 3: Nhấn e để edit các tham số trong grub2  <br />
-Bước 4: Chuyển con trỏ xuống cuối dòng bắt đầu bằng <strong>linux /boot/vmlinuz&hellip;&hellip;</strong>   <br />
-Bước 5: Thay các từ như <strong>[&lsquo;ro&rsquo;, &lsquo;quiet&rsquo;, &lsquo;spalsh&rsquo;]</strong> bằng cụm sau <strong>rw init=/bin/bash</strong>  <br />
+Bước 4: Chuyển con trỏ xuống cuối dòng bắt đầu bằng <code>linux /boot/vmlinuz......</code>   <br />
+Bước 5: Thay các từ như <strong>[&lsquo;ro&rsquo;, &lsquo;quiet&rsquo;, &lsquo;spalsh&rsquo;]</strong> bằng cụm sau <code>rw init=/bin/bash</code>  <br />
 Bước 6: Nhấn Ctrl + x để boot với chế độ single mode  <br />
 Bước 7: thích làm gì thì làm.hihi :&ndash;)  <br />
 Bước 8: sync &amp; reboot <br /></p>

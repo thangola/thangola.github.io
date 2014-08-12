@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Python: quản lý kết nối MySQL - just some lazy admins</title>
+	<title>Category: python - just some lazy admins</title>
 	<meta name="author" content="Thang Pham">
 
 	
-	<meta name="description" content="Khi sử dụng Python để code 1 vài tool hay script với Mysql,tornado&hellip;. mình hay gặp lỗi &ldquo;Dealing with OperationalError 2006, &lsquo;MySQL &hellip;">
+	<meta name="description" content="Category: python">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,90 +77,32 @@
 	
 		
 	
-	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Python: quản lý kết nối MySQL</h2>
-	<div class="entry-content"><p>Khi sử dụng Python để code 1 vài tool hay script với Mysql,tornado&hellip;. mình hay gặp lỗi &ldquo;Dealing with OperationalError 2006, &lsquo;MySQL server has gone away&rdquo;. Cái này do kết nối giữa mysql
-và python bị timeout, lúc gọi lại hàm thì nó chưa được reconnect.Dưới đây là đoạn code đơn giản để bạn <strong>avoid</strong> chuyện đấy:</p>
-
-<pre><code>
-import MySQLdb
-
-class DB:
-  conn = None
-
-  def connect(self):
-    self.conn = MySQLdb.connect()
-
-  def query(self, sql):
-    try:
-      cursor = self.conn.cursor()
-      cursor.execute(sql)
-    except (AttributeError, MySQLdb.OperationalError):
-      self.connect()
-      cursor = self.conn.cursor()
-      cursor.execute(sql)
-    return cursor
-
-db = DB()
-sql = "SELECT * FROM foo"
-cur = db.query(sql)
-# wait a long time for the Mysql connection to timeout
-cur = db.query(sql)
-# still works
-
-</code></pre>
-
-</div>
+	<div id="content" class="inner">
+	
 
 
-<div class="meta">
-	<div class="date">
+	
+	
+	<section class="archives"><h1 class="year">2014</h1>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-12T14:08:37+07:00" pubdate data-updated="true">Aug 12<span>th</span>, 2014</time></div>
-	<div class="tags">
+<article>
+	<h2 class="title"><a href="/blog/2014/08/12/python-quan-ly-ket-noi-mysql/">Python: quản lý kết nối MySQL</a></h2>
+	<div class="meta">
+		<div class="date">Aug 12</div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/python/'>python</a>
 
 
 </div>
-	
-</div>
-</article>
-
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-		
-		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-		
-		
-		<a class="addthis_button_tweet"></a>
-		
-		
-		<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-		
-		
+	    
 	</div>
+</article>
 	
-</div>
+	</section>
+	
 
-
-
-<section id="comment">
-    <h2 class="title">Comments</h2>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2014
 
@@ -180,10 +122,7 @@ cur = db.query(sql)
       var disqus_shortname = 'justalazyadmin';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://lazyadmin.me/blog/2014/08/12/python-quan-ly-ket-noi-mysql/';
-        var disqus_url = 'http://lazyadmin.me/blog/2014/08/12/python-quan-ly-ket-noi-mysql/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
