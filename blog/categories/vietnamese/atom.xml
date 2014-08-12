@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vietnamese, | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/vietnamese/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bài viết đầu tiên với Octopress Blog]]></title>
+    <link href="http://lazyadmin.me/blog/2014/01/01/bai-viet-dau-tien-voi-octopress/"/>
+    <updated>2014-01-01T00:30:08+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/01/01/bai-viet-dau-tien-voi-octopress</id>
+    <content type="html"><![CDATA[<p>Quyết định chuyển nhà qua <a href="http://octopress.org/" title="Octopress">Octopress</a> + <a href="http://pages.github.com/">Github pages</a>. <code>Octopress</code> xứng đáng được gọi là <em>blogging framework for harkers</em>, nhanh, tiện, thú vị. <code>Octopress</code> là framework dựa trên nền Jekyll, một trình tạo các trang nội dung tĩnh, rất phù hợp để làm blog. Với <code>Octopress</code>, chúng ta không cần database, không cần một webserver có hỗ trợ PHP, chỉ cần 1 server support file tĩnh là quá đủ. Trên máy cá nhân, viết blog bằng Markdown, vừa nhanh vừa tiện, sau đó, Octopress sẽ giúp chúng ta sinh ra các file HTML, CSS cần thiết, và có thể giúp ta deploy luôn lên Github, nếu hosting bằng <code>Github pages</code>. Miễn phí, nguồn mở, file tĩnh nên nhanh, tuỳ biến cao, lại hỗ trợ plugin, rất đáng để thử.</p>
+
+<p>Chúng tôi đã gặp một chút khó khăn khi import bài viết từ Blogger qua, nhưng đã giải quyết ổn, và giờ thì chăm chỉ viết bài thôi ;). Nội dung của blog này từ nay, sẽ bao gồm tất cả những gì liên quan đến công việc của một Linux system administrator, và sẽ được nhiều người cùng đóng góp.</p>
+
+<p>Cuối cùng:</p>
+
+<h3>Chúc mừng năm mới 2014.</h3>
+]]></content>
+  </entry>
+  
+</feed>

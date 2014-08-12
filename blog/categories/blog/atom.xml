@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blog | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Trở lại với Blogger]]></title>
+    <link href="http://lazyadmin.me/blog/2011/11/02/tro-lai-voi-blogger/"/>
+    <updated>2011-11-02T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2011/11/02/tro-lai-voi-blogger</id>
+    <content type="html"><![CDATA[<div class='post'>
+Hôm nay vào <a href="http://gmailblog.blogspot.com/2011/11/gmails-new-look.html">blog Gmail </a>thấy giao diện khác quá, vội quay lại Blogspot của mình thì cảm thấy rất thú vị khi biết nó đã bổ sung giao diện mới Dynamic view, với nhiều kiểu hay ho như Timeline, Mosaic hoặc Magazine. Sau một hồi vọc vạch, quyết định change giao diện blog mình về kiểu <strike>magazine</strike>&nbsp;sidebar, và từ nay sẽ tìm lại thói quen viết, hehe.<br /><br />Về phần bạn Blogspot, phải công nhận là dạo này bạn ấy thay đổi rất nhiều. Trong bối cảnh các mạng xã hội lên ngôi, các tumblelog cũng được đà phát triển, rõ ràng là blog truyền thống, với những sự bất tiện của mình, đang mất thị phần nghiêm trọng. Google ý thức được điều này, nên đã thực hiện rất nhiều "biến tấu" đối với Blogspot, với sự đơn giản hóa và tiết kiệm thời gian, đồng thời nâng cao tính thẩm mĩ và tiện dụng, từ giao diện admin tới khung soạn thảo, và cả giao diện chính của blog. Đó là sự đổi mới toàn diện, từ tổng quan đến chi tiết. Bạn có thể xem chi tiết những sự thay đổi này <a href="http://j.mp/sbzwAt">ở đây</a>.&nbsp;Có thể nói, với sự thay máu đợt này, Blogspot đã trở thành dịch vụ blog tiện dụng nhất.<br /><br />Để kết thúc entry này, chúng ta hãy quay trở lại với giao diện Dynamic Views qua&nbsp;clip giới thiệu từ Blogger team:<br /><div style="text-align: center;"><br /></div><div style="text-align: center;"><iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/lpDQF2lFnBU" width="560"></iframe></div></div>
+
+]]></content>
+  </entry>
+  
+</feed>

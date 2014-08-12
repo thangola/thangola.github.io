@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: English | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/english/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Count IP Addresses in Access Log ]]></title>
+    <link href="http://lazyadmin.me/blog/2014/01/06/count-ip-addresses-in-access-log/"/>
+    <updated>2014-01-06T09:31:05+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/01/06/count-ip-addresses-in-access-log</id>
+    <content type="html"><![CDATA[<p><strong>$</strong>echo &ldquo;most frequent IPs in last 10000 lines in log&rdquo;</p>
+
+<p>```
+sudo tail -10000 /var/log/nginx/lazyadmin.me.log | awk ‘{print $1}’ | sort | uniq -c | sort -g</p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

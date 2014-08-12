@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: syntax | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/syntax/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tổng hợp một số câu lệnh check file config của các services]]></title>
+    <link href="http://lazyadmin.me/blog/2014/01/07/tong-hop-mot-so-cau-lenh-check-file-config-cua-cac-services/"/>
+    <updated>2014-01-07T14:22:05+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/01/07/tong-hop-mot-so-cau-lenh-check-file-config-cua-cac-services</id>
+    <content type="html"><![CDATA[<p><img src="http://i1017.photobucket.com/albums/af300/nhanct/Screenshotfrom2014-01-07141758_zpsb4ead1c2.png" alt="Alt text" /></p>
+]]></content>
+  </entry>
+  
+</feed>

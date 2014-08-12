@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: news | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/news/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Linux.com, luồng gió mới cho cộng đồng]]></title>
+    <link href="http://lazyadmin.me/blog/2009/05/13/linuxcom-luong-gio-moi-cho-cong-ong/"/>
+    <updated>2009-05-13T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2009/05/13/linuxcom-luong-gio-moi-cho-cong-ong</id>
+    <content type="html"><![CDATA[<div class='post'>
+Khi Linux Foundation nhận lại tên miền Linux.com từ SourceForge đầu năm nay, họ đã có dự định xây dựng lại website, sao cho nó không chỉ là nơi đăng những tin tức liên quan đến Linux. Và sáng nay, khi bạn vào địa chỉ <a href="http://linux.com/">http://linux.com</a>, bạn sẽ nhận thấy một Linux.com hoàn toàn mới, và như một vài trang tin Linux nhận xét: "nó đủ khiến cho những người say mê Linux có thể tự hào". Cộng đồng đã lên tiếng cảm ơn chính mình, bởi chính họ là những người đưa ra phần lớn ý kiến đóng góp cho website.<br /><br />Trên tinh thần nguồn mở thực sự, Linux Foundation đã thiết kế một website mang đậm chất tương tác, có thể tập hợp được tri thức của toàn cộng đồng. Dựa trên ý tưởng từ những người dùng, những nhà phát triển và những người đam mê Linux, website mới có khả năng thu thập thông tin và khiến thức từ nhiều nguồn và theo cách mà có thể tiếp cận được với cả người dùng mới và các bậc lão làng Linux.<br /><br />Một trong những tính năng thú vị và hấp dẫn của website Linux.com mới là "Linux Guru". Người dùng đã đăng ký có thể kiếm điểm và nâng cấp trạng thái guru của mình bằng cách tham gia các hoạt động trên website. Top 50 người đóng góp nhiều nhất sẽ được ghi tên vào bản báo cáo hàng năm của tổ chức. Top 5 guru sẽ đại diện cho cộng đồng, được mời tới dự lễ họp mặt hàng năm của Linux Foundation (Linux Foundation Collaboration Summit). Mỗi năm sẽ có một thành viên trở thành "Ultimate Linux Guru" và sẽ được đích thân Linus Tovard tặng một máy notebook, để ghi nhận sự đóng góp cho cộng đồng.<br /><br />Website có năm phần chính: <a href="http://linux.com/news">News </a>- tin tức Linux; <a href="http://linux.com/community">Community </a>- là nơi những thành viên đã đăng ký có thể kết nối với những người khác; <a href="http://linux.com/distrocentral">Distribution Central</a> - các distro tương tác với người dùng ở đây; <a href="http://linux.com/learn">Learn </a>- là nơi các trang Man, HowTos và các tài liệu Linux khác được lưu trữ, đồng thời cũng là diễn đàn để cộng đồng hỏi và trả lời; <a href="http://linux.com/directory">Directory </a>- lưu trữ các phần mềm, ebook, dịch vụ,...<br /><br />Linux.com với giao diện và chức năng mới đã mang lại một luồng gió mới cho cộng đồng Linux. Chúng ta cùng chúc cho website sẽ đạt được những gì mà cộng đồng kỳ vọng, dựa trên chính sức mạnh của cộng đồng.<br /><br /><span style="font-weight: bold;">Update</span>: Cùng chúng tôi tham gia nhóm <a style="font-weight: bold;" href="http://linux.com/community/groups/viewgroup/258-Vietnamese+Linux+enthusiasts">Vietnamese Linux enthusiasts</a> ở <a href="http://linux.com/"><span style="font-weight: bold;">Linux.com</span></a>.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+cám ơn bạn rất nhiều..<a href="http://www.truyenhinhviet.net" title="xem truyen hinh , truyen hinh truc tuyen , truyen hinh online , xem phim online" rel="nofollow">.</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle mua Sun, rồi sao?]]></title>
+    <link href="http://lazyadmin.me/blog/2009/04/21/oracle-mua-sun-roi-sao/"/>
+    <updated>2009-04-21T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2009/04/21/oracle-mua-sun-roi-sao</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://www.techcrunch.com/wp-content/uploads/2009/04/oracle-sun.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 399px; height: 269px;" src="http://www.techcrunch.com/wp-content/uploads/2009/04/oracle-sun.png" alt="" border="0" /></a><br /><a href="http://www.sun.com/aboutsun/pr/2009-04/sunflash.20090420.1.xml">Oracle đã vượt qua IBM để mua được Sun</a> với giao dịch có giá trị xấp xỉ 7,4 tỷ USD. Bỏ qua những gì liên quan đến kinh tế và mớ cổ phiếu lộn xộn, bỏ qua những bình luận về khả năng của IBM và Oracle, tôi chỉ muốn biết quan điểm của các nhà lãnh đạo của cả Sun và Oracle đối với phần mềm mã nguồn mở như thế nào? Điều gĩ sẽ xảy ra với MySQL? Solaris sẽ như thế nào? Hướng phát triển của Java? Những câu hỏi và đến lúc này vẫn chưa có lời đáp cụ thể.<br /><br />Theo như <a href="http://www.sun.com/aboutsun/pr/2009-04/sunflash.20090420.1.xml">lời công bố từ Sun</a>, Java sẽ là nền tảng cho Oracle Fusion Middleware, trong khi hệ điều hành Solaris sẽ là nền tảng chính cho hệ quản trị cơ sở dữ liệu Oracle.<br /><br />Đồng thời, Oracle cũng đã nhận được một số công nghệ ảo hóa từ việc mua Sun. Nhưng nếu bạn là người có quan tâm tới mã nguồn mở, có lẽ bạn sẽ tự hỏi về số phận của OpenOffice và MySQL. Trong lời công bố trên, họ không nhắc đến hai phần mềm này. Có lẽ chúng ta sẽ phải chờ thêm.<br /><br />(Bạn nên ghé thăm <a href="http://www.sun.com/software/opensource/index.jsp">trang OSS của Sun</a> và <a href="http://oss.oracle.com/">của Oracle</a> nếu muốn biết thêm về các phần mềm nguồn mở liên quan đến hai tên tuổi này).<br /><br />Update:<br />- Đọc thêm bài <span style="font-weight: bold;">"Oracle mua Sun có ý nghĩa gì với Linux</span>" trên <a href="http://blog.360.yahoo.com/blog-LU.CUQA9b6gRyol5jVT.?p=3470">Nghialt's blog</a>.<br />- Đọc thêm chủ đề "<span style="font-weight: bold;">Oracle mua Sun, rồi sao"</span> trên <a href="http://www.fotech.org/forum/index.php?showtopic=22781">FOTECH.ORG</a>.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: grub,sysadmin | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/grub-sysadmin/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[single mode trong grub2 ubuntu 12.04 & 14.04]]></title>
+    <link href="http://lazyadmin.me/blog/2014/08/12/single-mode-trong-grub-ubuntu-12-dot-04/"/>
+    <updated>2014-08-12T12:07:45+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/08/12/single-mode-trong-grub-ubuntu-12-dot-04</id>
+    <content type="html"><![CDATA[<p>Nếu bạn lâu ngày không vào server ubuntu mà quên mất password root, đừng lo, đã có single mode :))
+Sau đây là các bước để vào single mode trong ubuntu 12.04 ( 14.04 cũng được nà )</p>
+
+<br>
+
+
+<p>Bước 1: Lúc bật máy lên bạn giữ phím shift  để vào màn hình grub2 load  <br />
+Bước 2: Chọn phiên bản kernel  <br />
+Bước 3: Nhấn e để edit các tham số trong grub2  <br />
+Bước 4: Chuyển con trỏ xuống cuối dòng bắt đầu bằng <strong>linux /boot/vmlinuz&hellip;&hellip;</strong>   <br />
+Bước 5: Thay các từ như [&lsquo;ro&rsquo;, &lsquo;quiet&rsquo;, &lsquo;spalsh&rsquo;] bằng cụm sau &ldquo;rw init=/bin/bash&rdquo;  <br />
+Bước 6: Nhấn Ctrl + x để boot với chế độ single mode  <br />
+Bước 7: thích làm gì thì làm.hihi :&ndash;)  <br />
+Bước 8: sync &amp; reboot <br /></p>
+
+<p>Note: Đôi lúc 1 số service của bạn bị hang lúc boot và server không thể khởi động lên được ( eg: redis) bạn có thể dùng cách này để vào disable auto start của service đó đi</p>
+
+<p>-Rd
+Nhan</p>
+]]></content>
+  </entry>
+  
+</feed>

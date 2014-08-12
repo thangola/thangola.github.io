@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ubuntu | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Những phần mềm nào sẽ được cài mặc định cho Ubuntu Netbook Edition 10.10?]]></title>
+    <link href="http://lazyadmin.me/blog/2010/05/14/nhung-phan-mem-nao-se-uoc-cai-mac-inh/"/>
+    <updated>2010-05-14T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2010/05/14/nhung-phan-mem-nao-se-uoc-cai-mac-inh</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div style="text-align: center;"><br /></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/unity-2.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 640px;" src="http://i165.photobucket.com/albums/u59/Thangola/Screenshot/unity-2.png" border="0" alt="" /></a><br /><a href="https://blueprints.edge.launchpad.net/ubuntu/+spec/desktop-maverick-une-app-selection">Bản kế hoạch các phần mềm mặc định</a> cho Ubuntu Netbook Edition 10.10 (UNE 10.10) vừa được đưa lên Launchpad ngày hôm nay. Tất nhiên danh sách này vẫn đang trong quá trình thảo luận, và có thể có những thay đổi nếu cần ^^.<div><br /></div><div>Đầu tiên là<b> trình duyệt web</b>. Trình duyệt mặc định cho UNE 10.10 sẽ là <a href="http://code.google.com/chromium/">Chromium</a>, phần mềm nguồn mở do Google hậu thuẫn. Bản kế hoạch viết rằng Chromium sẽ là trình duyệt mặc định cho đến bản Alpha3, nếu như nó phù hợp với kích thước của đĩa LiveCD. Chromium cũng còn một số vấn đề khác cần xem xét. Các vấn đề này chủ yếu liên quan đến sự tương thích về phần mềm (in ấn, <span class="Apple-style-span"   style="  line-height: 17px; font-family:'dejavu sans', 'bitstream vera sans', verdana, sans-serif;font-size:14px;">ffmepg, openjdk,...</span>) cũng như giao diện (menu, buttons). Nếu Chromium không được chọn, trình duyệt mặc định sẽ là Midori.</div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /><img src="http://yorba.org/static/images/shotwell/shotwell1.jpg" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 640px; " /></span></div><div><br /></div><div><a href="http://yorba.org/shotwell/">Shotwell</a> nhiều khả năng sẽ được chọn làm trình <b>quản lý ảnh</b>. Shotwell tương đối nhẹ, và tương thích khá tốt với các dịch vụ. Đây là trình quản lý ảnh duy nhất trên Gnome hiện có thể tương tác với cả Picasa, Flick và Facebook.</div><div><br /></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><img src="http://projects.gnome.org/gnumeric/images/gnumeric-sample.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 640px; " /></span></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /></span></div><div><b>Bộ công cụ văn phòng</b> OpenOffice sẽ được thay thế bởi ba phần mềm tương ứng là Abiword, <a href="http://projects.gnome.org/gnumeric/">Gnumeric</a> và <a href="http://blogs.gnome.org/racarr/2010/04/20/introducing-glide-presentations-for-gnome/">Glide</a>. Cũng như Ubuntu 10.04, Zoho sẽ vẫn được cung cấp kèm theo, tuy nhiên nhược điểm của dịch vụ này là không phục vụ chỉnh sửa ngoại tuyến! </div><div><br /></div><div><span class="Apple-style-span" style="color: rgb(85, 26, 139); -webkit-text-decorations-in-effect: underline; "><br /><img src="http://download.banshee-project.org/shots/1.5.1/banshee-autodj.png" border="0" alt="" style="display: block; margin-top: 0px; margin-right: auto; margin-bottom: 10px; margin-left: auto; text-align: center; cursor: pointer; width: 600px; height: 369px; " /></span></div><div><br /></div><div>Về <b>chương trình multimedia</b>, khả năng Banshee được chọn vẫn cao nhất. Trình chơi nhạc của Moblin (<span class="Apple-style-span"   style="  line-height: 17px; font-family:'dejavu sans', 'bitstream vera sans', verdana, sans-serif;font-size:14px;">hornsey</span>) đã bị bỏ rơi. XBMC tuy tốt nhưng lại không sử dung gstreamer. Vấn đề của Banshee chỉ là liệu nó có phù hợp với đĩa LiveCD (lại vấn đề dung lượng ^.-). </div><div><br /></div><div>Cuối cùng, nhóm phát triển vẫn đang thảo luận về việc trình khách email nào sẽ được cài mặc định. Có vẻ như họ sẽ tuỳ biến lại Evolution cho phù hợp với netbook. Đã có một bản tuỳ biến của Evolution là <span class="Apple-style-span"   style="  ;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:13px;"><a href="http://live.gnome.org/Evolution/Art" style="color: rgb(23, 57, 75); text-decoration: underline; font-weight: bold; ">Evolution Express</a></span>, nhưng hình như có nhiều người không thích nó.</div><div><br /></div><div>Về phần mình, mình vẫn khoái nghe nhạc bằng Rthymbox, Symphony cho tác vụ văn phòng và webmail + 1 tool notify cho thư điện tử :">.</div></div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Anonymous</div>
+<div class='content'>
+Nhìn trông giống bản dành cho smart phone quá :)). k0 giống ubuntu thường nữa. Đâm hơi chán</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cài đặt Ubuntu/Kubuntu 8.10 từ USB]]></title>
+    <link href="http://lazyadmin.me/blog/2008/11/04/ci-t-ubuntukubuntu-810-t-usb/"/>
+    <updated>2008-11-04T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2008/11/04/ci-t-ubuntukubuntu-810-t-usb</id>
+    <content type="html"><![CDATA[<div class='post'>
+<span style="font-weight: bold;">1. Chuẩn bị</span><br /><br />- Hệ điều hành Windows XP/Vista.<br /><br />- File ISO Ubuntu 8.10 (<a href="http://mirror-fpt-telecom.fpt.net/ubuntu-releases/intrepid/">link download</a>) hoặc Kubuntu 8.10 (<a href="http://mirror-fpt-telecom.fpt.net/ubuntu-releases/kubuntu/intrepid/">link download</a>).<br /><br />- USB dung lượng lớn hơn hoặc bằng 1 GB.<br /><br />- Chương trình HP USB Disk Storage (<a href="http://h50178.www5.hp.com/local_drivers/17550/SP27608.exe">link download</a>).<br /><br />- Công cụ tạo USB khởi động:<br />+ <a href="http://duythang.net.googlepages.com/Ubuntu810.exe">link dành cho Ubuntu</a> (file nén exe)<br />+ <a href="http://duythang.net.googlepages.com/Kubuntu810.rar">link dành cho Kubuntu</a> (file nén rar)<br /><br />[*] Từ bây giờ tớ sẽ chỉ hướng dẫn cho Ubuntu, bạn nào cài Kubuntu thì cứ thay chữ Ubuntu bằng Kubuntu là okie ^^.<br /><br /><span style="font-weight: bold;">2. Tạo USB khởi động</span><br /><br />- Kết nối máy tính với USB.<br /><br />- Đầu tiên các bạn sử dụng chương trình HP USB DS format USB của bạn về định dạng FAT32.<br /><br />- Tiếp đó giải nén cái công cụ tại USB khởi động ở trên vào đâu đó trên đĩa cứng, ta được thư mục Ubuntu810.<br /><br />- Copy file ISO của Ubuntu 8.10 vào thư mục Ubuntu 8.10.<br /><br />- Chạy file Ubuntu810.bat trong thư mục Ubuntu810.<br /><br />- Làm theo hướng dẫn trên cửa sổ hiện ra, và chờ đến khi nó báo thành công.<br /><span style="font-weight: bold;">3. Cài đặt Ubuntu 8.10</span><br /><br />- Khởi động lại máy tính<br /><br />- Vào BIOS thiết lập chế độ khởi động từ USB (cái này cách làm tùy BIOS, nhưng hầu hết BIOS không quá cũ đều hỗ trợ ^^).<br /><br />- Tiếp tục cài đặt như khi cài từ LiveCD.<br /><br /><span style="font-weight: bold;">4. Tổng kết</span><br /><br />Việc cài từ USB có nhiều ưu điểm hơn cài từ LiveCD do tận dụng được khả năng đọc/ghi tốc độ cao của USB, tiết kiệm được cả thời gian (thời gian cài đặt ở máy tớ là 8 phút) và tiền bạc (tiền đĩa CD và hao mòn ổ ghi =))).<br /><br />Nếu đã có LiveCD, bạn cũng có thể tạo USB cài Ubuntu bằng cách boot vào LiveCD và làm như sau:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://3.bp.blogspot.com/_7HQMEKpIxtQ/SRAxzystDyI/AAAAAAAAAKs/igNAfkydxl4/s1600-h/Ubuntu-USB-1.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 384px; height: 400px;" src="http://3.bp.blogspot.com/_7HQMEKpIxtQ/SRAxzystDyI/AAAAAAAAAKs/igNAfkydxl4/s400/Ubuntu-USB-1.jpg" alt="" id="BLOGGER_PHOTO_ID_5264762730248474402" border="0" /></a><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_7HQMEKpIxtQ/SRAxz-OHQ4I/AAAAAAAAAK0/6TexLjmjMLY/s1600-h/Ubuntu-USB.jpg"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 393px; height: 400px;" src="http://1.bp.blogspot.com/_7HQMEKpIxtQ/SRAxz-OHQ4I/AAAAAAAAAK0/6TexLjmjMLY/s400/Ubuntu-USB.jpg" alt="" id="BLOGGER_PHOTO_ID_5264762733341393794" border="0" /></a><br />Bài viết này tớ có tham khảo từ <a href="http://www.pendrivelinux.com/2008/10/06/usb-ubuntu-810-install-from-windows-non-persistent/">pendrivelinux</a>. Cái tool dành cho Kubuntu 8.10 là do tớ edit từ cái dành tool cho Ubuntu nên không có định dạng exe như cái của pendrivelinux ^^.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Đánh giá] Kubuntu 8.10]]></title>
+    <link href="http://lazyadmin.me/blog/2008/11/02/nh-gi-kubuntu-810/"/>
+    <updated>2008-11-02T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2008/11/02/nh-gi-kubuntu-810</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_7HQMEKpIxtQ/SQ5dq__2rnI/AAAAAAAAAKY/G9v25FbGF0A/s1600-h/Ibex.jpg"><img style="margin: 0pt 0pt 10px 10px; float: right; cursor: pointer; width: 237px; height: 400px;" src="http://2.bp.blogspot.com/_7HQMEKpIxtQ/SQ5dq__2rnI/AAAAAAAAAKY/G9v25FbGF0A/s400/Ibex.jpg" alt="" id="BLOGGER_PHOTO_ID_5264248007757835890" border="0" /></a><br />Vào ngày cuối tháng 10, khi Halloween đã tới rất gần, một sự kiện được trông đợi bởi những chiếc đồng hồ đếm ngược đã xảy ra: Bản Ubuntu 8.10 đã ra đời. Kèm theo đó là các phiên bản trên các nền đồ họa khác: Kubuntu 8.10, Xubuntu 8.10.<br /><br />Trước hết xin gửi lời cảm ơn đến bác CườngNV @ JAIST. Bác có lẽ là người đầu tiên làm mirror Ubuntu 8.10 ở Việt Nam cho anh em download và cài đặt Ubuntu ngay khi đang còn nóng. Bác cũng update ngay con Kubuntu khi em yêu cầu ^^.<br /><br />Theo như phản ánh của anh em Fotech thì bản Ubuntu 8.10 khá là chán. Việc thực hiện upgrade có tỷ lệ thất bại khá cao. Thêm vào đó, khả năng nhận phần cứng (card wireless, card màn hình) chưa tốt (còn tệ hợn bản RC :(). Có lẽ đây là hệ quả của sức ép từ phần sau dấu chấm của con số 8.10 gây ra. Rõ ràng tuyên bố trước là đúng 6 tháng sẽ phát hành một phiên bản khiến cho dù phiên bản chưa thật hoàn chỉnh vẫn phải tung ra.<br /><br />Tớ chỉ mới cài thử bản Kubuntu 8.10 trên laptop. Tuy nhiên tớ đánh giá khá cao bản này. Kubuntu 8.10 được xây dựng dựa vào nền đồ họa KDE 4.1 khá tốt. KDE 4.1 có khá nhiều tính năng nổi bật thú vị.<br /><br />KDE 4.1 là bản cải tiến của KDE 4.0. Khái niệm Desktop đã được thay đổi hoàn toàn. Bây giờ Desktop được gọi với tên mới là Plasma, là nơi để đính các Gadget, và chính các Gadget này với độ tùy biến cao sẽ mang lại các tiện ích cho người sử dụng. Thanh Start menu được thiết kế thành các Tab tiện lợi và có bổ sung ô search thông minh (đú theo Vista ^^). Phiên bản 4.1 bổ sung những điểm thiếu sót cho KDE 4.0: Gadget Folder view cho phép đưa một thư mục bất kỳ lên Plasma; main panel có tính tùy biến cao; bổ sung thêm công cụ Grub editor tiện lợi.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://www.kde.org/img/kde41.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 437px; height: 199px;" src="http://www.kde.org/img/kde41.png" alt="" border="0" /></a>Một điều đáng nói ở Kubuntu 8.10 là vấn đề giao diện và font chữ đã được cải thiện đặc biệt. Các bạn có thể thấy rõ nhất điều này khi cài thử FF3. Đã không còn những font + giao diện xấu mù, mà thay vào đó là một bộ mặt hoàn toàn khác.<br /><br />Bản Kubuntu 8.10 cũng đã fix được khá nhiều lỗi liên quan đến tính tương thích phàn mềm. Tớ dùng thử một ngày mà chưa gặp lỗi crash lần nào. Tớ cài bộ gõ XUnikey, để chế độ Foward, và tớ có thể sử dụng nó với hầu hết các phần mềm (trừ Konqueror không sao gõ được tiếng Việt).<br />Tuy nhiên tớ vẫn còn vướng một số vấn đề nhỏ khi sử dụng bản này. Tớ không thể mở được các file mp3 bằng Amarok. Tớ cũng không thể kết nối wireless được (cái này không biết do hệ điều hành hay tại AP nữa ^^). Kopete không thể kết nối được máy chủ Yahoo (một số anh em Fotech bảo là do máy chủ lỗi, tạm tin vậy ^^).<br /><br />Kết lại một câu là Kubuntu 8.10 cũng đáng để dùng đấy chứ nhỉ ^^.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Phạm Duy Thăng</div>
+<div class='content'>
+@crazyinhead: Ông có thể xử lý bằng cách cài wubi, dùng song song 2 hệ điều hành<BR/>@ngọc: Hờ hờ, tùy tâm ^^.</div>
+</div>
+<div class='comment'>
+<div class='author'>Pham Minh Ngoc</div>
+<div class='content'>
+Nhìn chung là ko biết có nên thử ko nhỉ :D</div>
+</div>
+<div class='comment'>
+<div class='author'>crazyinhead</div>
+<div class='content'>
+Giới thiệu khá hay :D. Nhìn cái giao diện KDE 4.1 là đã muốn thử rồi. Nhưng ngại cái là cài linux trên máy thật xong thì không thể nào cài nổi windows nữa (vào install CD màn hình đen xì luôn, chả hiểu sao lại vậy. Format lại ổ thì lại OK :D). Hơn nữa hiện giờ nhiều chương trình làm việc trên windows quá, không bỏ được (yêu cầu công việc nó phải vậy :) ) =&gt; Kubuntu thì cũng ... từ từ :D.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

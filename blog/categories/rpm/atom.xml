@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rpm | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/rpm/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Problem with proftpd 1.3.4 on RPMForge repository]]></title>
+    <link href="http://lazyadmin.me/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/"/>
+    <updated>2012-08-30T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge</id>
+    <content type="html"><![CDATA[<div class='post'>
+Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:<br /><br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">proftpd: PAM unable to dlopen(/lib64/security/pam_stack.so): /lib64/security/pam_stack.so: cannot open shared object file: No such file or directory</span></blockquote><br />Google một vòng thì ra kết quả là do lỗi của proftpd bản build 1.3.4 trên repository RPMForge. Nếu bạn cũng gặp lỗi tương tự với bản build trên repo này, hãy gỡ ra và cài bản build của epel:<br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># yum remove proftpd</span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># rpm -Uvh <span class="s2"><a href="http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm">http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</a></span></span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;"># yum install proftpd --disablerepo=rpmforge</span></blockquote><br /></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yum - Liệt kê danh sách file trong một gói]]></title>
+    <link href="http://lazyadmin.me/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/"/>
+    <updated>2012-08-07T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi</id>
+    <content type="html"><![CDATA[<div class='post'>
+Để liệt kê nội dung một gói, có thể đã cài hoặc chưa cài, chúng ta sử dụng công cụ <span style="font-family: Courier New, Courier, monospace;">repoquery</span> trong gói <span style="font-family: Courier New, Courier, monospace;">yum-utils</span>. Nếu chưa cài gói này, chạy lệnh sau để cài đặt:&nbsp;<div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><span style="font-size: small; line-height: normal; white-space: normal;"><span style="font-family: Courier New, Courier, monospace;"># yum install yum-utils -y</span></span></pre></div><div><br /></div><div>Lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> có 2 option hữu ích:</div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">  -l, --list            list files in this package/group<br />  -q, --query           no-op for rpmquery compatibility</span></code></pre></div><div><br /></div><div>Chạy lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> với 2 option trên cùng với tên gói để liệt kê danh sách các file có trong gói:</div><div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;">$ repoquery -ql mlocate<br />/etc/cron.daily/mlocate.cron<br />/etc/updatedb.conf<br />/usr/bin/locate<br />/usr/bin/updatedb<br />/usr/share/doc/mlocate-0.22.2<br />/usr/share/doc/mlocate-0.22.2/AUTHORS<br />/usr/share/doc/mlocate-0.22.2/COPYING<br />...</pre></div><div><br /></div></div></div>
+
+]]></content>
+  </entry>
+  
+</feed>

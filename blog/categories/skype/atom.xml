@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: skype | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/skype/atom.xml" rel="self"/>
+  <link href="http://lazyadmin.me/"/>
+  <updated>2014-08-12T13:45:07+07:00</updated>
+  <id>http://lazyadmin.me/</id>
+  <author>
+    <name><![CDATA[Thang Pham]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install SkypeTab-NG on Fedora]]></title>
+    <link href="http://lazyadmin.me/blog/2012/06/09/install-skypetab-ng-on-fedora/"/>
+    <updated>2012-06-09T00:00:00+07:00</updated>
+    <id>http://lazyadmin.me/blog/2012/06/09/install-skypetab-ng-on-fedora</id>
+    <content type="html"><![CDATA[<div class='post'>
+<div class="separator" style="clear: both; text-align: center;"><object height="360" width="480"><param name="movie" value="http://www.youtube.com/v/mZ_NvXhGEu0?version=3&amp;hl=vi_VN"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mZ_NvXhGEu0?version=3&amp;hl=vi_VN" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object></div><br /><span style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 22px;">SkypeTab-ng is a program that adds tabs to Skype™ for Linux (<i>ng</i> stands for <i>next generation</i>).</span><br /><span style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 22px;">SkypeTab-ng on Github:&nbsp;</span><a href="https://github.com/kekekeks/skypetab-ng">https://github.com/kekekeks/skypetab-ng</a><br /><br />To install it on Fedora 16-17, just run following command as root<br /><br /><blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">rpm -Uvh "http://widehat.opensuse.org/repositories/home:/keks-n:/skypetab-ng/Fedora_16/noarch/skypetab-ng-0.4.10-23.1.noarch.rpm"</span></blockquote><div>For other instructions (other distro, description), see <a href="http://keks-n.net/skypetab/">see here</a>.</div><div><br /></div></div>
+
+]]></content>
+  </entry>
+  
+</feed>
