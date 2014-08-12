@@ -4,7 +4,7 @@
   <title><![CDATA[just some lazy admins]]></title>
   <link href="http://lazyadmin.me/atom.xml" rel="self"/>
   <link href="http://lazyadmin.me/"/>
-  <updated>2014-08-12T13:45:07+07:00</updated>
+  <updated>2014-08-12T13:48:37+07:00</updated>
   <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
@@ -28,12 +28,12 @@ Sau đây là các bước để vào single mode trong ubuntu 12.04 ( 14.04 cũ
 Bước 2: Chọn phiên bản kernel  <br />
 Bước 3: Nhấn e để edit các tham số trong grub2  <br />
 Bước 4: Chuyển con trỏ xuống cuối dòng bắt đầu bằng <strong>linux /boot/vmlinuz&hellip;&hellip;</strong>   <br />
-Bước 5: Thay các từ như [&lsquo;ro&rsquo;, &lsquo;quiet&rsquo;, &lsquo;spalsh&rsquo;] bằng cụm sau &ldquo;rw init=/bin/bash&rdquo;  <br />
+Bước 5: Thay các từ như <strong>[&lsquo;ro&rsquo;, &lsquo;quiet&rsquo;, &lsquo;spalsh&rsquo;]</strong> bằng cụm sau <strong>rw init=/bin/bash</strong>  <br />
 Bước 6: Nhấn Ctrl + x để boot với chế độ single mode  <br />
 Bước 7: thích làm gì thì làm.hihi :&ndash;)  <br />
 Bước 8: sync &amp; reboot <br /></p>
 
-<p>Note: Đôi lúc 1 số service của bạn bị hang lúc boot và server không thể khởi động lên được ( eg: redis) bạn có thể dùng cách này để vào disable auto start của service đó đi</p>
+<p>Note: <strong>Đôi lúc 1 số service của bạn bị hang lúc boot và server không thể khởi động lên được ( eg: redis) bạn có thể dùng cách này để vào disable auto start của service đó đi</strong></p>
 
 <p>-Rd
 Nhan</p>
