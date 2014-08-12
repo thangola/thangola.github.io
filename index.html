@@ -7,8 +7,7 @@
 	<meta name="author" content="Thang Pham">
 
 	
-	<meta name="description" content="Nếu bạn lâu ngày không vào server ubuntu mà quên mất password root, đừng lo, đã có single mode :))
-Sau đây là các bước để vào single mode trong &hellip;">
+	<meta name="description" content="Khi sử dụng Python để code 1 vài tool hay script với Mysql,tornado&hellip;. mình hay gặp lỗi &ldquo;Dealing with OperationalError 2006, &lsquo;MySQL &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +78,73 @@ Sau đây là các bước để vào single mode trong &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/08/12/python-quan-ly-ket-noi-mysql/">
+		
+			Python: quản lý kết nối MySQL</a>
+	</h2>
+	<div class="entry-content">
+		<p>Khi sử dụng Python để code 1 vài tool hay script với Mysql,tornado&hellip;. mình hay gặp lỗi &ldquo;Dealing with OperationalError 2006, &lsquo;MySQL server has gone away&rdquo;. Cái này do kết nối giữa mysql
+và python bị timeout, lúc gọi lại hàm thì nó chưa được reconnect.Dưới đây là đoạn code đơn giản để bạn &ldquo;&#8221;avoid&rdquo; chuyện đấy:</p>
+
+<pre><code>
+import MySQLdb
+
+class DB:
+  conn = None
+
+  def connect(self):
+    self.conn = MySQLdb.connect()
+
+  def query(self, sql):
+    try:
+      cursor = self.conn.cursor()
+      cursor.execute(sql)
+    except (AttributeError, MySQLdb.OperationalError):
+      self.connect()
+      cursor = self.conn.cursor()
+      cursor.execute(sql)
+    return cursor
+
+db = DB()
+sql = "SELECT * FROM foo"
+cur = db.query(sql)
+# wait a long time for the Mysql connection to timeout
+cur = db.query(sql)
+# still works
+
+</code></pre>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-12T14:08:37+07:00" pubdate data-updated="true">Aug 12<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -714,48 +780,6 @@ Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:
 
 
 	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/quan-tri-he-thong/'>quản trị hệ thống</a>, <a class='category' href='/blog/categories/repoquery/'>repoquery</a>, <a class='category' href='/blog/categories/rpm/'>rpm</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>, <a class='category' href='/blog/categories/yum/'>yum</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/06/09/install-skypetab-ng-on-fedora/">
-		
-			Install SkypeTab-NG on Fedora</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-<div class="separator" style="clear: both; text-align: center;"><object height="360" width="480"><param name="movie" value="http://www.youtube.com/v/mZ_NvXhGEu0?version=3&amp;hl=vi_VN"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mZ_NvXhGEu0?version=3&amp;hl=vi_VN" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object></div><br /><span style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 22px;">SkypeTab-ng is a program that adds tabs to Skype™ for Linux (<i>ng</i> stands for <i>next generation</i>).</span><br /><span style="background-color: white; color: #333333; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 22px;">SkypeTab-ng on Github:&nbsp;</span><a href="https://github.com/kekekeks/skypetab-ng">https://github.com/kekekeks/skypetab-ng</a><br /><br />To install it on Fedora 16-17, just run following command as root<br /><br /><blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">rpm -Uvh &#8220;http://widehat.opensuse.org/repositories/home:/keks-n:/skypetab-ng/Fedora_16/noarch/skypetab-ng-0.4.10-23.1.noarch.rpm&#8221;</span></blockquote><div>For other instructions (other distro, description), see <a href="http://keks-n.net/skypetab/">see here</a>.</div><div><br /></div></div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-09T00:00:00+07:00" pubdate data-updated="true">Jun 9<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/fedora/'>fedora</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/skype/'>skype</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
 
 
 </div>

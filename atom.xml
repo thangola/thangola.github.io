@@ -4,7 +4,7 @@
   <title><![CDATA[just some lazy admins]]></title>
   <link href="http://lazyadmin.me/atom.xml" rel="self"/>
   <link href="http://lazyadmin.me/"/>
-  <updated>2014-08-12T13:48:37+07:00</updated>
+  <updated>2014-08-12T14:17:04+07:00</updated>
   <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python: quản lý kết nối MySQL]]></title>
+    <link href="http://lazyadmin.me/blog/2014/08/12/python-quan-ly-ket-noi-mysql/"/>
+    <updated>2014-08-12T14:08:37+07:00</updated>
+    <id>http://lazyadmin.me/blog/2014/08/12/python-quan-ly-ket-noi-mysql</id>
+    <content type="html"><![CDATA[<p>Khi sử dụng Python để code 1 vài tool hay script với Mysql,tornado&hellip;. mình hay gặp lỗi &ldquo;Dealing with OperationalError 2006, &lsquo;MySQL server has gone away&rdquo;. Cái này do kết nối giữa mysql
+và python bị timeout, lúc gọi lại hàm thì nó chưa được reconnect.Dưới đây là đoạn code đơn giản để bạn &ldquo;&#8221;avoid&rdquo; chuyện đấy:</p>
+
+<pre><code>
+import MySQLdb
+
+class DB:
+  conn = None
+
+  def connect(self):
+    self.conn = MySQLdb.connect()
+
+  def query(self, sql):
+    try:
+      cursor = self.conn.cursor()
+      cursor.execute(sql)
+    except (AttributeError, MySQLdb.OperationalError):
+      self.connect()
+      cursor = self.conn.cursor()
+      cursor.execute(sql)
+    return cursor
+
+db = DB()
+sql = "SELECT * FROM foo"
+cur = db.query(sql)
+# wait a long time for the Mysql connection to timeout
+cur = db.query(sql)
+# still works
+
+</code></pre>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[single mode trong grub2 ubuntu 12.04 & 14.04]]></title>
@@ -511,24 +550,6 @@ I like it more ;)</div>
 <div class='author'>Hồ Nga</div>
 <div class='content'>
 I like this ;))</div>
-</div>
-</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bảo vệ mắt tốt hơn với Redshift]]></title>
-    <link href="http://lazyadmin.me/blog/2010/06/02/bao-ve-mat-tot-hon-voi-redshift/"/>
-    <updated>2010-06-02T00:00:00+07:00</updated>
-    <id>http://lazyadmin.me/blog/2010/06/02/bao-ve-mat-tot-hon-voi-redshift</id>
-    <content type="html"><![CDATA[<div class='post'>
-Bạn là người làm việc với máy tính? Bạn sử dụng máy nhiều hơn 10 giờ mỗi ngày? Và mỗi tối bạn có hơn 5 tiếng dùng máy? Mắt bạn luôn ở trong trạng thái mệt mỏi hoặc buồn ngủ do ánh sáng từ màn hình máy tính. Hãy thử sử dụng phần mềm <a href="http://jonls.dk/redshift/">Redshift</a>. Redshift sẽ tinh chỉnh nhiệt độ màu của màn hình cho phù hợp với ánh sáng xung quanh bạn, dựa vào toạ độ địa lý của bạn. <div><br /></div><div>Vào ban đêm, nhiệt độ màu sẽ được chỉnh cho phù hợp với nhiệt độ màu của đèn trong phòng (khoảng 3700K đối với bóng dây tóc). Ban ngày, nhiệt độ màu sẽ tương ứng với nhiệt độ màu của ánh sáng tự nhiên, khoảng 5500K - 6500K (mặc định là 5500K). Ánh sáng sẽ có nhiệt độ cao hơn vào những ngày nhiều mây. Khi nhiệt độ màu màn hình phù hợp với nhiệt độ màu của ngoại cảnh, mắt bạn sẽ không còn cảm giác mệt mỏi do làm việc lâu bên máy tính nữa.</div><div><br /></div><div>Để cài đặt Redshift cho Ubuntu Lucid và Karmic, bạn có thể thêm repository và cài như sau:</div><div><span class="Apple-style-span"   style="  color: rgb(51, 51, 51); line-height: 19px; font-family:Arial, Tahoma, Verdana;font-size:12px;"><ul><li><b><span class="Apple-style-span"  style="font-family:'courier new';">sudo add-apt-repository</span></b><span class="Apple-style-span"  style="font-family:'courier new';"> </span><strong><span class="Apple-style-span"  style="font-family:'courier new';">ppa:jonls/redshift-ppa</span></strong></li><li><strong><span class="Apple-style-span"  style="font-family:'courier new';">sudo apt-get update &amp;&amp; sudo apt-get install redshift</span></strong></li></ul></span></div><div>Sau khi cài đặt thành công, bạn vào website <a href="http://www.getlatlon.com/">http://www.getlatlon.com/</a> để lấy vĩ độ và kinh độ chính xác nơi bạn ở. Ví dụ, toạ độ ở Yên Phụ, Hà Nội là khoảng (21.1, 105.9). Sau đó, bạn mở một cửa sổ Terminal và chạy lệnh sau để redshift hoạt động:</div><div><ul><li><span class="Apple-style-span"   style="font-size:100%;color:#333333;"><span class="Apple-style-span"  style=" line-height: 19px;font-size:12px;"><b><span class="Apple-style-span"  style="font-family:'courier new';">gtk-redshift -l 21.1:105:9 </span></b></span></span></li></ul></div><div>Để chương trình có thể chạy lúc khởi động, bạn thêm lệnh trên vào danh mục các ứng dụng chạy start-up (<span class="Apple-style-span"   style="  color: rgb(51, 51, 51); line-height: 19px; font-family:Arial, Tahoma, Verdana;font-size:12px;"><em class=" aptureTMMSelection">System > Preferences > Start-up Application</em></span>). </div><div><br /></div><div>Bạn có thể sử dụng tham số -t để thay đổi nhiệt độ màu mặc định của redshift. Ví dụ:</div><span class="Apple-style-span"   style="  color: rgb(51, 51, 51); font-weight: bold; line-height: 19px; font-family:Arial, Tahoma, Verdana;font-size:12px;"><ul><li><span class="Apple-style-span"  style="font-family:'courier new';">gtk-redshift  -l  21.1:105:9 -t 6700:4700</span></li></ul></span><div>Trong đó 6700 là nhiệt độ màu ban ngày, 4700 là nhiệt độ màu ban đêm. Mình thấy để nhiệt độ là 6700:4700 sẽ vừa với mắt hơn ^^ (mặc định là 5500:3700).</div><div><br /></div><div>Bạn cũng có thể tạm thời tắt redshift để xem ảnh hoặc phim với màu sắc thực bằng cách kích chuột vào biểu tượng của redshift trên khay hệ thống.</div><br /><br />Chúc các bạn sức khoẻ để thành công ^^.</div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>NHACF.COM</div>
-<div class='content'>
-Lâu rùi mới ghé thăm blog của bạn. ^_^<br />Mời bạn <a href="http://nhacf.com?nghenhac" rel="nofollow">nghe nhạc</a> ở <a href="http://nhacf.com" rel="nofollow">nhacf.com</a> (2.0) mới cập nhật thêm nhiều bài hát, và sửa lại nhanh hơn, <a href="http://nhacf.com" rel="nofollow">nhacf</a> trang <a href="http://nhacf.com?nghenhacmienphipro" rel="nofollow">nghe nhạc miễn phí pro</a>.<br />Chúc blog của bạn có thêm nhiều người ghé thăm và ngày càng hay hơn.. Thân!</div>
 </div>
 </div>
 ]]></content>
