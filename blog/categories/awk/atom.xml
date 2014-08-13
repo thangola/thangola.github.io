@@ -4,7 +4,7 @@
   <title><![CDATA[Category: awk | just some lazy admins]]></title>
   <link href="http://lazyadmin.me/blog/categories/awk/atom.xml" rel="self"/>
   <link href="http://lazyadmin.me/"/>
-  <updated>2014-08-13T14:25:01+07:00</updated>
+  <updated>2014-08-13T23:27:34+07:00</updated>
   <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham & Kao Nhan]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[1 vài ví dụ sử dụng awk phần 1]]></title>
+    <title type="html"><![CDATA[1 vài ví dụ sử dụng awk]]></title>
     <link href="http://lazyadmin.me/blog/2014/08/13/1-vai-vi-du-su-dung-awk/"/>
     <updated>2014-08-13T13:01:28+07:00</updated>
     <id>http://lazyadmin.me/blog/2014/08/13/1-vai-vi-du-su-dung-awk</id>
@@ -64,7 +64,7 @@ Bạn muốn in cột thứ 3 của tất cả các dòng trong 1 file: <br/></p
 <p><strong> Ví dụ 8: </strong> Xoá toàn bộ các dòng trống (blank line ) trong file <br />
 <code>awk NF</code></p>
 
-<p><strong> Trong phần sau mình sẽ đưa ra các ví dụ về ghi trong awk </strong></p>
+<p><strong> Trong phần sau mình sẽ đưa ra các ví dụ về ghi bằng sed </strong></p>
 ]]></content>
   </entry>
   
