@@ -7,7 +7,7 @@
 	<meta name="author" content="Thang Pham & Kao Nhan">
 
 	
-	<meta name="description" content="AWK là ngôn ngữ lập trình được nhằm mục đích xử lý các Tập tin chữ (text file) theo nguyên lý khớp mẫu (pattern matching); đồng thời còn là tên gọi &hellip;">
+	<meta name="description" content=".bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells. What is a login or non-login shell? When you &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,6 +78,70 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/08/13/whats-the-difference-between-bash-profile-vs-bashrc/">
+		
+			What&#8217;s the difference between .bash_profile vs .bashrc</a>
+	</h2>
+	<div class="entry-content">
+		<p>.bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells. <br />
+<strong>What is a login or non-login shell?</strong> <br /></p>
+
+<p>When you login (type username and password) via console, either sitting at the machine, or remotely via ssh: <em>.bash_profile</em> is executed to configure your shell before the initial command prompt. <br />
+But, if you’ve already logged into your machine and open a new terminal window (xterm) inside Gnome or KDE, then <em>.bashrc</em> is executed before the window command prompt. <em>.bashrc</em> is also run when you start a new bash instance by typing <em>/bin/bash</em> in a terminal. <br /></p>
+
+<p><strong>Why two different files?</strong> <br /></p>
+
+<p>Say, you’d like to print some lengthy diagnostic information about your machine each time you login (load average, memory usage, current users, etc). You only want to see it on login, so you only want to place this in your <em>.bash_profile</em>. If you put it in your .bashrc, you’d see it every time you open a new terminal window. <br /></p>
+
+<p><strong>Recommendation</strong> <br /></p>
+
+<p>Most of the time you don’t want to maintain two separate config files for login and non-login shells — when you set a <em>PATH</em>, you want it to apply to both. You can fix this by sourcing <em>.bashrc</em> from your <em>.bash_profile</em> file, then putting <em>PATH</em> and common settings in <em>.bashrc</em>. <br /></p>
+
+<p>To do this, add the following lines to <em>.bash_profile</em>:</p>
+
+<pre><code>
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+</code></pre>
+
+
+<p>Now when you login to your machine from a console <em>.bashrc</em> will be called.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-13T14:19:15+07:00" pubdate data-updated="true">Aug 13<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/login/'>login</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -787,48 +851,6 @@ Từ lúc mình dùng Mac đến giờ, nhầm lẫn giữa <b>⌘Q</b> và <b>�
 
 
 	<a class='category' href='/blog/categories/chrome/'>chrome</a>, <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/osx/'>osx</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/08/30/problem-with-proftpd-134-on-rpmforge/">
-		
-			Problem with proftpd 1.3.4 on RPMForge repository</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:<br /><br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">proftpd: PAM unable to dlopen(/lib64/security/pam_stack.so): /lib64/security/pam_stack.so: cannot open shared object file: No such file or directory</span></blockquote><br />Google một vòng thì ra kết quả là do lỗi của proftpd bản build 1.3.4 trên repository RPMForge. Nếu bạn cũng gặp lỗi tương tự với bản build trên repo này, hãy gỡ ra và cài bản build của epel:<br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># yum remove proftpd</span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;"># rpm -Uvh <span class="s2"><a href="http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm">http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm</a></span></span>&nbsp;</blockquote><blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;"># yum install proftpd &#8211;disablerepo=rpmforge</span></blockquote><br /></div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-30T00:00:00+07:00" pubdate data-updated="true">Aug 30<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/epel/'>epel</a>, <a class='category' href='/blog/categories/proftpd/'>proftpd</a>, <a class='category' href='/blog/categories/rpm/'>rpm</a>, <a class='category' href='/blog/categories/rpmforge/'>rpmforge</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>, <a class='category' href='/blog/categories/yum/'>yum</a>
 
 
 </div>
