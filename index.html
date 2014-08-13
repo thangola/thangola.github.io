@@ -7,7 +7,7 @@
 	<meta name="author" content="Thang Pham & Kao Nhan">
 
 	
-	<meta name="description" content="Khi sử dụng Python để code 1 vài tool hay script với Mysql,tornado&hellip;. mình hay gặp lỗi &ldquo;Dealing with OperationalError 2006, &lsquo;MySQL &hellip;">
+	<meta name="description" content="AWK là ngôn ngữ lập trình được nhằm mục đích xử lý các Tập tin chữ (text file) theo nguyên lý khớp mẫu (pattern matching); đồng thời còn là tên gọi &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,6 +78,93 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2014/08/13/1-vai-vi-du-su-dung-awk/">
+		
+			1 vài ví dụ sử dụng awk phần 1</a>
+	</h2>
+	<div class="entry-content">
+		<p>AWK là ngôn ngữ lập trình được nhằm mục đích xử lý các Tập tin chữ (text file) theo nguyên lý khớp mẫu (pattern matching); đồng thời còn là tên gọi một chương trình trong hệ điều hành UNIX. Trong UNIX các chương trình được viết tên chữ thường nên AWK còn được gọi là Awk hoặc awk.
+Sử dụng awk thì chắc nói cả ngày cũng không hết được nên hôm nay mình sẽ đưa ra 1 vài ví dụ hay dùng đến awk và cực kỳ đơn giản, dễ hiểu (mooning).</p>
+
+<p><strong>Ví dụ 1:</strong> In cột trong file <br/>
+Bạn muốn in cột thứ 3 của tất cả các dòng trong 1 file: <br/></p>
+
+<p><code>awk '{ print $3 }' file</code></p>
+
+<p><strong>awk sẽ tự động cắt các cột của từng dòng đưa vào biến $1, $2, $3&hellip;$n</strong><br /></p>
+
+<p><strong> Ví dụ 2:</strong> In ra toàn bộ dòng trong 1 file theo số thứ tự <br /></p>
+
+<p><code>awk '{ print NR ": " $0 }' file</code></p>
+
+<p><strong> NR là 1 biến đặc biệt, nó chứa số thứ tự của dòng in ra</strong> <br /></p>
+
+<p><strong> Ví dụ 3: </strong> In ra số từ trong 1 file <br /></p>
+
+<p><code>awk '{ total = total + NF } END { print total }'</code></p>
+
+<p><strong> NF: &lsquo;number of fields, or number of columns, or number of words&rsquo; </strong>  <br /></p>
+
+<p><strong> Ví dụ 4: </strong> In ra những dòng nào chứa ít hơn n ký tự: <br /></p>
+
+<p><code>awk 'length &lt; 64'</code></p>
+
+<p><strong> Ví dụ 5: </strong> In ra n dòng đầu tiên của file (tương đương head -n ) <br /></p>
+
+<p><code>awk 'NR &lt; n'</code></p>
+
+<p><strong> sau khi đọc xong mỗi dòng, awk sẽ tự động tăng lên 1 giá trị</strong> <br /></p>
+
+<p><strong> Ví dụ 6: </strong> In ra các dòng trong khoảng : n &lt; line &lt; m <br /></p>
+
+<p><code>awk 'NR==n,NR==m'</code></p>
+
+<p><strong> Ví dụ 7: </strong> In ra dòng thứ n trong file <br /></p>
+
+<p><code>awk 'NR==n'</code></p>
+
+<br />
+
+
+<p><strong> Ví dụ 8: </strong> Xoá toàn bộ các dòng trống (blank line ) trong file <br />
+<code>awk NF</code></p>
+
+<p><strong> Trong phần sau mình sẽ đưa ra các ví dụ về ghi trong awk </strong></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-13T13:01:28+07:00" pubdate data-updated="true">Aug 13<span>th</span>, 2014</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/awk/'>awk</a>, <a class='category' href='/blog/categories/shell/'>shell</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -742,48 +829,6 @@ Hôm nay gặp lỗi với proftpd trên CentOS 6. Xem log secure thì nó báo:
 
 
 	<a class='category' href='/blog/categories/epel/'>epel</a>, <a class='category' href='/blog/categories/proftpd/'>proftpd</a>, <a class='category' href='/blog/categories/rpm/'>rpm</a>, <a class='category' href='/blog/categories/rpmforge/'>rpmforge</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>, <a class='category' href='/blog/categories/yum/'>yum</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/">
-		
-			Yum - Liệt kê danh sách file trong một gói</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-Để liệt kê nội dung một gói, có thể đã cài hoặc chưa cài, chúng ta sử dụng công cụ <span style="font-family: Courier New, Courier, monospace;">repoquery</span> trong gói <span style="font-family: Courier New, Courier, monospace;">yum-utils</span>. Nếu chưa cài gói này, chạy lệnh sau để cài đặt:&nbsp;<div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><span style="font-size: small; line-height: normal; white-space: normal;"><span style="font-family: Courier New, Courier, monospace;"># yum install yum-utils -y</span></span></pre></div><div><br /></div><div>Lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> có 2 option hữu ích:</div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">  -l, --list            list files in this package/group<br />  -q, --query           no-op for rpmquery compatibility</span></code></pre></div><div><br /></div><div>Chạy lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> với 2 option trên cùng với tên gói để liệt kê danh sách các file có trong gói:</div><div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;">$ repoquery -ql mlocate<br />/etc/cron.daily/mlocate.cron<br />/etc/updatedb.conf<br />/usr/bin/locate<br />/usr/bin/updatedb<br />/usr/share/doc/mlocate-0.22.2<br />/usr/share/doc/mlocate-0.22.2/AUTHORS<br />/usr/share/doc/mlocate-0.22.2/COPYING<br />...</pre></div><div><br /></div></div></div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-07T00:00:00+07:00" pubdate data-updated="true">Aug 7<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/quan-tri-he-thong/'>quản trị hệ thống</a>, <a class='category' href='/blog/categories/repoquery/'>repoquery</a>, <a class='category' href='/blog/categories/rpm/'>rpm</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>, <a class='category' href='/blog/categories/yum/'>yum</a>
 
 
 </div>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: shell | just some lazy admins]]></title>
-  <link href="http://lazyadmin.me/blog/categories/shell/atom.xml" rel="self"/>
+  <title><![CDATA[Category: awk | just some lazy admins]]></title>
+  <link href="http://lazyadmin.me/blog/categories/awk/atom.xml" rel="self"/>
   <link href="http://lazyadmin.me/"/>
   <updated>2014-08-13T14:11:08+07:00</updated>
   <id>http://lazyadmin.me/</id>
@@ -65,20 +65,6 @@ Bạn muốn in cột thứ 3 của tất cả các dòng trong 1 file: <br/></p
 <code>awk NF</code></p>
 
 <p><strong> Trong phần sau mình sẽ đưa ra các ví dụ về ghi trong awk </strong></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Count IP Addresses in Access Log ]]></title>
-    <link href="http://lazyadmin.me/blog/2014/01/06/count-ip-addresses-in-access-log/"/>
-    <updated>2014-01-06T09:31:05+07:00</updated>
-    <id>http://lazyadmin.me/blog/2014/01/06/count-ip-addresses-in-access-log</id>
-    <content type="html"><![CDATA[<p><strong>$</strong>echo &ldquo;most frequent IPs in last 10000 lines in log&rdquo;</p>
-
-<p>```
-sudo tail -10000 /var/log/nginx/lazyadmin.me.log | awk ‘{print $1}’ | sort | uniq -c | sort -g</p>
-
-<p>```</p>
 ]]></content>
   </entry>
   

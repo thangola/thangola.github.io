@@ -7,7 +7,7 @@
 	<meta name="author" content="Thang Pham & Kao Nhan">
 
 	
-	<meta name="description" content="SkypeTab-ng is a program that adds tabs to Skype™ for Linux (ng stands for next generation).SkypeTab-ng on Github:&nbsp;https://github.com/kekekeks/ &hellip;">
+	<meta name="description" content="Để liệt kê nội dung một gói, có thể đã cài hoặc chưa cài, chúng ta sử dụng công cụ repoquery trong gói yum-utils. Nếu chưa cài gói này, chạy lệnh &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,6 +78,48 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2012/08/07/yum-liet-ke-danh-sach-file-trong-mot-goi/">
+		
+			Yum - Liệt kê danh sách file trong một gói</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
+Để liệt kê nội dung một gói, có thể đã cài hoặc chưa cài, chúng ta sử dụng công cụ <span style="font-family: Courier New, Courier, monospace;">repoquery</span> trong gói <span style="font-family: Courier New, Courier, monospace;">yum-utils</span>. Nếu chưa cài gói này, chạy lệnh sau để cài đặt:&nbsp;<div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><span style="font-size: small; line-height: normal; white-space: normal;"><span style="font-family: Courier New, Courier, monospace;"># yum install yum-utils -y</span></span></pre></div><div><br /></div><div>Lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> có 2 option hữu ích:</div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">  -l, --list            list files in this package/group<br />  -q, --query           no-op for rpmquery compatibility</span></code></pre></div><div><br /></div><div>Chạy lệnh <span style="font-family: Courier New, Courier, monospace;">repoquery</span> với 2 option trên cùng với tên gói để liệt kê danh sách các file có trong gói:</div><div><div><pre style="background-color: #eeeeee; border: 0px; font-size: 14px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;">$ repoquery -ql mlocate<br />/etc/cron.daily/mlocate.cron<br />/etc/updatedb.conf<br />/usr/bin/locate<br />/usr/bin/updatedb<br />/usr/share/doc/mlocate-0.22.2<br />/usr/share/doc/mlocate-0.22.2/AUTHORS<br />/usr/share/doc/mlocate-0.22.2/COPYING<br />...</pre></div><div><br /></div></div></div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-07T00:00:00+07:00" pubdate data-updated="true">Aug 7<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/quan-tri-he-thong/'>quản trị hệ thống</a>, <a class='category' href='/blog/categories/repoquery/'>repoquery</a>, <a class='category' href='/blog/categories/rpm/'>rpm</a>, <a class='category' href='/blog/categories/sysadmin/'>sysadmin</a>, <a class='category' href='/blog/categories/yum/'>yum</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -489,52 +531,6 @@ I like it more ;)</div>
 
 	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/oss/'>oss</a>, <a class='category' href='/blog/categories/svn/'>svn</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
 
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2010/12/04/google-sap-mo-chrome-web-store/">
-		
-			Google sắp mở Chrome Web Store</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://i165.photobucket.com/albums/u59/Thangola/linh%20tinh/Chromeapp.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 600px;" src="http://i165.photobucket.com/albums/u59/Thangola/linh%20tinh/Chromeapp.png" border="0" alt="" /></a><br /><span class="Apple-style-span" style="border-collapse: collapse; font-family: arial, sans-serif; font-size: 13px; "><p>Đang code thì nhận được email từ team Chrome/Chromium. Như vậy là Google sắp tung ra chiêu mới: Web Store, để chọn đường cho việc kinh doanh apps trên Chrome OS sau này. Các bạn tập tành viết app dần đi, sắp bán được rồi đấy ^^.</p><p><br /></p><p><span></span></p><blockquote><p><span><i><span class="Apple-style-span" style="font-size: medium; "></span></i></span></p><h1 class="ha" style="font-family: arial, sans-serif; font-size: 16px; margin-top: 12px; margin-right: 150px !important; margin-bottom: 5px; margin-left: 10px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; color: rgb(0, 0, 0); background: inherit; border-right: inherit; position: relative; z-index: 10; "><span id=":q1" class="hP" style="padding-right: 10px; "><i>Upcoming Launch of the Chrome Web Store</i></span></h1><p></p><p><i>Hello!</i></p><p><span><i> </i></span></p><p><i><span>Thank you for developing for Google Chrome. These last few months, our team has been hard at work, preparing for the</span><span><a href="http://chrome.google.com/extensions" target="_blank" style="color: rgb(25, 107, 123); "> </a></span><span><a href="http://chrome.google.com/extensions" target="_blank" style="color: rgb(25, 107, 123); ">Chrome Web Store</a></span><span><a href="http://chrome.google.com/extensions" target="_blank" style="color: rgb(25, 107, 123); ">l</a></span><span>aunch later this year. Extensions and themes for Google Chrome will be part of this new store. With this email we wanted to inform you of some upcoming developments and changes in the extensions gallery and how you can best prepare the items you have listed in the gallery for the upcoming launch.</span></i></p><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>We have updated our guidelines for extension and theme creative assets</span><span>: We recommend you to produce all the creative materials described in our</span><span><a href="http://code.google.com/chrome/webstore/docs/images.html" target="_blank" style="color: rgb(25, 107, 123); "> </a></span><span><a href="http://code.google.com/chrome/webstore/docs/images.html" target="_blank" style="color: rgb(25, 107, 123); ">docs</a></span><span>. These are currently available only to apps developers but the same guidelines will apply to all items listed in the store</span><span> </span><span>once we launch. So, </span><span>if you get these prepared now, you are going to be ready when the store launches. For those of you with complex extensions, we also highly recommend investing some time in preparing videos and slideshows, describing how your extensions work.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="2" style="margin-left: 15px; "><i><span>Double-check our </span><span><a href="http://code.google.com/chrome/webstore/branding.html" target="_blank" style="color: rgb(25, 107, 123); ">branding policies</a></span><span>: If you are using Google trademarks and brand names to describe your items, please take a moment to re-read our branding policies to help you avoid common mistakes.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>Verify your listed items using Google’s Webmaster Tools</span><span>: This new feature allows you to associate your website with the items you have posted in the store. This will make users more comfortable trying them out. Access this feature at the</span><span><a href="https://chrome.google.com/extensions/developer/dashboard" target="_blank" style="color: rgb(25, 107, 123); "> </a></span><span><a href="https://chrome.google.com/extensions/developer/dashboard" target="_blank" style="color: rgb(25, 107, 123); ">developer dashboard</a></span><span>.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>Set up your Google Checkout merchant account and associate it with your developer account</span><span>: If you are </span><span>located in the US</span><span> and want to sell apps and eventually extensions or themes through the store, you’ll need to register for a Google Checkout merchant account. You can find more information on this new </span><span><a href="http://www.google.com/support/chrome/bin/answer.py?answer=96832" target="_blank" style="color: rgb(25, 107, 123); ">help article</a></span><span>.</span></i></li></ol><p><span><i> </i></span></p><ol><li value="1" style="margin-left: 15px; "><i><span>Make your extensions more discoverable:</span><span> We will be launching a robust system of extensions categories in the gallery. You now have the option to classify your extension in up to three of these categories through the developer dashboard. This will help your extension be discovered by users who will be browsing the pages for each category.</span></i></li></ol><p><span><i> </i></span></p><p><span><i>Thank you again for making Google Chrome a better browser.</i></span></p><p><span><i> </i></span></p><p><span><i>The Google Chrome Extensions team</i></span></p></blockquote><p><span></span></p></span></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Hồ Nga</div>
-<div class='content'>
-I like this ;))</div>
-</div>
-</div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-04T00:00:00+07:00" pubdate data-updated="true">Dec 4<span>th</span>, 2010</time></div>
-	<div class="tags">
 
 </div>
 	
