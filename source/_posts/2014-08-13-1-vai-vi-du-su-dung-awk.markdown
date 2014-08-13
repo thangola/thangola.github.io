@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "1 vài ví dụ sử dụng awk phần 1"
+title: "1 vài ví dụ sử dụng awk"
 date: 2014-08-13 13:01:28 +0700
 comments: true
 categories: shell awk
@@ -68,4 +68,4 @@ Bạn muốn in cột thứ 3 của tất cả các dòng trong 1 file: <br/>
 
 
 
-** Trong phần sau mình sẽ đưa ra các ví dụ về ghi trong awk **
+** Trong phần sau mình sẽ đưa ra các ví dụ về ghi bằng sed **
