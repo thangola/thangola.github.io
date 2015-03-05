@@ -7,7 +7,7 @@
 	<meta name="author" content="Thang Pham & Kao Nhan">
 
 	
-	<meta name="description" content="(Copy from durdn.com)Am I the only one to notice that there is a lot of vim love in the airwaves recently? I saw the trend very clearly, spanning &hellip;">
+	<meta name="description" content="Một trong những shell được sử dụng thường xuyên trong Linux là bash shell. Khi viết các shell script, công việc mà người sử dụng hay gặp phải nhất &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,6 +78,48 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2008/12/12/lm-ch-linux-bash-shell-x-l-string-trong/">
+		
+			Làm chủ Linux Bash shell: Xử lý string trong Bash shell</a>
+	</h2>
+	<div class="entry-content">
+		<div class='post'>
+Một trong những shell được sử dụng thường xuyên trong <span class="wiki_link">Linux</span> là bash shell. Khi viết các shell script, công việc mà người sử dụng hay gặp phải nhất có lẽ là xử lý string (tìm file, xử lý tên file, xử lý log, xử lý chuỗi nhập vào,&#8230;). Sau đây tôi xin trình bày một số điểm mấu chốt thú vị trong xử lý string với bash shell.<br /><br />Hai lệnh đầu tiên, đơn giản nhưng tương đối hữu ích, đó là<!--fonto:Courier New--> <span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->dirname<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc--> và <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->basename<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->. Cho một biến có chứa 1 string dạng đường dẫn đến 1 thư mục D hoặc 1 file X, lệnh <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->basename<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc--> sẽ trả về đúng tên thư mục D hoặc tên file X, còn lệnh <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->dirname<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc--> trả về phàn đường dẫn đến thư mục mẹ của D hoặc X. Ví dụ:<br /><!--c1--><blockquote style="font-family: courier new;"><div class="codemain"><!--ec1-->$ basename /home/thangphamduy/workspace/foo.txt<br />foo.txt<br />$ dirname /home/thangphamduy/workspace/foo.txt<br />/home/thangphamduy/workspace<br />$ basename /home/thangphamduy/workspace<br />workspace<br />$ dirname /home/thangphamduy/workspace<br /><br />/home/thangphamduy<!--c2--></div></blockquote><!--c1--><div class="codetop"><br /></div><div style="font-family: courier new;" class="codemain"><!--ec1--><blockquote>$ ALPHA=&#8221;/home/thangphamduy/temp/bar.txt&#8221;<br />$ BETA=`dirname $ALPHA`<br />$ echo $BETA<br />/home/thangphamduy/temp</blockquote><!--c2--></div><br />Đó chỉ là xử lý xâu đơn giản, tiếp đây, chúng ta thử xử lý xâu một cách &#8220;pro&#8221; hơn với bash shell. Trong 1 biểu thức, ta thường bắt gặp một biến được đặt trong cặp dấu ngoặc nhọn kiểu như<!--fonto:Courier New--> <span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->${MYVAR}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->. Và bash cũng cho phép chúng ta xử lý biến đó ngay trong cặp ngoặc nhọn. Chúng ta có thể dễ dàng cắt bỏ hay lấy ra một phần của string chứa trong biến một cách rất dễ dàng. Để dễ hình dung, các bạn có thể xem ví dụ sau:<br /><br /><div style="font-family: courier new;" class="codemain"><!--ec1--><blockquote>$ MYVAR=foodforthought.jpg<br />$ echo ${MYVAR##*fo}<br />rthought.jpg<br />$ echo ${MYVAR#*fo}<br />odforthought.jpg</blockquote><!--c2--></div><!--ec2--><br />Trong lệnh thứ nhất, ở phía trong dấu <!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->${}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->, đầu tiên chúng ta viết tên biến, sau đó là hai dấu #, rồi đến 1 chuỗi ký tự đại diện (*fo). Vậy lệnh này có nghĩa là gì và nó được bash shell thực hiện như thế nào? Lệnh này (<!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->echo ${MYVAR##*fo}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->) sẽ khiến cho bash thực hiện việc cắt bỏ chuối dài nhất, tính từ ký tự đầu tiên, khớp với chuỗi ký tự đại diện (còn gọi là wildcard), sau đó in phần còn lại ra stdout. Khi gặp lệnh này, bash shell sẽ thực hiện việc tìm kiếm tất cả các xâu con khớp với chuỗi ký tự đại diện *fo trong xâu được chứa bởi<!--fonto:Courier New--> <span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->$MYVAR<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->(tức là tìm tất cả các xâu kết thúc với 2 ký tự fo):<br /><blockquote style="font-family: courier new;"><div class="codemain"><!--ec1-->f  <br />fo              MATCHES *fo<br />foo<br />food<br />foodf      <br />foodfo          MATCHES *fo<br />foodfor<br />foodfort   <br />foodforth<br />foodfortho <br />foodforthou<br />foodforthoug<br />foodforthought<br />foodforthought.j<br />foodforthought.jp<br />foodforthought.jpg</div></blockquote><div class="codemain"><!--c2--></div><br />Sau khi kết thúc tìm kiếm (trong VD trên bash tìm được 2 kết quả), bash sẽ lấy xâu kết quả dài nhất (foodfo), rồi loại bỏ nó ra khỏi xâu gốc (phần còn lại: rthought.jpg), rồi in kết quả ra màn hình.<br /><br />Trong câu lệnh thứ hai (<!--fonto:Courier New--><span style="font-family:Courier New;"><!--/fonto--><!--sizeo:3--><span style="line-height: 100%;font-size:12;" ><!--/sizeo-->echo ${MYVAR#*fo}<!--sizec--></span><!--/sizec--><!--fontc--></span><!--/fontc-->), công việc cũng tương tự như trên, nhưng thay vì lấy kết quả dài nhất, bash shell lại lấy kết quả ngắn nhất (fo) rồi loại bỏ khỏi xâu gốc và in kết quả ra màn hình. Thực ra khi chỉ sử dụng 1 dấu # ở phần tùy biến, ngay khi tìm được kết quả đầu tiên, bash shell sẽ lập tức dừng việc tìm kiếm lại.<br /><br />Để tìm kiếm từ cuối xâu thay vì tìm kiếm từ đầu xâu, chúng ta thay các tùy biến # và ## bằng các tùy biến % và %%, cách sử dụng hoàn toàn tương tự. Ví dụ:<br /><!--c1--><div style="font-family: courier new;" class="codemain"><!--ec1--><blockquote>$ MYVAR=thangphamduy/workspace/bar.foo.txt<br />$ echo ${MYVAR%.*}<br />thangphamduy/workspace/bar.foo<br />$ echo ${MYVAR%%.*}<br />thangphamduy/workspace/bar</blockquote><!--c2--></div><br />Và một cách xử lý string nữa, ít được dùng tới hơn, nhưng nhiều lúc rất có ích, đó là cắt xâu theo vị trí:<br /><blockquote style="font-family: courier new;">$ MYVAR=http://thangphamduy.blogspot.com<br />$ echo ${MYVAR:0:13}<br />http://fotech<br />$ echo ${MYVAR:8:17}<br />fotech.org</blockquote><span style="font-style: italic;"><br /></span><span>Phần </span><span>xử lý string xin được dừng lại tại đây, cảm ơn quý vị và các bạn đã quan tâm theo dõi >:).</span><span style="font-style: italic;"><br />(Tham khảo từ </span><a style="font-style: italic;" href="http://www.ibm.com/developerworks/library/l-bash.html">Bash by example - IBM</a><span style="font-style: italic;">)</span><br /><br /><div class="codemain"><!--c2--></div><!--ec2--></div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-12T00:00:00+07:00" pubdate data-updated="true">Dec 12<span>th</span>, 2008</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/lam-chu-bash-shell/'>làm chủ Bash shell</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -507,56 +549,6 @@ Chả biết Tũn nào :D. Của Nguyễn Thế Hoàng Linh mà ^^.</div>
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/09/24/lm-ch-linux-bash-shell/">
-		
-			Làm chủ Linux Bash shell với kí tự</a>
-	</h2>
-	<div class="entry-content">
-		<div class='post'>
-<span class="Apple-style-span" style="color: rgb(34, 34, 34); font-weight: bold; line-height: 19px;font-family:Verdana;font-size:48;"  ><span class="Apple-style-span" style="font-weight: normal;font-size:12;" >- <i>Cú pháp:</i> !{Some chars} <i></i></span></span><div><span class="Apple-style-span" style="color: rgb(34, 34, 34); font-weight: bold; line-height: 19px;font-family:Verdana;font-size:48;"  ><span class="Apple-style-span" style="font-weight: normal;font-size:12;" ><i>Ý nghĩa:</i> gọi và thực thi lệnh gần nhất trong đã thực thi có phần bắt đầu là {some chars}</span></span></div><div><span class="Apple-style-span" style="color: rgb(34, 34, 34); font-weight: bold; line-height: 19px;font-family:Verdana;font-size:48;"  ><span class="Apple-style-span" style="font-weight: normal;font-size:12;" ><br /><div class="codetop" style="margin: 0px auto; padding: 3px; background-image: url(http://www.fotech.org/forum/style_images/fotech/css_img_code.gif); background-repeat: no-repeat; background-color: rgb(253, 219, 204); color: rgb(0, 0, 0); font-weight: bold; background-position: 100% 50%;">CODE</div><div class="codemain" style="border: 1px dotted rgb(0, 0, 0); margin: 0px auto; padding: 2px; background-color: rgb(250, 252, 254); color: rgb(70, 85, 132); font-family: 'Courier New',Courier,Verdana,Arial;">$ cat /home/mrpc/workspace/learning-bash/test.txt<br />dong thu nhat<br />$ echo &#8220;bo sung them dong thu hai&#8221; >> ~/test.txt<br />$!cat<br />cat /home/mrpc/workspace/learning-bash/test.txt<br />dong thu nhat<br />bo sung them dong thu hai</div>- <i>Cú pháp:</i> {tên lệnh} [danh sách tham số | !$]<br /><i>Ý nghĩa</i>: Gọi lệnh và thay tham số !$ trong danh sách tham số bằng tham số cuối cùng của lệnh vừa gõ<br /><div class="codetop" style="margin: 0px auto; padding: 3px; background-image: url(http://www.fotech.org/forum/style_images/fotech/css_img_code.gif); background-repeat: no-repeat; background-color: rgb(253, 219, 204); color: rgb(0, 0, 0); font-weight: bold; background-position: 100% 50%;">CODE</div><div class="codemain" style="border: 1px dotted rgb(0, 0, 0); margin: 0px auto; padding: 2px; background-color: rgb(250, 252, 254); color: rgb(70, 85, 132); font-family: 'Courier New',Courier,Verdana,Arial;">$ touch /home/mrpc/workspace/learning-bash/ten.file.rat.la.dai.txt<br />$ echo &#8220;dong dau tien&#8221; >> !$<br />$ cat !$<br />dong dau tien</div><br /></span></span></div></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Nguyễn Thành Hải</div>
-<div class='content'>
-Tuyệt quá anh Thắng ơi, mấy cái này bây giờ em mới thấy đó :D</div>
-</div>
-</div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-09-24T00:00:00+07:00" pubdate data-updated="true">Sep 24<span>th</span>, 2008</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/lam-chu-bash-shell/'>làm chủ Bash shell</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
-
-
-</div>
-	
-</div>
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/4/" class="prev">Prev</a>
@@ -566,7 +558,7 @@ Tuyệt quá anh Thắng ơi, mấy cái này bây giờ em mới thấy đó :D
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+	<footer id="footer" class="inner">Copyright &copy; 2015
 
     Thang Pham & Kao Nhan
 

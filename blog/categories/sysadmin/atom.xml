@@ -4,7 +4,7 @@
   <title><![CDATA[Category: sysadmin | just some lazy admins]]></title>
   <link href="http://lazyadmin.me/blog/categories/sysadmin/atom.xml" rel="self"/>
   <link href="http://lazyadmin.me/"/>
-  <updated>2014-08-13T23:27:34+07:00</updated>
+  <updated>2015-03-05T11:39:41+07:00</updated>
   <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham & Kao Nhan]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What duties does a sysadmin perform?]]></title>
+    <link href="http://lazyadmin.me/blog/2015/03/05/what-duties-does-a-sysadmin-perform/"/>
+    <updated>2015-03-05T11:34:36+07:00</updated>
+    <id>http://lazyadmin.me/blog/2015/03/05/what-duties-does-a-sysadmin-perform</id>
+    <content type="html"><![CDATA[<p>Duties can be quite site-specific.  Typical things that a sysadmin does,
+in the quest to keep things running smoothly, include:</p>
+
+<ul>
+<li>  ensuring backups are being made timely and correctly</li>
+<li>  closing security holes</li>
+<li>  watching the system logs for problems</li>
+<li>  keeping the software up-to-date</li>
+<li>  keeping current with his knowledge of the software</li>
+<li>  writing small programs and scripts</li>
+<li>  maintaining the network hardware and software</li>
+<li>  keeping track of resource usage (so you don&rsquo;t run out of disk space,
+    ram, cpu cycles, or network bandwidth at a crucial moment)</li>
+<li>  evaluating and recommending hardware and software</li>
+<li>  doing field repairs on equipment (replacing disks, boards, etc.)</li>
+<li>  routine maintenance (cleaning tape drives, replacing toner cartridges)</li>
+<li>  pull wire for new workstations</li>
+<li>  account creation and deletion</li>
+<li>  user training</li>
+<li> writing documentation</li>
+<li> answering user questions</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Problem with proftpd 1.3.4 on RPMForge repository]]></title>

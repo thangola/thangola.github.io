@@ -4,7 +4,7 @@
   <title><![CDATA[just some lazy admins]]></title>
   <link href="http://lazyadmin.me/atom.xml" rel="self"/>
   <link href="http://lazyadmin.me/"/>
-  <updated>2014-08-13T23:27:34+07:00</updated>
+  <updated>2015-03-05T11:39:26+07:00</updated>
   <id>http://lazyadmin.me/</id>
   <author>
     <name><![CDATA[Thang Pham & Kao Nhan]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What duties does a sysadmin perform?]]></title>
+    <link href="http://lazyadmin.me/blog/2015/03/05/what-duties-does-a-sysadmin-perform/"/>
+    <updated>2015-03-05T11:34:36+07:00</updated>
+    <id>http://lazyadmin.me/blog/2015/03/05/what-duties-does-a-sysadmin-perform</id>
+    <content type="html"><![CDATA[<p>Duties can be quite site-specific.  Typical things that a sysadmin does,
+in the quest to keep things running smoothly, include:</p>
+
+<ul>
+<li>  ensuring backups are being made timely and correctly</li>
+<li>  closing security holes</li>
+<li>  watching the system logs for problems</li>
+<li>  keeping the software up-to-date</li>
+<li>  keeping current with his knowledge of the software</li>
+<li>  writing small programs and scripts</li>
+<li>  maintaining the network hardware and software</li>
+<li>  keeping track of resource usage (so you don&rsquo;t run out of disk space,
+    ram, cpu cycles, or network bandwidth at a crucial moment)</li>
+<li>  evaluating and recommending hardware and software</li>
+<li>  doing field repairs on equipment (replacing disks, boards, etc.)</li>
+<li>  routine maintenance (cleaning tape drives, replacing toner cartridges)</li>
+<li>  pull wire for new workstations</li>
+<li>  account creation and deletion</li>
+<li>  user training</li>
+<li> writing documentation</li>
+<li> answering user questions</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What's the difference between .bash_profile vs .bashrc]]></title>
@@ -585,24 +616,6 @@ Hôm nay vào <a href="http://gmailblog.blogspot.com/2011/11/gmails-new-look.htm
     <id>http://lazyadmin.me/blog/2011/07/03/sunday-clip-story-of-linux-cau-chuyen</id>
     <content type="html"><![CDATA[<div class='post'>
 <div>Chủ nhật là ngày thoải mái nhất để xem các video clip. Hôm nay chúng ta sẽ xem một clip của Linux Foundation, thực hiện nhân dịp kỉ niệm 20 năm Linux. Chúng ta sẽ cùng nhớ lại Linus Torvald đã viết ra Linux như thế nào, liên hệ với dự án GNU ra sao, và cùng xem cách  mà Linux đã làm thay đổi thế giới 20 năm qua. </div><div><br /></div><iframe width="640" height="390" src="http://www.youtube.com/embed/5ocq6_3-nEw" frameborder="0" allowfullscreen=""></iframe><div><br /></div><div>P/S: Tất nhiên, mỗi chúng ta đều xuất hiện trong câu chuyện này ;))</div></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Sunday clip: Linux AD - What does it me]]></title>
-    <link href="http://lazyadmin.me/blog/2011/06/26/sunday-clip-linux-ad-what-does-it-me/"/>
-    <updated>2011-06-26T00:00:00+07:00</updated>
-    <id>http://lazyadmin.me/blog/2011/06/26/sunday-clip-linux-ad-what-does-it-me</id>
-    <content type="html"><![CDATA[<div class='post'>
-<div>Clip rất hay và sáng tạo, nội dung thể hiện triết lý của Linux ^^. Tác phẩm lọt vào top 5 của cuộc thi &#8220;We&#8217;re Linux&#8221;.</div><div><br /></div><div><br /></div><iframe width="480" height="390" src="http://www.youtube.com/embed/qWEIQIv8zvY" frameborder="0" allowfullscreen=""></iframe><div><br /></div></div>
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>Nguyễn Thành Hải</div>
-<div class='content'>
-nghe giọng giống châu Phi nhể ^^</div>
-</div>
-</div>
 ]]></content>
   </entry>
   
